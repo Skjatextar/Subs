@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Subs.Models.Entity.Client>
+
+@*Ekki breyta thessu !!!!!!!!! DatabasePrufa*@
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sUsername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sPass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sEmail)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.sUsername)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sPass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sEmail)
+            </td>
+        </tr>
+    }
+</table>

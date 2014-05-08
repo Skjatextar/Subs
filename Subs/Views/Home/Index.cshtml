@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Subs.Models.Entity.Client>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<form id="searchbox" action="">
+    <input id="search" type="text" placeholder="Leita">
+    <select name="Categories" id="Categories">
+        <option value="valmynd">--Velja flokk--</option>
+        <option value="barnaefni">Barnaefni</option>
+        <option value="drama">Drama</option>
+        <option value="gaman">Gaman</option>
+        <option value="hrollvekja">Hrollvekja</option>
+        <option value="spenna">Spenna</option>
+    </select>
+    <input id="submit" type="submit" value="Search">
+</form>
+
+
+<div id="center">
+
+    <table class="table-responsive table table-bordered table-hover table-left">
+        <caption><h3>Vinsælast</h3></caption>
+        <thead>
+            <tr>
+                <th>Notandanafn</th>
+                <th>Lykilorð</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> @Html.ActionLink(item.sUsername, "info", new { id = item.sUsername }) </td>
+                    <td> @item.sPass </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <table class="table-responsive table table-bordered table-hover table-right">
+        <caption><h3>Nýjast</h3></caption>
+        <thead>
+            <tr>
+                <th>Notandanafn</th>
+                <th>Lykilorð</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> @Html.ActionLink(item.sUsername, "info", new { id = item.sUsername }) </td>
+                    <td> @item.sPass </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>

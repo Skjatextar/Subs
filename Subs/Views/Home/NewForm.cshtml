@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "NewForm";
+}
+
+<
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Site.css">
+</head>
+<body>
+    <div class="Breadcrumb">
+        <p><a href="/Home/">Heim</a> > <a href="/Home/Search">Beiðni</a> > Ný beiðni</p>
+    </div>
+    <div id="upload">
+        <form>
+            <fieldset>
+                <legend>Nýbeiðni</legend>
+                <div class="room">
+                    Nafn <input class="textbox-room" type="text" name="name"><br>
+                </div>
+                <div class="room">
+                    Tungumál <input class="textbox-room" type="text" name="language"><br>
+                </div>
+                <div class="room">
+                    Slóð á mynd <input class="textbox-room" type="text" name="url"><br>
+                </div>
+                <div class="room">
+                    Gerð
+                    <input id="radioplass" type="radio" name="type" value="movie">Mynd
+                    <input id="radioplass" type="radio" name="type" value="tv-show">Þáttur
+                </div>
+                <div>
+                    <select id="SearchMenu" name="Category">
+                        <option value="menu">--Velja flokk--</option>
+                        <option value="cartoon">Barnaefni</option>
+                        <option value="drama">Drama</option>
+                        <option value="comedy">Gaman</option>
+                        <option value="thriller">Hrollvekja</option>
+                        <option value="action">Spenna</option>
+                    </select>
+
+                </div><br />
+
+                <div>
+                    <p id="Boost">Nánar</p> <textarea id="Boost" rows="20" cols="50"></textarea><br>
+                </div>
+                <div>
+                    <input type="button" name="submit" value="Submit">
+                    <input type="button" name="cancel" value="Hætta vid">
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
+</body>
+</html>

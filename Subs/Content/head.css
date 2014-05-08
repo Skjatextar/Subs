@@ -1,0 +1,33 @@
+﻿#head {
+   /* background-image:url('Headohoto.png');*/
+    
+    background-color:#800080;
+    text-align:center;   
+    color:#ffffff;
+    padding-top:20px;
+    margin-bottom:20px;
+   
+}
+
+#span1 {
+    font-size: 25px;
+    margin-right:95px;
+    font-family:'Comic Sans MS';
+}
+#span2 {
+    font-size: 35px; 
+    font-family:'Comic Sans MS';
+    margin-right:100px;
+    text-shadow: 3px 1px 1px #4f4242;
+}
+#head-left {
+    font-family:'Comic Sans MS';
+    float:left;
+    margin-left:35px;
+    font-size: 20px;  
+    padding-top:20px;
+    transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    -moz-transform:rotate(-20deg);
+     text-shadow: 2px 1px 1px #4f4242;
+}

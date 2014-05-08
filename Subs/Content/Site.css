@@ -1,0 +1,179 @@
+﻿body {
+    background-color:#F5F5F5;
+    height: 100%;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+#container {
+    
+}
+
+/* CSS fyrir forsíðu og beiðnaleitarsíðu / Index, Search  */
+
+#SearchBox {
+    width: 1000px;
+    float: right;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#SearchMenu{
+    float: left;
+}
+
+#SearchCentered {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
+#Leftbox{
+    margin-right: 30px;
+}
+
+#Search-boxes{
+    margin-left: auto;
+    margin-right: auto;
+    width: 594px;
+}
+
+.Breadcrumb {
+    margin-left: auto;
+    margin-right: auto;
+    width: 206px;
+}
+
+
+
+/*  Fileform CSS / Senda inn skrá  */
+
+#upload  {
+    margin-left: 400px;
+    margin-right: 500px;
+    padding: 50px;
+    width: 500px;
+    border-style: solid;
+    border-width: 1px;
+
+}
+
+.room {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left:25px;
+
+}
+
+.textbox-room{
+    width: 300px;
+    float: right;
+}
+
+#radioroom{
+    margin-left: 100px;
+}
+/* ------- Home Index byrjar --------------------*/
+#center {
+    margin:5px;
+    font-family:'Comic Sans MS';
+}
+.table-left {
+    margin-left:75px;
+    margin-right:55px;
+    float:left;
+    width:40%;
+}
+.table-right {
+   
+    width:40%;
+}
+caption, h3 {
+      font-family:'Comic Sans MS';
+}
+
+
+footer {
+    padding-top: 8px;
+     margin: 0 75px;
+    bottom:0px;
+}
+
+#footer-left {
+    float: left;
+}
+   
+#footer-right {
+    float: right;
+}
+
+.about {
+    margin-top: 10px;
+}
+
+.Um-okkur, h2 {
+    font-family: 'Lucida Console';
+    margin-left: 0px;
+    clear: both;
+}
+
+.Um-okkur, p {
+}
+    
+.Um-okkur, a {
+    
+}
+
+.Um-okkur, h3 {
+   
+}
+
+.Um-okkur, ol {
+
+}
+#um-list {
+    float: right;
+    width: 40%;
+
+}
+
+#um-text {
+    float: left;
+    width: 50%;
+    margin-left: 50px;
+}

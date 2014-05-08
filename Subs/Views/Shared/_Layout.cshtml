@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div id="head">
+        <div id="head-left">Skjátextar.is</div>
+
+        <!--<span id="span1">00:43:42,586 --> <!--00:43:44,952 </span><br/>-->
+        <span id="span2">These aren't the droids you're looking for.</span>
+
+
+    <div class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                     @*@Html.ActionLink("Subs", "Index", "Home", null, new { @class = "navbar-brand" })  þetta er ekki notað*@ 
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Heim", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Senda inn skrá", "FileForm", "Home")</li>
+                    <li>@Html.ActionLink("Skoða Beiðnir", "Index", "Home")</li>
+                    <li>@Html.ActionLink("UM okkur", "About", "Home")</li>
+                    <li>@Html.ActionLink("Leiðbeiningar", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Gagnaleit", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Upphala", "Index", "Home")</li> @*þetta þarf ekki*@ 
+                    @*<li>@Html.ActionLink("Persónustillingar", "Contact", "Home")</li>*@
+                     
+                </ul>
+                   @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="container" class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div id="footer-left">
+                <p>Við mælum með <a href="http://www.videolan.org/vlc/index.html">VLC</a></p>
+            </div>
+            
+            <div id="footer-right">
+                <p>Með því að nota þessa síðu samþykkir þú þessa skilmála (href)</p>
+            </div>
+
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

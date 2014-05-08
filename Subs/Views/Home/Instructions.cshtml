@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Instructions"; ;
+}
+
+
+
+    <link rel="stylesheet" type="text/css" href="leidbein.css">
+
+    <h1>Leiðbeiningar</h1>
+
+
+    <h2>Notkun á .srt skrám í VLC:</h2>
+    <ul>
+        <li>
+            Aðferð 1.
+            <ol>
+                <li>Búðu til möppu undir myndskrána og .srt skrána.</li>
+                <li>Passaðu að báðar skrár hafi alveg sama nafn (fyrir utan skráarendinguna).</li>
+                <li>Opnaðu síðan myndskrána með VLC.</li>
+            </ol>
+        </li>
+
+        <li>
+            Aðferð 2.
+            <ol>
+                <li>Finndu myndskrána og .srt skrána. (hér þarf ekki að passa að þær hafi sama nafn)</li>
+                <li>Veldu báðar skrárnar og dragðu þær saman yfir í VLC.</li>
+            </ol>
+        </li>
+
+        <li>
+            Aðferð 3.
+            <ol>
+                <li>Opnaðu VLC.</li>
+                <li>Opnaðu File->Advanced open file.</li>
+                <li>Við "Choose a file" skaltu smella á "Browse..." og finna myndskrána.</li>
+                <li>Hakaðu við "Load subtitle file:", smelltu á "Choose..." og veldu .srt skrána.</li>
+                <li>Smelltu síðan á "Open" til að spila myndina.</li>
+            </ol>
+        </li>
+    </ul>
+
+
+    <div id="makesrt">
+
+        <h2>Að búa til .srt skrá:</h2>
+
+
+
+        <div class="makesrtlist">
+            <ol>
+                <li>Opnaðu nýtt skjal í textavinnslu forriti (eins og t.d. Notepad eða TextEdit).</li>
+
+                <li>Texti sem á að birtast á skjánum þarf að hafa 3 atriði í skjalinu:</li>
+
+                <li>
+                    <ol type="a">
+                        <li>Tölu sem að hækkar um einn með hverju textabroti. (1 fyrir fyrsta texta sem birtist, 2 fyrir þann næsta,                            o.s.frv.).</li>
+                        <li>Það tímabil þar sem að textinn á að birtast, skipt með tvípunktum upp í klukkustundir, mínútur og sekúndur. Á milli tímanna skal vera ör búin til með tveimur bandstrikum og hægri gogg (-->).</li>
+                        <li>Textan sjálfan.</li>
+                    </ol>
+                </li>
+                <li>Að lokum skal vista skrána með skráarendingunni ".srt".</li>
+            </ol>
+        </div>
+        <div id="example">
+            <b>Dæmi um .srt skjal:</b> <br>
+            <img src="http://i.imgur.com/kSJPn2e.png">
+        </div>
+
+    </div>
+
