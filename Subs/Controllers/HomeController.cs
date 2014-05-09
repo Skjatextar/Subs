@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 using Subs.App_Data.DataAccessLayer;
+using Subs.Models.Interface;
 
 namespace Subs.Controllers
 {
@@ -12,6 +13,18 @@ namespace Subs.Controllers
     {
         // Tennging i gagnagrunn - breytist thegar repos. koma inn
         private SubDataContext db = new SubDataContext();
+
+        //private IClientRepository c_repository = null;
+
+        //public HomeController()
+        //{
+            
+        //}
+
+        //public HomeController(IClientRepository rep)
+        //{
+            
+        //}
 
         public ActionResult Index()
         {
