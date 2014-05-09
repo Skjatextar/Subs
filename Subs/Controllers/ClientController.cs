@@ -5,16 +5,37 @@ using System.Web;
 using System.Web.Mvc;
 using Subs.App_Data.DataAccessLayer;
 using Subs.Models.Interface;
+using Subs.Models.Repository;
 
 namespace Subs.Controllers
 {
     public class ClientController : Controller
     {
-        private readonly IClientRepository _repo;
+        // Tennging i gagnagrunn - Tekin ut thegar repos. koma inn
+        //private SubDataContext db = new SubDataContext();
 
-        public ClientController(IClientRepository repo)
+        // Tengingar i gagnagrunn ---------------------------------------
+        // Thetta er tenging vid Interface klasann sem tengist
+        //   svo vid Repository sem tengist svo vid gagnagrunn 
+        private IClientRepository m_repository = null;
+
+        // Smidur fyrir tengingar i Repositories
+        public ClientController()
         {
-            _repo = repo;
+            m_repository = new ClientRepository();
         }
+        // --------------------------------------------------------------
+
+        // Thetta er tilbuid fyrir mock-database ------------------------
+        // Notad vid einingaprofanir
+        //public HomeController(IClientRepository rep)
+        //{
+        //    m_repository = rep;
+        //}
+        // --------------------------------------------------------------
+
+        // Her fyrir nedan koma Viewin ----------------------------------
+
+
 	}
 }

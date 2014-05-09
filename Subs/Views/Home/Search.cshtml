@@ -2,17 +2,21 @@
     ViewBag.Title = "Beiðni-Leit";
 }
 
-   
+<!-- Byrjum á því að gera brauðslóð (breadcrumb) til að upplýsa notandann hvar hann er staddur á síðunni. -->
+
     <div class="Breadcrumb">
         <p><a href="/Home/">Heim</a> > Beiðni</p>
     </div>
-      
+     
+<!-- Búum til leitarkassa þar sem notandinn getur leitað að beiðnum. Hann getur einnig gert Nýja beiðni með takkanum "Ný beiðni". -->
 
 <form id="searchbox" action="">
     <input id="search" type="text" placeholder="Leita">
     <input type="submit" value="Leita">
     <input type="submit" value="Ný beiðni">
 </form>
+
+<!-- ÞARF AÐ KÓÐA ÞETTA VIÐ DATABASE -->
 
     <center>
         <textarea rows="30" cols="50">
