@@ -173,6 +173,14 @@
     <Compile Include="Migrations\201405081605305_HRtenging.Designer.cs">
       <DependentUpon>201405081605305_HRtenging.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201405091521373_HRtenging1.cs" />
+    <Compile Include="Migrations\201405091521373_HRtenging1.Designer.cs">
+      <DependentUpon>201405091521373_HRtenging1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405091647504_HRtenging2.cs" />
+    <Compile Include="Migrations\201405091647504_HRtenging2.Designer.cs">
+      <DependentUpon>201405091647504_HRtenging2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entity\Client.cs" />
@@ -261,6 +269,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201405081605305_HRtenging.resx">
       <DependentUpon>201405081605305_HRtenging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405091521373_HRtenging1.resx">
+      <DependentUpon>201405091521373_HRtenging1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405091647504_HRtenging2.resx">
+      <DependentUpon>201405091647504_HRtenging2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

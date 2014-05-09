@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Configuration;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.Ajax.Utilities;
 using Subs.App_Data.DataAccessLayer;
 using Subs.Models.Interface;
 using Subs.Models.Repository;
+using Subs.Models.ViewModel;
 
 namespace Subs.Controllers
 {
@@ -86,28 +89,18 @@ namespace Subs.Controllers
         }
 
         // Ekki breyta thessu !!!!!!!!!!!!!!!!!!!!!!!!!!!! DatabasePrufa
-        public ActionResult Info()
+        [Authorize]
+        public ActionResult Info(/*SettingsViewModel model*/)
         {
+            //SettingsViewModel model = new SettingsViewModel();
+
+            //var name = model.sUsername;
+
+            //return View(name);
+
+            //return View(model);
+
             return View(Client_m_repository.GetClients());
         }
-
-                [AcceptVerbs(HttpVerbs.Post)]
-                public ActionResult Index(User user){
-                    //the user object now has the form fields from the view. 
-
-                    foreach (string file in Request.Files){
-                        HttpPostedFileBase hpf = Request.Files[file];
-                        //Save file here
-                    }
-
-                    return View();
-                }
-            
-
-            public class User{
-                public string Name { get; set; }
-                public int Age { get; set; }
-            }
-
     }
 }
