@@ -24,10 +24,12 @@ namespace Subs.Models.Entity
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? dSubDate { get; set; }
         // Slod ad mynd fyrir skrana
+        [DataType(DataType.ImageUrl)]
         public string   sPicture { get; set; }
         // Lysing a thydingu
         public string   sSubDescription { get; set; }
         // Slod ad textaskra
+       // [DataType(DataType.Upload)] þarf kanski ekki 
         public string   sFilePath { get; set; }
         // Talning a hve oft hefur verid likad vid gaedi textaskrar
         public int?      iUpVote { get; set; }
