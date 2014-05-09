@@ -30,17 +30,17 @@
         <thead>
             <tr>
                 <th>Notandanafn</th>
-                <th>Lykilorð</th>
+                <th>Netfang</th>
             </tr>
         </thead>
         <tbody>
-            @*@foreach (var item in Model)
+            @foreach (var item in Model)
             {
                 <tr>
                     <td> @Html.ActionLink(item.sUsername, "info", new { id = item.sUsername }) </td>
-                    <td> @item.sPass </td>
+                    <td> @item.sEmail </td>
                 </tr>
-            }*@
+            }
 
         </tbody>
     </table>
@@ -53,7 +53,7 @@
         <thead>
             <tr>
                 <th>Notandanafn</th>
-                <th>Lykilorð</th>
+                <th>Netfang</th>
             </tr>
         </thead>
         <tbody>
@@ -61,7 +61,7 @@
             {
                 <tr>
                     <td> @Html.ActionLink(item.sUsername, "info", new { id = item.sUsername }) </td>
-                    <td> @item.sPass </td>
+                    <td> @item.sEmail </td>
                 </tr>
             }*@
 
