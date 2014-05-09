@@ -41,7 +41,8 @@
                     <li>@Html.ActionLink("Innskrá", "Login", "Home")</li>
                     <li>@Html.ActionLink("Nýskrá", "Register", "Home")</li>
                      @*<li>@Html.ActionLink("Gagnaleit", "Index", "Home")</li>þetta þarf ekki*@ 
-           
+                    <li>@Html.ActionLink("Senda inn skrá", "FileForm", "Home")</li>  @* þetta á að byrtast þegar notandi er innskráður *@
+                   <li>@Html.ActionLink("Persónustillingar", "Index", "Home")</li>@* þetta á að byrtast þegar notandi er innskráður *@
                      
                 </ul>
                    @Html.Partial("_LoginPartial")

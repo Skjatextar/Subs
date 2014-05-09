@@ -58,7 +58,7 @@ namespace Subs.Controllers
             return View();
         }
 
-        public ActionResult RequestInfo()
+        public ActionResult FileForm()
         {
             ViewBag.Message = "Skoða beiðni";
             return View();
@@ -127,23 +127,7 @@ namespace Subs.Controllers
             return View(Client_m_repository.GetClients());
         }
 
-                [AcceptVerbs(HttpVerbs.Post)]
-                public ActionResult Index(User user){
-                    //the user object now has the form fields from the view. 
 
-                    foreach (string file in Request.Files){
-                        HttpPostedFileBase hpf = Request.Files[file];
-                        //Save file here
-                    }
-
-                    return View();
-                }
-            
-
-            public class User{
-                public string Name { get; set; }
-                public int Age { get; set; }
-            }
 
     }
 }
