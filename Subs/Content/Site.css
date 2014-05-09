@@ -127,53 +127,70 @@ caption, h3 {
       font-family:'Comic Sans MS';
 }
 
-
+/*------------footer--------*/
 footer {
-    padding-top: 8px;
-     margin: 0 75px;
-    bottom:0px;
+    width: 800px;
+    margin: auto;
+    color: #909090;
+
 }
 
 #footer-left {
     float: left;
 }
-   
+
 #footer-right {
     float: right;
 }
-
+/*-------about--------*/
 .about {
-    margin-top: 10px;
+    min-width: 740px;
+    max-width: 740px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.Um-okkur, h2 {
-    font-family: 'Lucida Console';
+.about h2 {
     margin-left: 0px;
     clear: both;
 }
 
-.Um-okkur, p {
-}
-    
-.Um-okkur, a {
-    
-}
-
-.Um-okkur, h3 {
-   
-}
-
-.Um-okkur, ol {
-
-}
-#um-list {
-    float: right;
-    width: 40%;
-
-}
-
-#um-text {
-    float: left;
-    width: 50%;
+.about p {
     margin-left: 50px;
+}
+
+.about h3 {
+    margin-left: 50px;
+}
+
+.about ol {
+    margin-left: 80px;
+}
+
+#about-list {
+    width: 200px;
+    margin-top: 80px;
+    float: right;
+}
+
+#about-text {
+    float: left;
+    width: 65%;
+}
+
+.makesrtlist {
+    margin-top:20px;
+    width:600px;
+    float:left;
+}
+
+#example {
+    
+    float:right;
+    
+}
+
+#makesrt {
+    margin-top: 100px;
+      overflow:hidden; 
 }
