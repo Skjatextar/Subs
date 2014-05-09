@@ -34,13 +34,15 @@
             </tr>
         </thead>
         <tbody>
-            @*@foreach (var item in Model)
+            @foreach (var item in Model)
             {
                 <tr>
+                    
                     <td> @Html.ActionLink(item.sUsername, "info", new { id = item.sUsername }) </td>
                     <td> @item.sPass </td>
+                    <td> @item.sEmail</td>
                 </tr>
-            }*@
+            }
 
         </tbody>
     </table>

@@ -41,7 +41,11 @@ namespace Subs.Controllers
 
         public ActionResult Index()
         {
-            return View(Client_m_repository.GetClients());
+            var model = SubFile_m_repository;
+            return View(model);
+
+
+            //return View(Client_m_repository.GetClients());
 
             //return View(db.Clients.ToList());
         }

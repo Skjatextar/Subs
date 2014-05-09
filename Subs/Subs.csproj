@@ -271,6 +271,7 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\Files\" />
     <Folder Include="Views\Comment\" />
     <Folder Include="Views\Request\" />
     <Folder Include="Views\User\" />
