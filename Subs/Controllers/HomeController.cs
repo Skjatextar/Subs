@@ -46,6 +46,13 @@ namespace Subs.Controllers
             //return View(db.Clients.ToList());
         }
 
+        public ActionResult Search()
+        {
+            ViewBag.Message = "Beiðni-Leit";
+            return View();
+        }
+
+
         public ActionResult FileForm()
         {
             ViewBag.Message = "Senda inn skrá";
