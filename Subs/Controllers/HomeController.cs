@@ -126,6 +126,7 @@ namespace Subs.Controllers
         }
 
         // Ekki breyta thessu !!!!!!!!!!!!!!!!!!!!!!!!!!!! DatabasePrufa
+        [Authorize]
         public ActionResult Info()
         {
             return View(Client_m_repository.GetClients());
