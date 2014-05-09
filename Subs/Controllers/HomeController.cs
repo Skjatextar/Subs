@@ -46,31 +46,52 @@ namespace Subs.Controllers
             //return View(db.Clients.ToList());
         }
 
-        public ActionResult Search()
+        public ActionResult RequestSearch()
         {
             ViewBag.Message = "Beiðni-Leit";
             return View();
         }
 
+        public ActionResult FileInfo()
+        {
+            ViewBag.Message = "Skráarupplýsingar/Niðurhal";
+            return View();
+        }
 
-        public ActionResult SendRequest()
+        public ActionResult RequestInfo()
+        {
+            ViewBag.Message = "Skoða beiðni";
+            return View();
+        }
+
+        public ActionResult FileUpload()
         {
             ViewBag.Message = "Senda inn skrá";
             return View();
         }
 
-        public ActionResult NewForm()
+        public ActionResult RequestUpload()
+        {
+            ViewBag.Message = "Leggja inn beiðni m/skrá";
+            return View();
+        }
+
+        public ActionResult RequestSubmit()
         {
             ViewBag.Message = "Ný beiðni";
 
             return View();
         }
 
-        public ActionResult ViewForm()
+        public ActionResult Profile()
         {
-            ViewBag.Message = "Skoða beiðni";
+            ViewBag.Message = "Persónustillingar";
+
             return View();
         }
+
+
+
         public ActionResult About()
         {
             ViewBag.Message = "Um okkur";
@@ -85,13 +106,44 @@ namespace Subs.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            ViewBag.Message = "Innskrá";
+
+            return View();
+        }
+
+
+        public ActionResult Register()
+        {
+            ViewBag.Message = "Nýskrá";
+
+            return View();
+        }
+
         // Ekki breyta thessu !!!!!!!!!!!!!!!!!!!!!!!!!!!! DatabasePrufa
         public ActionResult Info()
         {
             return View(Client_m_repository.GetClients());
         }
 
-       
+                [AcceptVerbs(HttpVerbs.Post)]
+                public ActionResult Index(User user){
+                    //the user object now has the form fields from the view. 
+
+                    foreach (string file in Request.Files){
+                        HttpPostedFileBase hpf = Request.Files[file];
+                        //Save file here
+                    }
+
+                    return View();
+                }
+            
+
+            public class User{
+                public string Name { get; set; }
+                public int Age { get; set; }
+            }
 
     }
 }

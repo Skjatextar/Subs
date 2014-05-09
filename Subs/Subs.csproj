@@ -241,23 +241,22 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Home\SendRequest.cshtml" />
-    <Content Include="Views\Home\FileInfo.cshtml" />
+    <Content Include="Views\Home\FileUpload.cshtml" />
     <Content Include="Views\Home\Info.cshtml" />
     <Content Include="Views\Home\Instructions.cshtml" />
-    <Content Include="Views\Home\NewForm.cshtml" />
-    <Content Include="Views\Home\NewFormFile.cshtml" />
-    <Content Include="Views\Home\Search.cshtml" />
-    <Content Include="Views\Home\SignInn.cshtml" />
-    <Content Include="Views\Home\SignUp.cshtml" />
-    <Content Include="Views\Home\UserSettings.cshtml" />
-    <Content Include="Views\Home\ViewForm.cshtml" />
+    <Content Include="Views\Home\RequestSubmit.cshtml" />
+    <Content Include="Views\Home\RequestSearch.cshtml" />
+    <Content Include="Views\Home\RquestInfo.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\upload.cshtml" />
+    <Content Include="Views\Home\FileInfo.cshtml" />
+    <Content Include="Views\Home\RequestUpload.cshtml" />
+    <Content Include="Views\Home\Profile.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201405081605305_HRtenging.resx">
