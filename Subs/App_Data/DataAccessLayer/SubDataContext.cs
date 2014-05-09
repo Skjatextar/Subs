@@ -26,5 +26,7 @@ namespace Subs.App_Data.DataAccessLayer
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
+
+        public System.Data.Entity.DbSet<Subs.Models.Repository.SubFileRepository> SubFileRepositories { get; set; }
     }
 }

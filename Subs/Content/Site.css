@@ -1,13 +1,15 @@
-﻿body {
-    background-color:#F5F5F5;
+﻿/*#region body */
+body {
+    background-color: #F5F5F5;
     height: 100%;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
+/*#endregion */
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
@@ -44,34 +46,51 @@ input[type="checkbox"].input-validation-error {
     
 }
 
-/* CSS fyrir forsíðu og beiðnaleitarsíðu / Index, Search  */
-
+/*#region Breadcrumb */
 #Breadcrumb {
     margin-left: auto;
     margin-right: auto;
-    margin:25px auto;
+    margin: 25px auto;
     width: 210px;
 }
+/*#endregion */
 
+/*#region footer */
+footer {
+    width: 800px;
+    margin: auto;
+    color: #909090;
+}
 
+#footer-left {
+    float: left;
+}
 
-/*  Fileform CSS / Senda inn skrá  */
+#footer-right {
+    float: right;
+}
+/*#endregion */
 
-#upload  {
-    background-color:#D3D3D3;
-    margin-left: 25%;
+/*#region FileUpload */
+.file-upload {
+    min-width: 540px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box-border {
+    background-color: #D3D3D3;
     padding: 50px;
-    width: 50%;
     border-style: solid;
-    border-width: 1px;
-
+    border-width: 3px;
+    border-color: #800080;
 }
 
 .room {
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left:25px;
-
 }
 
 .textbox-room{
@@ -82,46 +101,36 @@ input[type="checkbox"].input-validation-error {
 #radioroom{
     margin-left: 100px;
 }
+
 input[name="submit"] {
   margin:15px;
 }
-    
+ /*#endregion */
 
-/* ------- Home Index byrjar --------------------*/
+/*#region Index */
 #center {
-    margin:5px;
-    font-family:'Comic Sans MS';
+    margin: 5px;
+    font-family: 'Comic Sans MS';
 }
+
 .table-left {
-    margin-left:75px;
-    margin-right:55px;
-    float:left;
-    width:40%;
-}
-.table-right {
-   
-    width:40%;
-}
-caption, h3 {
-      font-family:'Comic Sans MS';
-}
-
-/*------------footer--------*/
-footer {
-    width: 800px;
-    margin: auto;
-    color: #909090;
-
-}
-
-#footer-left {
+    margin-left: 75px;
+    margin-right: 55px;
     float: left;
+    width: 40%;
 }
-   
-#footer-right {
-    float: right;
+
+.table-right {
+    width: 40%;
 }
-/*-------about--------*/
+
+caption, h3 {
+    font-family: 'Comic Sans MS';
+}
+/*#endregion */
+
+/*#region About */
+
 .about {
     min-width: 740px;
     max-width: 740px;
@@ -134,11 +143,7 @@ footer {
     clear: both;
 }
 
-.about p {
-    margin-left: 50px;
-}
-
-.about h3 {
+.about p, h3 {
     margin-left: 50px;
 }
 
@@ -157,6 +162,9 @@ footer {
     width: 65%;
 }
 
+/*#endregion */
+
+
 .makesrtlist {
     margin-top:20px;
     width:600px;
@@ -173,3 +181,4 @@ footer {
     margin-top: 100px;
       overflow:hidden; 
 }
+

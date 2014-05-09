@@ -1,0 +1,25 @@
+﻿@model Subs.Models.Entity.SubFile
+
+
+<form action="" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true);
+
+    <div>
+        @Html.LabelFor(m => m.sTitle)
+        @Html.EditorFor(m => m.sTitle)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.sSubLanguage)
+        @Html.EditorFor(m => m.sSubLanguage)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.sFilePath)
+        @Html.EditorFor(m => m.sFilePath)
+    </div>
+    <div>
+        @*@Html.LabelFor(m => m.sSubType)
+        @Html.CheckBoxFor(m => m.sSubType)*@
+    </div>
+    <button type="submit">Create</button>
+</form>

@@ -37,6 +37,11 @@ namespace Subs.Controllers
 
         // Her fyrir nedan koma Viewin ----------------------------------
 
+        //public Action uplaod()
+        //{
+        //    var _uplaod = new SubFileRepository();
+        //    return View(_uplaod);
+        //}
 
 	}
 }

@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Configuration;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.Ajax.Utilities;
 using Subs.App_Data.DataAccessLayer;
 using Subs.Models.Interface;
 using Subs.Models.Repository;
-using Subs.Models.ViewModel;
 
 namespace Subs.Controllers
 {
@@ -49,31 +46,52 @@ namespace Subs.Controllers
             //return View(db.Clients.ToList());
         }
 
-        public ActionResult Search()
+        public ActionResult RequestSearch()
         {
             ViewBag.Message = "Beiðni-Leit";
             return View();
         }
 
+        public ActionResult FileInfo()
+        {
+            ViewBag.Message = "Skráarupplýsingar/Niðurhal";
+            return View();
+        }
 
         public ActionResult FileForm()
+        {
+            ViewBag.Message = "Skoða beiðni";
+            return View();
+        }
+
+        public ActionResult FileUpload()
         {
             ViewBag.Message = "Senda inn skrá";
             return View();
         }
 
-        public ActionResult NewForm()
+        public ActionResult RequestUpload()
+        {
+            ViewBag.Message = "Leggja inn beiðni m/skrá";
+            return View();
+        }
+
+        public ActionResult RequestSubmit()
         {
             ViewBag.Message = "Ný beiðni";
 
             return View();
         }
 
-        public ActionResult ViewForm()
+        public ActionResult Profile()
         {
-            ViewBag.Message = "Skoða beiðni";
+            ViewBag.Message = "Persónustillingar";
+
             return View();
         }
+
+
+
         public ActionResult About()
         {
             ViewBag.Message = "Um okkur";
@@ -88,19 +106,29 @@ namespace Subs.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            ViewBag.Message = "Innskrá";
+
+            return View();
+        }
+
+
+        public ActionResult Register()
+        {
+            ViewBag.Message = "Nýskrá";
+
+            return View();
+        }
+
         // Ekki breyta thessu !!!!!!!!!!!!!!!!!!!!!!!!!!!! DatabasePrufa
         [Authorize]
-        public ActionResult Info(/*SettingsViewModel model*/)
+        public ActionResult Info()
         {
-            //SettingsViewModel model = new SettingsViewModel();
-
-            //var name = model.sUsername;
-
-            //return View(name);
-
-            //return View(model);
-
             return View(Client_m_repository.GetClients());
         }
+
+
+
     }
 }

@@ -29,9 +29,17 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Heim", "Index", "Home")</li>     
-                    <li>@Html.ActionLink("Beiðnir leit", "Index", "Home")</li>
-                    <li>@Html.ActionLink("UM okkur", "About", "Home")</li>
-                    <li>@Html.ActionLink("Leiðbeiningar", "instructions", "Home")</li>
+                    <li>@Html.ActionLink("Beiðni-leit", "RequestSearch", "Home")</li>
+                    <li>@Html.ActionLink("Skráarupplýsingar/Niðurhal", "FileInfo", "Home")</li>
+                    <li>@Html.ActionLink("Skoða beiðni", "RequestInfo", "Home")</li>
+                    <li>@Html.ActionLink("Senda inn skrá", "FileUpload", "Home")</li>
+                    <li>@Html.ActionLink("Leggja inn beiðni m/skrá", "RequestUpload", "Home")</li>
+                    <li>@Html.ActionLink("Ný beiðni", "RequestSubmit", "Home")</li>
+                    <li>@Html.ActionLink("Persónustillingar", "Profile", "Home")</li>
+                    <li>@Html.ActionLink("Um okkur", "About", "Home")</li>
+                    <li>@Html.ActionLink("Leiðbeiningar", "Instructions", "Home")</li>
+                    <li>@Html.ActionLink("Innskrá", "Login", "Home")</li>
+                    <li>@Html.ActionLink("Nýskrá", "Register", "Home")</li>
                      @*<li>@Html.ActionLink("Gagnaleit", "Index", "Home")</li>þetta þarf ekki*@ 
                     <li>@Html.ActionLink("Senda inn skrá", "FileForm", "Home")</li>  @* þetta á að byrtast þegar notandi er innskráður *@
                    <li>@Html.ActionLink("Persónustillingar", "Index", "Home")</li>@* þetta á að byrtast þegar notandi er innskráður *@
