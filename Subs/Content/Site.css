@@ -72,14 +72,14 @@ footer {
 /*#endregion */
 
 /*#region FileUpload */
-.file-form {
+.file-upload {
     min-width: 540px;
     max-width: 540px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.upload {
+.box-border {
     background-color: #D3D3D3;
     padding: 50px;
     border-style: solid;
