@@ -46,31 +46,52 @@ namespace Subs.Controllers
             //return View(db.Clients.ToList());
         }
 
-        public ActionResult Search()
+        public ActionResult RequestSearch()
         {
             ViewBag.Message = "Beiðni-Leit";
             return View();
         }
 
+        public ActionResult FileInfo()
+        {
+            ViewBag.Message = "Skráarupplýsingar/Niðurhal";
+            return View();
+        }
 
-        public ActionResult FileForm()
+        public ActionResult RequestInfo()
+        {
+            ViewBag.Message = "Skoða beiðni";
+            return View();
+        }
+
+        public ActionResult FileUpload()
         {
             ViewBag.Message = "Senda inn skrá";
             return View();
         }
 
-        public ActionResult NewForm()
+        public ActionResult RequestUpload()
+        {
+            ViewBag.Message = "Leggja inn beiðni m/skrá";
+            return View();
+        }
+
+        public ActionResult RequestSubmit()
         {
             ViewBag.Message = "Ný beiðni";
 
             return View();
         }
 
-        public ActionResult ViewForm()
+        public ActionResult Profile()
         {
-            ViewBag.Message = "Skoða beiðni";
+            ViewBag.Message = "Persónustillingar";
+
             return View();
         }
+
+
+
         public ActionResult About()
         {
             ViewBag.Message = "Um okkur";
@@ -81,6 +102,21 @@ namespace Subs.Controllers
         public ActionResult Instructions()
         {
             ViewBag.Message = "Leiðbeiningar";
+
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+            ViewBag.Message = "Innskrá";
+
+            return View();
+        }
+
+
+        public ActionResult Register()
+        {
+            ViewBag.Message = "Nýskrá";
 
             return View();
         }
