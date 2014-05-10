@@ -13,5 +13,11 @@ namespace Subs.Models
             : base("DefaultConnection")
         {
         }
+
+        //public System.Data.Entity.DbSet<Subs.Models.Entity.SubFile> SubFiles { get; set; }
+
+        //public System.Data.Entity.DbSet<Subs.Models.Repository.SubFileRepository> SubFileRepositories { get; set; }
+
+        //public System.Data.Entity.DbSet<Subs.Models.ViewModel.SubFileViewModel> SubFileViewModels { get; set; }
     }
 }

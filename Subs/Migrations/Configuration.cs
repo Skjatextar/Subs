@@ -1,3 +1,12 @@
+using System;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using System.Linq;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Subs.App_Data.DataAccessLayer;
+using Subs.Models;
+
 namespace Subs.Migrations
 {
     using System;

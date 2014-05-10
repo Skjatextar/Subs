@@ -41,7 +41,11 @@ namespace Subs.Controllers
 
         public ActionResult Index()
         {
-            return View(Client_m_repository.GetClients());
+            var model = SubFile_m_repository;
+            return View(model);
+
+
+            //return View(Client_m_repository.GetClients());
 
             //return View(db.Clients.ToList());
         }
@@ -61,7 +65,7 @@ namespace Subs.Controllers
             return View();
         }
 
-        public ActionResult RequestInfo()
+        public ActionResult FileForm()
         {
             ViewBag.Message = "Skoða beiðni";
             return View();
@@ -125,28 +129,13 @@ namespace Subs.Controllers
         }
 
         // Ekki breyta thessu !!!!!!!!!!!!!!!!!!!!!!!!!!!! DatabasePrufa
+        [Authorize]
         public ActionResult Info()
         {
             return View(Client_m_repository.GetClients());
         }
 
-                [AcceptVerbs(HttpVerbs.Post)]
-                public ActionResult Index(User user){
-                    //the user object now has the form fields from the view. 
 
-                    foreach (string file in Request.Files){
-                        HttpPostedFileBase hpf = Request.Files[file];
-                        //Save file here
-                    }
-
-                    return View();
-                }
-            
-
-            public class User{
-                public string Name { get; set; }
-                public int Age { get; set; }
-            }
 
 
 
