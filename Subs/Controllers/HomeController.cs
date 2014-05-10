@@ -41,15 +41,19 @@ namespace Subs.Controllers
 
         public ActionResult Index()
         {
-            var model = SubFile_m_repository;
-            return View(model);
-
-
+            return View(SubFile_m_repository.GetSubFiles());
             //return View(Client_m_repository.GetClients());
 
-            //return View(db.Clients.ToList());
+           // return View(db.Clients.ToList());
         }
-
+        [HttpGet]
+        public ActionResult info()
+        {
+            var model = SubFile_m_repository.GetSubFiles();
+          
+            return View(model);
+ 
+        }
         public ActionResult RequestSearch()
         {
             ViewBag.Message = "Beiðni-Leit";
@@ -129,13 +133,15 @@ namespace Subs.Controllers
         }
 
         // Ekki breyta thessu !!!!!!!!!!!!!!!!!!!!!!!!!!!! DatabasePrufa
-        [Authorize]
+       /* [Authorize]
         public ActionResult Info()
         {
-            return View(Client_m_repository.GetClients());
+            var model = SubFile_m_repository.GetSubFiles();
+            //return View(Client_m_repository.GetClients());
+            return View(model);
         }
 
-
+        */
 
 
 
