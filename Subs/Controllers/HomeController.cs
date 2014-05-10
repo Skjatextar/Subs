@@ -57,7 +57,10 @@ namespace Subs.Controllers
         public ActionResult RequestSearch()
         {
             ViewBag.Message = "Beiðni-Leit";
-            return View();
+
+            return View(Request_m_repository.GetRequests());
+
+            //return View();
         }
 
         public ActionResult FileInfo()
@@ -139,6 +142,9 @@ namespace Subs.Controllers
         }
 
         */
+
+
+
 
     }
 }

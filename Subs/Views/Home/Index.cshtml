@@ -4,9 +4,10 @@
     ViewBag.Title = "Home Page";
 }
 
+
+<div class="home-page">
 <!-- Hér búum við til leitarkassa á forsíðunni með "Search" takka sem nær í gögn úr gagnagrunninum.
     Ásamt því að vera með dropdown lista til að velja flokk.   -->
-
 <form id="searchbox" action="">
     <input id="search" type="text" placeholder="Leita"> <!-- Leitarkassi -->
     <select name="Categories" id="Categories">
@@ -20,11 +21,8 @@
     <input id="submit" type="submit" value="Search">  <!-- Search takki -->
 </form>
 
-
 <!-- Tafla sem að birtir vinsælustu skrárnar. Notum Razor kóðun til að sækja þær úr gagnagrunninum. -->
-
 <div id="center">
-
     <table class="table-responsive table table-bordered table-hover table-left">
         <caption><h3>Vinsælast</h3></caption>
         <thead>
@@ -42,12 +40,9 @@
                     <td> @item.sSubLanguage </td>
                 </tr>
             }
-
         </tbody>
     </table>
-
     <!-- Tafla sem að birtir nýjustu skrárnar. Notum Razor kóðun til að ná í vinsælustu skrárnar úr gagnagrunninum. -->
-
 
     <table class="table-responsive table table-bordered table-hover table-right">
         <caption><h3>Nýjast</h3></caption>
@@ -60,12 +55,14 @@
         <tbody>
             @foreach (var item in Model)
             {
-               <tr>
+                <tr>
                     <td> @Html.ActionLink(item.sTitle, "info", new { id = item.iSubFileId })</td>
                     <td> @item.sSubLanguage </td>
                 </tr>
-            }
+            }*@
+
 
         </tbody>
     </table>
+</div>
 </div>

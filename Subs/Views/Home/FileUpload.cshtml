@@ -3,10 +3,32 @@
 
 <div class="file-form">
 
-    <div>
-        @Html.LabelFor(m => m.sTitle)
-        @Html.EditorFor(m => m.sTitle)
+<div id="Breadcrumb">
+    <a href="/Home/">Heim</a> > <a href="/Home/Search">Beiðni</a> > Senda inn skrá
 </div>
+
+<!-- Svæði þar sem notandi skráir inn Nafn, tungumál og slóða á mynd. -->
+
+<div class="box-border">
+        
+                <div class="room">
+                    Nafn <input class="textbox-room" type="text" name="name"><br>
+                </div>
+                <div class="room">
+                    Tungumál <input class="textbox-room" type="text" name="language"><br>
+                </div>
+                <div class="room">
+                    Slóð á mynd <input class="textbox-room" type="text" name="url"><br>
+                </div>
+
+            <!-- Hér eru radiotakkar þar sem valið er annaðhvort mynd eða þáttur. -->
+
+                <div class="room">
+                    Gerð
+                    <input id="radioroom" type="radio" name="type" value="movie">Mynd
+                    <input id="radioroom" type="radio" name="type" value="tv-show">Þáttur
+
+            </div>
 
 
             <div>
