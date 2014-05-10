@@ -43,11 +43,10 @@
                     <li>@Html.ActionLink("Persónustillingar", "Profile", "Home")</li>@* þetta á að byrtast þegar notandi er innskráður *@
                      
                 </ul>
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Innskrá", "Login", "Home")</li>
-                    <li>@Html.ActionLink("Nýskrá", "Register", "Home")</li>
-                    @*   @Html.Partial("_LoginPartial") *@
-                </ul>
+                
+                    
+                     @Html.Partial("_LoginPartial") 
+                
 </div>
             </div>
         </div>

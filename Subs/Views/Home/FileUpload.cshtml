@@ -1,7 +1,7 @@
 ﻿@model Subs.Models.Entity.SubFile
 
 
-<div class="file-form">
+<div class="file-upload">
 
 <div id="Breadcrumb">
     <a href="/Home/">Heim</a> > <a href="/Home/Search">Beiðni</a> > Senda inn skrá
@@ -9,7 +9,7 @@
 
 <!-- Svæði þar sem notandi skráir inn Nafn, tungumál og slóða á mynd. -->
 
-<div class="box-border">
+    <div class="box-border">
         
                 <div class="room">
                     Nafn <input class="textbox-room" type="text" name="name"><br>
@@ -27,17 +27,17 @@
                     Gerð
                     <input id="radioroom" type="radio" name="type" value="movie">Mynd
                     <input id="radioroom" type="radio" name="type" value="tv-show">Þáttur
-
-            </div>
-
+                </div>
+        </div>
 
             <div>
         @Html.LabelFor(m => m.sFilePath)
         @Html.EditorFor(m => m.sFilePath)
                 </div>
-            <div>
-        @*@Html.LabelFor(m => m.sSubType)
-        @Html.CheckBoxFor(m => m.sSubType)*@
-                </div>
+            @*<div>
+        @Html.LabelFor(m => m.sSubType)
+        @Html.CheckBoxFor(m => m.sSubType)
+                </div>*@
     <button type="submit">Create</button>
-        </form>
+        </div>
+
