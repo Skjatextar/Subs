@@ -46,6 +46,16 @@ input[type="checkbox"].input-validation-error {
     
 }
 
+
+
+.box-border {
+    background-color: #D3D3D3;
+    padding: 50px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #800080;
+}
+
 /*#region Breadcrumb */
 #Breadcrumb {
     margin-left: auto;
@@ -71,20 +81,19 @@ footer {
 }
 /*#endregion */
 
-/*#region FileUpload */
-.file-upload {
+.file-info {
     min-width: 540px;
     max-width: 540px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.box-border {
-    background-color: #D3D3D3;
-    padding: 50px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: #800080;
+/*#region FileUpload */
+.file-upload {
+    min-width: 540px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .room {
@@ -131,7 +140,7 @@ caption, h3 {
 
 /*#region About */
 
-.about {
+.about, .request-search, .home-page {
     min-width: 740px;
     max-width: 740px;
     margin-left: auto;

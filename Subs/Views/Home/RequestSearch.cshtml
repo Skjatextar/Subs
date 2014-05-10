@@ -1,28 +1,62 @@
-﻿@{
+﻿@model IEnumerable<Subs.Models.Entity.Request>
+
+@{
     ViewBag.Title = "Request Search";
 }
 
-<!-- Byrjum á því að gera brauðslóð (breadcrumb) til að upplýsa notandann hvar hann er staddur á síðunni. -->
+<div class="request-search">
+    <form id="searchbox" action="">
+        <input id="search" type="text" placeholder="Leita"> <!-- Leitarkassi -->
+        <select name="Categories" id="Categories">
+            <option value="valmynd">--Velja flokk--</option> <!-- Dropdown listi til að velja flokk -->
+            <option value="barnaefni">Barnaefni</option>
+            <option value="drama">Drama</option>
+            <option value="gaman">Gaman</option>
+            <option value="hrollvekja">Hrollvekja</option>
+            <option value="spenna">Spenna</option>
+        </select>
+        <input id="submit" type="submit" value="Search">  <!-- Search takki -->
+    </form>
 
-    <div class="Breadcrumb">
-        <p><a href="/Home/">Heim</a> > Beiðni</p>
+
+    <div id="center">
+        <table class="table-responsive table table-bordered table-hover table-left">
+            <caption><h3>Leitarniðurstöður</h3></caption>
+            <thead>
+                <tr>
+                    <th>Titill</th>
+                    <th>Likes</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td> @Html.ActionLink(item.sTitle, "info", new { id = item.sTitle }) </td>
+                        <td> @item.iUpVote </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <table class="table-responsive table table-bordered table-hover table-right">
+            <caption><h3>Vinsælast</h3></caption>
+            <thead>
+                <tr>
+                    <th>Titill</th>
+                    <th>Likes</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td> @Html.ActionLink(item.sTitle, "info", new { id = item.sTitle }) </td>
+                        <td> @item.iUpVote </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
     </div>
-     
-<!-- Búum til leitarkassa þar sem notandinn getur leitað að beiðnum. Hann getur einnig gert Nýja beiðni með takkanum "Ný beiðni". -->
-
-<form id="searchbox" action="">
-    <input id="search" type="text" placeholder="Leita">
-    <input type="submit" value="Leita">
-    <input type="submit" value="Ný beiðni">
-</form>
-
-<!-- ÞARF AÐ KÓÐA ÞETTA VIÐ DATABASE -->
-
-    <center>
-        <textarea rows="30" cols="50">
-            Niðurstöður skrár
-        </textarea>
-        <textarea rows="30" cols="50">
-            Vinsælast
-        </textarea>
-    </center>
+</div>
