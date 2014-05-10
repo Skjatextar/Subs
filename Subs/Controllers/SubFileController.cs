@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using Subs.Models;
 using Subs.Models.Interface;
-using Subs.Models.Interface;
 using Subs.Models.Repository;
 
 namespace Subs.Controllers

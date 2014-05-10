@@ -1,11 +1,24 @@
-﻿#searchbox  {
+﻿#searchbox  {/* leita box á forsíðunni*/
     background-color: #eaf8fc;
     background-image: linear-gradient(#fff, #d4e8ec);
     border-radius: 35px;    
     border-width: 1px;
     border-style: solid;
     border-color: #c4d9df #a4c3ca #83afb7;            
-    width: 500px;
+    width: 475px;
+    height: 45px;
+    padding: 10px;
+    margin: 40px auto 50px;
+    overflow: hidden; /* Clear floats */
+}
+#searchbox-newrequest {
+    background-color: #eaf8fc;
+    background-image: linear-gradient(#fff, #d4e8ec);
+    border-radius: 35px;    
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c4d9df #a4c3ca #83afb7;            
+    width: 440px;
     height: 45px;
     padding: 10px;
     margin: 40px auto 50px;
@@ -17,10 +30,12 @@
     border: 1px solid #a4c3ca;
     font: normal 13px 'trebuchet MS', arial, helvetica;
     background: #f1f1f1;
-    border-radius: 25px 25px;
+    /*border-radius: 25px 25px;*/
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);
-    margin-left:15px;  
+     margin-left:auto;
+     margin-right:auto;
 }
+#Categories,
 #search, 
 #submit {
     float: left;
@@ -39,9 +54,23 @@
 }
 
 /* ----------------------- */
+#newrequest {
+    background-color: #6cbb6b;
+    background-image: linear-gradient(#95d788, #6cbb6b);
+    border-radius: 10px 10px 10px 10px;    
+    border-width: 1px;
+    border-style: solid;
+    border-color: #7eba7c #578e57 #447d43;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);             
+    height: 23px;
+    cursor: pointer;
+    font: bold 14px Arial, Helvetica;
+    color: #23441e;    
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    margin-left:9px;
+}
 
-#submit
-{       
+#submit {       
     background-color: #6cbb6b;
     background-image: linear-gradient(#95d788, #6cbb6b);
     border-radius: 3px 50px 50px 3px;    
@@ -55,18 +84,18 @@
     color: #23441e;    
     text-shadow: 0 1px 0 rgba(255,255,255,0.5);
 }
-
+#newrequest, 
 #submit:hover {       
     background-color: #95d788;
     background-image: linear-gradient(#6cbb6b, #95d788);
 }   
-
+#newrequest, 
 #submit:active {       
     background: #95d788;
     outline: none;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;        
 }
-
+#newrequest, 
 #submit::-moz-focus-inner {
        border: 0;  /* Small centering fix for Firefox */
 }

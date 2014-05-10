@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Subs.Models.Entity.Client>
+﻿ @model IEnumerable<Subs.Models.Entity.SubFile>
 
 @{
     ViewBag.Title = "Home Page";
@@ -29,17 +29,17 @@
         <caption><h3>Vinsælast</h3></caption>
         <thead>
             <tr>
-                <th>Notandanafn</th>
-                <th>Netfang</th>
+                <th>Titil</th>
+                <th>Tungumál</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr>
-                    
-                    <td> @Html.ActionLink(item.sUsername, "info", new { id = item.sUsername }) </td>
-                    <td> @item.sEmail </td>
+                    <td> @Html.ActionLink(item.sTitle, "info", new { id = item.sTitle })</td>
+                   @*<td> @Html.ActionLink(item.sUsername, "info", new { id = item.sUsername }) </td>*@
+                    <td> @item.sSubLanguage </td>
                 </tr>
             }
 
@@ -58,14 +58,13 @@
             </tr>
         </thead>
         <tbody>
-            @*@foreach (var item in Model)
+            @foreach (var item in Model)
             {
-                <tr>
-                    <td> @Html.ActionLink(item.sUsername, "info", new { id = item.sUsername }) </td>
-                    <td> @item.sEmail </td>
+               <tr>
+                    <td> @Html.ActionLink(item.sTitle, "info", new { id = item.iSubFileId })</td>
+                    <td> @item.sSubLanguage </td>
                 </tr>
-            }*@
-
+            }
 
         </tbody>
     </table>

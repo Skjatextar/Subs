@@ -166,19 +166,25 @@ caption, h3 {
 
 
 .makesrtlist {
-    margin-top:20px;
-    width:600px;
+    margin-top:5px;
+    width:550px;
     float:left;
 }
 
 #example {
-    
+    margin-top:1px;
+    margin-right:25px;
     float:right;
     
 }
 
 #makesrt {
-    margin-top: 100px;
-      overflow:hidden; 
+     margin-top: 5px;
+     overflow:hidden; 
+     margin-left:80px;
 }
 
+#instructions {
+    margin-left:80px;
+    border-bottom:dotted 2px #800080;
+}

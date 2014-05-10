@@ -1,16 +1,16 @@
-﻿@model IEnumerable<Subs.Models.Entity.Client>
+﻿@model IEnumerable<Subs.Models.Entity.SubFile>
 
 @*Ekki breyta thessu !!!!!!!!! DatabasePrufa*@
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.sUsername)
+           Title
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.sPass)
+            SubType
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.sEmail)
+            Language
         </th>
     </tr>
 
@@ -18,13 +18,13 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.sUsername)
+                @Html.DisplayFor(modelItem => item.sTitle)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.sPass)
+                @Html.DisplayFor(modelItem => item.sSubType)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.sEmail)
+                @Html.DisplayFor(modelItem => item.sSubLanguage)
             </td>
         </tr>
     }
