@@ -14,6 +14,8 @@ namespace Subs.Models
         {
         }
 
+        public System.Data.Entity.DbSet<Subs.Models.Entity.SubFile> SubFiles { get; set; }
+
         //public System.Data.Entity.DbSet<Subs.Models.Entity.SubFile> SubFiles { get; set; }
 
         //public System.Data.Entity.DbSet<Subs.Models.Repository.SubFileRepository> SubFileRepositories { get; set; }

@@ -117,13 +117,21 @@ input[name="submit"] {
  /*#endregion */
 
 /*#region Index */
-#center {
-    margin: 5px;
-    font-family: 'Comic Sans MS';
+
+.home-page {
+    width:990px;
+    max-width: 1000px;
+    min-width: 740px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+#center {
+    margin-left:100px;
+    width:95%;
+}
 .table-left {
-    margin-left: 75px;
+    
     margin-right: 55px;
     float: left;
     width: 40%;
@@ -140,9 +148,9 @@ caption, h3 {
 
 /*#region About */
 
-.about, .request-search, .home-page {
+.about, .request-search {
     min-width: 740px;
-    max-width: 740px;
+    max-width: 840px;
     margin-left: auto;
     margin-right: auto;
 }

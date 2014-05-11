@@ -1,31 +1,32 @@
 ﻿@model IEnumerable<Subs.Models.Entity.SubFile>
-
 @*Ekki breyta thessu !!!!!!!!! DatabasePrufa*@
-<table>
-    <tr>
-        <th>
-           Title
-        </th>
-        <th>
-            SubType
-        </th>
-        <th>
-            Language
-        </th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div id="center">
+    <table>
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.sTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.sSubType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.sSubLanguage)
-            </td>
+            <th>
+                Title
+            </th>
+            <th>
+                SubType
+            </th>
+            <th>
+                Language
+            </th>
         </tr>
-    }
-</table>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sSubType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sSubLanguage)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
