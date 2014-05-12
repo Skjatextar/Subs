@@ -7,18 +7,18 @@ namespace Subs.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.0-20911")]
-    public sealed partial class HRtenging : IMigrationMetadata
+    public sealed partial class In : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(HRtenging));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(In));
         
         string IMigrationMetadata.Id
         {
-            get { return "201405081605305_HRtenging"; }
+            get { return "201405121506231_In"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target
