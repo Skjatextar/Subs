@@ -7,7 +7,7 @@
 <div class="request-search">
 
     <div id="Breadcrumb">
-        <p><a href="/Home/">Heim</a> > Beiðni</p>
+        <p><a href="/Home/Index">Heim</a> > Beiðni</p>
     </div>
      
 <!-- Búum til leitarkassa þar sem notandinn getur leitað að beiðnum. Hann getur einnig gert Nýja beiðni með takkanum "Ný beiðni". -->
@@ -17,7 +17,7 @@
         <input id="submit" type="submit" value="Leita">
         <input id="newrequest" type="submit" value="Ný beiðni">
     </form>
-
+    
         <table class="table-responsive table table-bordered table-hover table-right">
             <caption><h3>Vinsælast</h3></caption>
             <thead>
@@ -27,15 +27,15 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @*@foreach (var item in Model)
                 {
                     <tr>
                         <td> @Html.ActionLink(item.sTitle, "info", new { id = item.sTitle }) </td>
                         <td> @item.iUpVote </td>
                     </tr>
-                }
+                }*@
 
             </tbody>
         </table>
-    </div>
+    
 </div>
