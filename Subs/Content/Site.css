@@ -122,15 +122,27 @@ input[name="submit"] {
     font-family: 'Comic Sans MS';
 }
 
+td {
+    /*white-space: nowrap;
+    max-width: 200px;
+    overflow-x: hidden;*/
+}
+
+
 .table-left {
-    margin-left: 75px;
-    margin-right: 55px;
+    min-width: 350px;
+    max-width: 350px;
     float: left;
-    width: 40%;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .table-right {
-    width: 40%;
+    min-width: 350px;
+    max-width: 350px;
+    float: right;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 caption, h3 {
