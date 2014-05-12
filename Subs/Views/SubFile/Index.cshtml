@@ -35,15 +35,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @*@foreach (var item in Model)
             {
                 <tr>
                         <td> @Html.ActionLink(item.sTitle, "FileInfo", new { id = item.iSubFileId })</td>
-                   @*<td> @Html.ActionLink(item.sUsername, "info", new { id = item.sUsername }) </td>*@
+                   @<td> @Html.ActionLink(item.sUsername, "info", new { id = item.sUsername }) </td>@
                     <td> @item.sSubLanguage </td>
                     <td> @item.iUpVote </td>
                 </tr>
-            }
+            }*@
         </tbody>
     </table>
     <!-- Tafla sem að birtir nýjustu skrárnar. Notum Razor kóðun til að ná í vinsælustu skrárnar úr gagnagrunninum. -->
@@ -58,14 +58,14 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @*@foreach (var item in Model)
             {
                 <tr>
                     <td> @Html.ActionLink(item.sTitle, "info", new { id = item.iSubFileId })</td>
                     <td> @item.sSubLanguage </td>
                     <td> @item.iUpVote </td>
                 </tr>
-                }
+                }*@
 
 
         </tbody>
