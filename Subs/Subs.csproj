@@ -258,15 +258,13 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\Index22.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\FileInfo.cshtml" />
     <Content Include="Views\Home\RequestUpload.cshtml" />
     <Content Include="Views\Home\Profile.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
-    <Content Include="Views\SubFile\Index.cshtml" />
-    <Content Include="Views\SubFile\FileUpload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201405081605305_HRtenging.resx">
@@ -290,6 +288,7 @@
     <Folder Include="App_Data\Files\" />
     <Folder Include="Views\Comment\" />
     <Folder Include="Views\Request\" />
+    <Folder Include="Views\SubFile\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <PropertyGroup>
