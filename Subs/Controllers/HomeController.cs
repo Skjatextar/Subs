@@ -41,7 +41,43 @@ namespace Subs.Controllers
         //}
         // --------------------------------------------------------------
 
+        public ActionResult Index()
+        {
+            SubFileRepository repo = new SubFileRepository();
+            var model = repo.GetSubFiles();
+            return View(model);
 
+        }
+        //public SubFileRepository GetSubFileById(int id)
+        //{
+        //    var result = (from subfile in Subs
+        //                  where subfile.iSubFileId == id
+        //                select subfile).SingleOrDefault();
+
+        //   return result;
+        //}
+        [HttpGet]
+        public ActionResult FileInfo(int? id)
+        {
+            ViewBag.Message = "Skráarupplýsingar/Niðurhal";
+
+            //int realid = id.Value;
+            SubFileRepository repo = new SubFileRepository();
+            var model = repo.GetSubFiles();
+            if (id.HasValue)
+            {
+                return View(model);
+            }
+            //return View("Notfound");
+            return View(model);
+            
+        }
+
+        public ActionResult FileUpload()
+        {
+            ViewBag.Message = "Senda inn skrá";
+            return View();
+        }
 
         [HttpGet]
         public ActionResult info()
@@ -79,9 +115,11 @@ namespace Subs.Controllers
         public ActionResult RequestSubmit()
         {
             ViewBag.Message = "Ný beiðni";
+           
 
             return View();
         }
+
 
         //public ActionResult Profile()
         //{

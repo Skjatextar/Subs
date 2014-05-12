@@ -15,7 +15,9 @@
     <form id="searchbox-newrequest" action="">
         <input id="search" type="text" placeholder="Leita">
         <input id="submit" type="submit" value="Leita">
-        <input id="newrequest" type="submit" value="Ný beiðni">
+        @*<input id="newrequest" type="submit" value="Ný beiðni" onclick="location.href='Home/RequestSubmit.cshtml';">*@
+        <a href="RequestSubmit" id="newrequest">Ný beiðni</a>
+
     </form>
         <table class="table-responsive table table-bordered table-hover table-right">
             <caption><h3>Vinsælast</h3></caption>
@@ -26,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @*@foreach (var item in Model)
                 {
                     <tr>
                         <td> @Html.ActionLink(item.sTitle, "info", new { id = item.sTitle }) </td>
@@ -35,5 +37,5 @@
                 }
             </tbody>
         </table>
-    </div>
+    
 </div>
