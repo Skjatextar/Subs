@@ -10,13 +10,28 @@
 </head>
 <body>
     <div id="head">
-        <div id="head-left">Skjátextar.is</div>
+        <div id="head-top">
+            <div id="head-left">Skjátextar.is</div>
+            <!--<span id="span1">00:43:42,586 --> <!--00:43:44,952 </span><br/>-->
+            <span id="span2">These aren't the droids you're looking for.</span>
+        </div>
+        
+            <div id="nav">
+                <ul>
+                    <li><a href='index.html'><span>Heim</span></a></li>
+                    <li><a href='#'><span>Beiðni</span></a></li>
+                    <li><a href='#'><span>Um Okkur</span></a></li>
+                    <li><a href='#'><span>Leiðbeiningar</span></a></li>
+                    <li><a href='#'><span>Senda Inn Skrá</span></a></li>
+                </ul>
+               
+            </div>
 
-        <!--<span id="span1">00:43:42,586 --> <!--00:43:44,952 </span><br/>-->
-        <span id="span2">These aren't the droids you're looking for.</span>
 
 
-    <div class=" navbar navbar-default">
+
+        </div>
+    @*<div class=" navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -30,17 +45,17 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Heim", "Index", "SubFile")</li>     
                     <li>@Html.ActionLink("Beiðni-leit", "RequestSearch", "Home")</li>
-                    @*<li>@Html.ActionLink("Skráarupplýsingar/Niðurhal", "FileInfo", "Home")</li> *@             
+                    //<li>@Html.ActionLink("Skráarupplýsingar/Niðurhal", "FileInfo", "Home")</li>//         
                     <li>@Html.ActionLink("Um okkur", "About", "Home")</li>
                     <li>@Html.ActionLink("Leiðbeiningar", "Instructions", "Home")</li>
-                    @*<li>@Html.ActionLink("Persónustillingar", "Profile", "Home")</li> þetta á að byrtast þegar notandi er innskráður *@ 
+                    //<li>@Html.ActionLink("Persónustillingar", "Profile", "Home")</li> þetta á að byrtast þegar notandi er innskráður // 
                     <li>@Html.ActionLink("Senda inn skrá", "FileUpload", "SubFile")</li>   
                 </ul> 
                      @Html.Partial("_LoginPartial") 
             </div>
             </div>
         </div>
-    </div>
+    </div>*@
 
     <div id="container" class="container body-content">
         @RenderBody()
