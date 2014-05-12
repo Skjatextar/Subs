@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using Subs.App_Data.DataAccessLayer;
 using Subs.Models.Interface;
 using Subs.Models.Repository;
+using Subs.Models.Entity;
+using Subs.Models.ViewModel;
 
 namespace Subs.Controllers
 {
@@ -25,7 +27,7 @@ namespace Subs.Controllers
         // Smidur fyrir tengingar i Repositories
         public HomeController()
         {
-            Client_m_repository = new ClientRepository();
+            Client_m_repository  = new ClientRepository();
             Comment_m_repository = new CommentRepository();
             Request_m_repository = new RequestRepository();
             SubFile_m_repository = new SubFileRepository();
@@ -39,13 +41,8 @@ namespace Subs.Controllers
         //}
         // --------------------------------------------------------------
 
-        public ActionResult Index()
-        {
-            return View(SubFile_m_repository.GetSubFiles());
-            //return View(Client_m_repository.GetClients());
 
-           // return View(db.Clients.ToList());
-        }
+
         [HttpGet]
         public ActionResult info()
         {
@@ -63,11 +60,7 @@ namespace Subs.Controllers
             //return View();
         }
 
-        public ActionResult FileInfo()
-        {
-            ViewBag.Message = "Skráarupplýsingar/Niðurhal";
-            return View();
-        }
+        
 
         public ActionResult FileForm()
         {
@@ -75,11 +68,7 @@ namespace Subs.Controllers
             return View();
         }
 
-        public ActionResult FileUpload()
-        {
-            ViewBag.Message = "Senda inn skrá";
-            return View();
-        }
+
 
         public ActionResult RequestUpload()
         {
@@ -94,12 +83,12 @@ namespace Subs.Controllers
             return View();
         }
 
-        public ActionResult Profile()
-        {
-            ViewBag.Message = "Persónustillingar";
+        //public ActionResult Profile()
+        //{
+        //    ViewBag.Message = "Persónustillingar";
 
-            return View();
-        }
+        //    return View();
+        //}
 
 
 
@@ -146,5 +135,10 @@ namespace Subs.Controllers
 
 
 
+        /*ekki gera neitt við þetta */
+        public ViewResult Info()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

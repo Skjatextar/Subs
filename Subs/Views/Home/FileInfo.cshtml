@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<Subs.Models.Entity.SubFile>
+
 @{
     ViewBag.Title = "File Info";
 }
@@ -16,6 +17,14 @@
                 <legend>Nánari upplýsingar</legend>
 
                 <!------------setja inn stuff hérna!    -->
+                @foreach (var item in Model)
+                { 
+                            @Html.DisplayFor(modelItem => item.sTitle)
+                       
+                            @Html.DisplayFor(modelItem => item.sSubType)
+                        
+                            @Html.DisplayFor(modelItem => item.sSubLanguage)
+                }
 
             </fieldset>
         </form>

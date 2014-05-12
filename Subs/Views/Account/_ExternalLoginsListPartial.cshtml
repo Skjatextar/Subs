@@ -1,14 +1,13 @@
 ﻿@using Microsoft.Owin.Security
 
-<h4>Use another service to log in.</h4>
+<h4>Nota annað kerfi til innskráningar</h4>
 <hr />
 @{
     var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
     if (loginProviders.Count() == 0)
     {
         <div>
-            <p>There are no external authentication services configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=313242">this article</a>
-            for details on setting up this ASP.NET application to support logging in via external services.</p>
+            <p>Það er engin utanaðkomandi heimildarþjónusta stillt. Sjá <a href="http://go.microsoft.com/fwlink/?LinkId=313242">þessa grein</a> fyrir upplýsingar um að setja upp þetta ASP.NET kerfi til að styðja innskráningu með ytri þjónustu.</p>
         </div>
     }
     else

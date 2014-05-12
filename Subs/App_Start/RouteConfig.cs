@@ -16,7 +16,7 @@ namespace Subs
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "SubFile", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
