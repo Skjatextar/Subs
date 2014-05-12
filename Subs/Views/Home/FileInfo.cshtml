@@ -1,7 +1,32 @@
-﻿
+﻿@model IEnumerable<Subs.Models.Entity.SubFile>
+
 @{
     ViewBag.Title = "File Info";
 }
 
-<h2>FileInfo</h2>
+<div class="file-info">
 
+    <div id="Breadcrumb">
+        <a href="/Home/">Heim</a> > <a href="/Home/Search">Beiðni</a> > Senda inn skrá
+    </div>
+
+
+    <div class="box-border">
+        <form>
+            <fieldset>
+                <legend>Nánari upplýsingar</legend>
+
+                <!------------setja inn stuff hérna!    -->
+                @foreach (var item in Model)
+                { 
+                            @Html.DisplayFor(modelItem => item.sTitle)
+                       
+                            @Html.DisplayFor(modelItem => item.sSubType)
+                        
+                            @Html.DisplayFor(modelItem => item.sSubLanguage)
+                }
+
+            </fieldset>
+        </form>
+    </div>
+</div>

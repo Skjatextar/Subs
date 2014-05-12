@@ -1,31 +1,32 @@
-﻿@model IEnumerable<Subs.Models.Entity.Client>
-
+﻿@model IEnumerable<Subs.Models.Entity.SubFile>
 @*Ekki breyta thessu !!!!!!!!! DatabasePrufa*@
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.sUsername)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sPass)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sEmail)
-        </th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div id="center">
+    <table>
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.sUsername)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.sPass)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.sEmail)
-            </td>
+            <th>
+                Title
+            </th>
+            <th>
+                SubType
+            </th>
+            <th>
+                Language
+            </th>
         </tr>
-    }
-</table>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sSubType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sSubLanguage)
+                </td>
+            </tr>
+        }
+    </table>
+</div>

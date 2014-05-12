@@ -1,12 +1,13 @@
-﻿@model IEnumerable<Subs.Models.Entity.Client>
+﻿@model IEnumerable<Subs.Models.Entity.SubFile>
 
 @{
     ViewBag.Title = "Home Page";
 }
 
+
+<div class="home-page">
 <!-- Hér búum við til leitarkassa á forsíðunni með "Search" takka sem nær í gögn úr gagnagrunninum.
     Ásamt því að vera með dropdown lista til að velja flokk.   -->
-
 <form id="searchbox" action="">
     <input id="search" type="text" placeholder="Leita"> <!-- Leitarkassi -->
     <select name="Categories" id="Categories">
@@ -20,52 +21,48 @@
     <input id="submit" type="submit" value="Search">  <!-- Search takki -->
 </form>
 
-
 <!-- Tafla sem að birtir vinsælustu skrárnar. Notum Razor kóðun til að sækja þær úr gagnagrunninum. -->
-
 <div id="center">
-
     <table class="table-responsive table table-bordered table-hover table-left">
         <caption><h3>Vinsælast</h3></caption>
         <thead>
             <tr>
-                <th>Notandanafn</th>
-                <th>Lykilorð</th>
+                <th>Titil</th>
+                <th>Tungumál</th>
             </tr>
         </thead>
         <tbody>
-            @*@foreach (var item in Model)
+            @foreach (var item in Model)
             {
                 <tr>
-                    <td> @Html.ActionLink(item.sUsername, "info", new { id = item.sUsername }) </td>
-                    <td> @item.sPass </td>
+                    <td> @Html.ActionLink(item.sTitle, "FileInfo", new { id = item.iSubFileId })</td>
+                   @*<td> @Html.ActionLink(item.sUsername, "info", new { id = item.sUsername }) </td>*@
+                    <td> @item.sSubLanguage </td>
                 </tr>
-            }*@
-
+            }
         </tbody>
     </table>
-
     <!-- Tafla sem að birtir nýjustu skrárnar. Notum Razor kóðun til að ná í vinsælustu skrárnar úr gagnagrunninum. -->
-
 
     <table class="table-responsive table table-bordered table-hover table-right">
         <caption><h3>Nýjast</h3></caption>
         <thead>
             <tr>
-                <th>Notandanafn</th>
-                <th>Lykilorð</th>
+                <th>Titil</th>
+                <th>Tungumál</th>
             </tr>
         </thead>
         <tbody>
-            @*@foreach (var item in Model)
+            @foreach (var item in Model)
             {
                 <tr>
-                    <td> @Html.ActionLink(item.sUsername, "info", new { id = item.sUsername }) </td>
-                    <td> @item.sPass </td>
+                    <td> @Html.ActionLink(item.sTitle, "FileInfo", new { id = item.iSubFileId })</td>
+                    <td> @item.sSubLanguage </td>
                 </tr>
-            }*@
+            }
 
 
         </tbody>
     </table>
+</div>
 </div>

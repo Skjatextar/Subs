@@ -1405,7 +1405,6 @@ pre code {
 }
 
 table {
-  max-width: 100%;
   background-color: transparent;
 }
 
@@ -1414,7 +1413,6 @@ th {
 }
 
 .table {
-  width: 100%;
   margin-bottom: 20px;
 }
 
