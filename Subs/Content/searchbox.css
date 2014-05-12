@@ -62,13 +62,14 @@
     border-style: solid;
     border-color: #7eba7c #578e57 #447d43;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);             
-    height: 63px;
+  
     cursor: pointer;
     font: bold 14px Arial, Helvetica;
     color: #23441e;    
     text-shadow: 0 1px 0 rgba(255,255,255,0.5);
     margin-left:9px;
     padding: 1px 6px 4px 3px;
+    margin-top:-2px;
 }
 
 #submit {       

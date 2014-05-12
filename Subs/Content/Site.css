@@ -221,12 +221,12 @@ input[type=button].m {
     width:95%;
 }
 .table-left {
-
-td {
-    /*white-space: nowrap;
-    max-width: 200px;
-    overflow-x: hidden;*/
 }
+/*td {
+    white-space: nowrap;
+    max-width: 200px;
+    overflow-x: hidden;
+}*/
 
 
 .table-left {
