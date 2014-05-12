@@ -27,7 +27,7 @@ namespace Subs.Controllers
         // Smidur fyrir tengingar i Repositories
         public HomeController()
         {
-            Client_m_repository  = new ClientRepository();
+            //Client_m_repository  = new ClientRepository();
             Comment_m_repository = new CommentRepository();
             Request_m_repository = new RequestRepository();
             SubFile_m_repository = new SubFileRepository();
