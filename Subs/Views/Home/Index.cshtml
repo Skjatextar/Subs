@@ -29,19 +29,21 @@
         <caption><h3>Vinsælast</h3></caption>
         <thead>
             <tr>
+                
                 <th>Titil</th>
-                <th>Tungumál</th>
+                <th>Gerð</th>
+                <th>Þýðing</th>
             </tr>
         </thead>
         <tbody>
-            @*@foreach (var item in Model)
+            @foreach (var item in Model)
             {
                 <tr>
-                    <td> @Html.ActionLink(item.sTitle, "FileInfo", new { id = item.iSubFileId })</td>
-                   
+                    <td> @Html.ActionLink(item.sTitle, "FileInfo", new { id = item.SubFileId}) </td>
+                    <td> @item.sSubType </td>
                     <td> @item.sSubLanguage </td>
                 </tr>
-            }*@ 
+            } 
         </tbody>
     </table>
     <!-- Tafla sem að birtir nýjustu skrárnar. Notum Razor kóðun til að ná í vinsælustu skrárnar úr gagnagrunninum. -->
@@ -51,17 +53,19 @@
         <thead>
             <tr>
                 <th>Titil</th>
-                <th>Tungumál</th>
+                <th>Gerð</th>
+                <th>Þýðing</th>
             </tr>
         </thead>
         <tbody>
-            @*@foreach (var item in Model)
+            @foreach (var item in Model)
             {
                 <tr>
-                    <td> @Html.ActionLink(item.sTitle, "FileInfo", new { id = item.iSubFileId })</td>
+                    <td> @Html.ActionLink(item.sTitle, "FileInfo", new { id = item.SubFileId}) </td>
+                    <td> @item.sSubType </td>
                     <td> @item.sSubLanguage </td>
                 </tr>
-            }*@
+            }
 
 
         </tbody>

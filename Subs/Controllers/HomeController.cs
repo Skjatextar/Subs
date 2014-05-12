@@ -4,11 +4,17 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
+using Subs;
 using Subs.App_Data.DataAccessLayer;
 using Subs.Models.Interface;
 using Subs.Models.Repository;
 using Subs.Models.Entity;
 using Subs.Models.ViewModel;
+using Subs.Migrations;
+using System.IO;
+
+
 
 namespace Subs.Controllers
 {
@@ -48,22 +54,22 @@ namespace Subs.Controllers
             return View(model);
 
         }
-        //public SubFileRepository GetSubFileById(int id)
-        //{
-        //    var result = (from subfile in Subs
-        //                  where subfile.iSubFileId == id
-        //                select subfile).SingleOrDefault();
+        public SubFileRepository GetSubFileById(int id)
+        {
+            var result = (from subfile in Subs
+                          where subfile.SubFileId == id
+                          select subfile).SingleOrDefault();
 
-        //   return result;
-        //}
+            return result;
+        }
         [HttpGet]
         public ActionResult FileInfo(int? id)
-        {
-            ViewBag.Message = "Skráarupplýsingar/Niðurhal";
-
+        {  ViewBag.Message = "Skráarupplýsingar/Niðurhal";
+        SubFileRepository repo = new SubFileRepository();
+       
             //int realid = id.Value;
-            SubFileRepository repo = new SubFileRepository();
-            var model = repo.GetSubFiles();
+
+        var model = repo;
             if (id.HasValue)
             {
                 return View(model);

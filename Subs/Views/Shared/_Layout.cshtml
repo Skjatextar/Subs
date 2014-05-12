@@ -21,9 +21,10 @@
                     <li>@Html.ActionLink("Beiðni-leit", "RequestSearch", "Home", new { @class = "tab" })</li>
                     <li>@Html.ActionLink("Um okkur", "About", "Home", new { @class = "tab" })</li>
                     <li>@Html.ActionLink("Leiðbeiningar", "Instructions", "Home", new { @class = "tab" })</li>
-                    
+                    @Html.Partial("_LoginPartial") <!-- þetta er innskráning og það -->
                 </ul>
-               
+              
+                
             </div>
 
 
