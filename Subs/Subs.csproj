@@ -169,19 +169,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201405081605305_HRtenging.cs" />
-    <Compile Include="Migrations\201405081605305_HRtenging.Designer.cs">
-      <DependentUpon>201405081605305_HRtenging.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405091521373_HRtenging1.cs" />
-    <Compile Include="Migrations\201405091521373_HRtenging1.Designer.cs">
-      <DependentUpon>201405091521373_HRtenging1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201405091647504_HRtenging2.cs" />
-    <Compile Include="Migrations\201405091647504_HRtenging2.Designer.cs">
-      <DependentUpon>201405091647504_HRtenging2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\201405120529199_Initial.cs" />
+    <Compile Include="Migrations\201405120529199_Initial.Designer.cs" />
+    <Compile Include="Migrations\201405121506231_In.cs" />
+    <Compile Include="Migrations\201405121506231_In.Designer.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entity\Client.cs" />
     <Compile Include="Models\Entity\Comment.cs" />
@@ -215,7 +206,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\JavaScriptauka.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -268,17 +258,6 @@
     <Content Include="Views\Home\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201405081605305_HRtenging.resx">
-      <DependentUpon>201405081605305_HRtenging.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405091521373_HRtenging1.resx">
-      <DependentUpon>201405091521373_HRtenging1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201405091647504_HRtenging2.resx">
-      <DependentUpon>201405091647504_HRtenging2.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -291,6 +270,10 @@
     <Folder Include="Views\Request\" />
     <Folder Include="Views\SubFile\" />
     <Folder Include="Views\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201405120529199_Initial.resx" />
+    <EmbeddedResource Include="Migrations\201405121506231_In.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

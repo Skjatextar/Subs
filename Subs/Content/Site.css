@@ -78,7 +78,7 @@ input[type="checkbox"].input-validation-error {
 
 /*#region footer */
 footer {
-    width: 800px;
+    width: 940px;
     margin: auto;
     color: #909090;
 }
@@ -209,16 +209,14 @@ input[type=button].m {
 /*#region Index */
 
 .home-page {
-    width:990px;
-    max-width: 1000px;
+    max-width: 740px;
     min-width: 740px;
     margin-left: auto;
     margin-right: auto;
 }
 
 #center {
-    margin-left:100px;
-    width:95%;
+
 }
 .table-left {
 }
@@ -252,9 +250,9 @@ caption, h3 {
 
 /*#region About */
 
-.about, .request-search {
+.about, .request-search, .instructions {
     min-width: 740px;
-    max-width: 840px;
+    max-width: 740px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -286,26 +284,27 @@ caption, h3 {
 /*#endregion */
 
 
-.makesrtlist {
+.make-srt-list {
     margin-top:5px;
-    width:550px;
+    width:400px;
     float:left;
 }
 
 #example {
     margin-top:1px;
-    margin-right:25px;
+    margin-right:10px;
     float:right;
-    
+    width: 250px;
+    height: auto;
 }
 
-#makesrt {
+#make-srt {
      margin-top: 5px;
      overflow:hidden; 
      margin-left:80px;
 }
 
-#instructions {
+#use-srt {
     margin-left:80px;
     border-bottom:dotted 2px #800080;
 }

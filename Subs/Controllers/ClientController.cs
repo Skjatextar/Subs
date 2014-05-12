@@ -22,7 +22,7 @@ namespace Subs.Controllers
         // Smidur fyrir tengingar i Repositories
         public ClientController()
         {
-            m_repository = new ClientRepository();
+            //m_repository = new ClientRepository();
         }
         // --------------------------------------------------------------
 

@@ -10,11 +10,11 @@ namespace Subs.Models.Entity
     {
         // Eigindi fyrir umsagnir --------------------------------------------------------
         [Key]       // Frumlykill
-        public int      iCommentId { get; set; }
+        public int CommentId { get; set; }
         [Required]  // Ekki nullable
-        public string   sCommenterUsername { get; set; }
+        public string sCommenterUsername { get; set; }
         [Required]  // Ekki nullable
-        public string   sCommentText { get; set; }
+        public string sCommentText { get; set; }
         // Synir bara dagsetningu - tekur ut klukkuna
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? dCommentDate { get; set; }

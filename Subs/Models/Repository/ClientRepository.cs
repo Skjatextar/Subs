@@ -8,14 +8,14 @@ using Subs.Models.Interface;
 
 namespace Subs.Models.Repository
 {
-    public class ClientRepository : IClientRepository
-    {
-        private SubDataContext _context = new SubDataContext();
+    //public class ClientRepository : IClientRepository
+    //{
+    //    private SubDataContext _context = new SubDataContext();
 
-        // Ma vera IEnumerable
-        public IQueryable<Client> GetClients()
-        {
-            return _context.Clients;
-        }
-    }
+    //    // Ma vera IEnumerable
+    //    public IQueryable<Client> GetClients()
+    //    {
+    //        return _context.Clients;
+    //    }
+    //}
 }
