@@ -19,4 +19,9 @@
             }
         });
     }
+
 });
+
+function redirect() {
+    window.location = "Home/RequestSubmit"
+}

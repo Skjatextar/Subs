@@ -18,7 +18,9 @@
         <option value="hrollvekja">Hrollvekja</option>
         <option value="spenna">Spenna</option>
     </select>
-    <input id="submit" type="submit" value="Search">  <!-- Search takki -->
+    
+        <input id="submit" type="submit" value="Search">  <!-- Search takki -->
+    
 </form>
 
 <!-- Tafla sem að birtir vinsælustu skrárnar. Notum Razor kóðun til að sækja þær úr gagnagrunninum. -->
@@ -32,14 +34,14 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @*@foreach (var item in Model)
             {
                 <tr>
                     <td> @Html.ActionLink(item.sTitle, "FileInfo", new { id = item.iSubFileId })</td>
-                   @*<td> @Html.ActionLink(item.sUsername, "info", new { id = item.sUsername }) </td>*@
+                   
                     <td> @item.sSubLanguage </td>
                 </tr>
-            }
+            } *@
         </tbody>
     </table>
     <!-- Tafla sem að birtir nýjustu skrárnar. Notum Razor kóðun til að ná í vinsælustu skrárnar úr gagnagrunninum. -->
@@ -53,13 +55,13 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @*@foreach (var item in Model)
             {
                 <tr>
                     <td> @Html.ActionLink(item.sTitle, "FileInfo", new { id = item.iSubFileId })</td>
                     <td> @item.sSubLanguage </td>
                 </tr>
-            }
+            }*@
 
 
         </tbody>
