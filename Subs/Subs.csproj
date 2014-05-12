@@ -183,6 +183,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Entity\Client.cs" />
     <Compile Include="Models\Entity\Comment.cs" />
     <Compile Include="Models\Entity\Request.cs" />
@@ -193,7 +194,7 @@
     <Compile Include="Models\Interface\IRequestRepository.cs" />
     <Compile Include="Models\Interface\ISubFileRepository.cs" />
     <Compile Include="Models\Repository\ClientRepository.cs" />
-    <Compile Include="Models\Repository\CommentRepositorycs.cs" />
+    <Compile Include="Models\Repository\CommentRepository.cs" />
     <Compile Include="Models\Repository\RequestRepository.cs" />
     <Compile Include="Models\Repository\SubFileRepository.cs" />
     <Compile Include="Models\ViewModel\CommentViewModel.cs" />
