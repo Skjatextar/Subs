@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using Subs.App_Data.DataAccessLayer;
 using Subs.Models.Interface;
 using Subs.Models.Repository;
+using Subs.Models.Entity;
+using Subs.Models.ViewModel;
 
 namespace Subs.Controllers
 {
@@ -25,7 +27,7 @@ namespace Subs.Controllers
         // Smidur fyrir tengingar i Repositories
         public HomeController()
         {
-            Client_m_repository = new ClientRepository();
+            Client_m_repository  = new ClientRepository();
             Comment_m_repository = new CommentRepository();
             Request_m_repository = new RequestRepository();
             SubFile_m_repository = new SubFileRepository();
@@ -41,27 +43,34 @@ namespace Subs.Controllers
 
         public ActionResult Index()
         {
-            return View(Client_m_repository.GetClients());
+            SubFileRepository repo = new SubFileRepository();
+            var model = repo.GetSubFiles();
+            return View(model);
 
-            //return View(db.Clients.ToList());
         }
+        //public SubFileRepository GetSubFileById(int id)
+        //{
+        //    var result = (from subfile in Subs
+        //                  where subfile.iSubFileId == id
+        //                select subfile).SingleOrDefault();
 
-        public ActionResult RequestSearch()
-        {
-            ViewBag.Message = "Beiðni-Leit";
-            return View();
-        }
-
-        public ActionResult FileInfo()
+        //   return result;
+        //}
+        [HttpGet]
+        public ActionResult FileInfo(int? id)
         {
             ViewBag.Message = "Skráarupplýsingar/Niðurhal";
-            return View();
-        }
 
-        public ActionResult RequestInfo()
-        {
-            ViewBag.Message = "Skoða beiðni";
-            return View();
+            //int realid = id.Value;
+            SubFileRepository repo = new SubFileRepository();
+            var model = repo.GetSubFiles();
+            if (id.HasValue)
+            {
+                return View(model);
+            }
+            //return View("Notfound");
+            return View(model);
+            
         }
 
         public ActionResult FileUpload()
@@ -69,6 +78,33 @@ namespace Subs.Controllers
             ViewBag.Message = "Senda inn skrá";
             return View();
         }
+
+        [HttpGet]
+        public ActionResult info()
+        {
+            var model = SubFile_m_repository.GetSubFiles();
+          
+            return View(model);
+ 
+        }
+        public ActionResult RequestSearch()
+        {
+            ViewBag.Message = "Beiðni-Leit";
+
+            return View(Request_m_repository.GetRequests());
+
+            //return View();
+        }
+
+        
+
+        public ActionResult FileForm()
+        {
+            ViewBag.Message = "Skoða beiðni";
+            return View();
+        }
+
+
 
         public ActionResult RequestUpload()
         {
@@ -79,16 +115,18 @@ namespace Subs.Controllers
         public ActionResult RequestSubmit()
         {
             ViewBag.Message = "Ný beiðni";
+           
 
             return View();
         }
 
-        public ActionResult Profile()
-        {
-            ViewBag.Message = "Persónustillingar";
 
-            return View();
-        }
+        //public ActionResult Profile()
+        //{
+        //    ViewBag.Message = "Persónustillingar";
+
+        //    return View();
+        //}
 
 
 
@@ -122,28 +160,23 @@ namespace Subs.Controllers
         }
 
         // Ekki breyta thessu !!!!!!!!!!!!!!!!!!!!!!!!!!!! DatabasePrufa
+       /* [Authorize]
         public ActionResult Info()
         {
-            return View(Client_m_repository.GetClients());
+            var model = SubFile_m_repository.GetSubFiles();
+            //return View(Client_m_repository.GetClients());
+            return View(model);
         }
 
-                [AcceptVerbs(HttpVerbs.Post)]
-                public ActionResult Index(User user){
-                    //the user object now has the form fields from the view. 
+        */
 
-                    foreach (string file in Request.Files){
-                        HttpPostedFileBase hpf = Request.Files[file];
-                        //Save file here
-                    }
 
-                    return View();
-                }
-            
 
-            public class User{
-                public string Name { get; set; }
-                public int Age { get; set; }
-            }
 
+        /*ekki gera neitt við þetta */
+        public ViewResult Info()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

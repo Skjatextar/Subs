@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using Subs.Models;
 using Subs.Models.Interface;
-using Subs.Models.Interface;
 using Subs.Models.Repository;
 
 namespace Subs.Controllers
@@ -37,6 +36,12 @@ namespace Subs.Controllers
 
         // Her fyrir nedan koma Viewin ----------------------------------
 
+        //public Action uplaod()
+        //{
+        //    var _uplaod = new SubFileRepository();
+        //    return View(_uplaod);
+        //}
 
+ 
 	}
 }

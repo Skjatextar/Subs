@@ -1,67 +1,66 @@
-﻿
+﻿@model Subs.Models.Entity.Request
 @{
     ViewBag.Title = "Request Submit";
 }
-
-    <!-- Byrjum á því að gera brauðslóð (breadcrumb) til að upplýsa notandann hvar hann er staddur á síðunni. -->    
-
-    <div class="breadcrumb">
+<div id="breadcrumb">
     <p><a href="/Home/">Heim</a> > <a href="/Home/Search">Beiðni</a> > Ný beiðni</p>
-    </div>
+</div>
 
+<!-- Svæði þar sem notandi skráir inn Nafn, tungumál og slóða á mynd. -->
+    <!-- Byrjum á því að gera brauðslóð (breadcrumb) til að upplýsa notandann hvar hann er staddur á síðunni. -->    
+<div id="upload">
+    @using (Html.BeginForm())
+    {
+        //Html.EditorForModel("RegistrationForm")
+    <fieldset>
 
-    <!-- Svæði þar sem notandi skráir inn Nafn, tungumál og slóða á mynd. -->
-
-    <div id="upload">
-        <form>
-            <fieldset>
-                <legend>Nýbeiðni</legend>
-                <div class="room">
-                    Nafn <input class="textbox-room" type="text" name="name"><br>
-                </div>
-                <div class="room">
-                    Tungumál <input class="textbox-room" type="text" name="language"><br>
-                </div>
-                <div class="room">
-                    Slóð á mynd <input class="textbox-room" type="text" name="url"><br>
-                </div>
-
+        <legend><span>Nýbeiðni</span></legend>
+        
+            <label>Nafn á mynd</label>
+            @Html.TextBoxFor(model => model.sTitle, new { @class = "my" })<br />
+       
+            <label>Tungumál</label> <br />
+            <label>Frá</label> @Html.TextBoxFor(model => model.sLanguageFrom, new { @class = "my" }) <br />
+            <label>Til</label> @Html.TextBoxFor(model => model.sLanguageTo, new { @class = "my" })  <br />
+        
+                @*<div class="room">
+                <label>Slóð á mynd</label> @Html.TextBoxFor(model => model.sPicture, new { Type = "file" })
+            </div> þarf þetta ???? *@
                 <!-- Hér eru radiotakkar þar sem valið er annaðhvort mynd eða þáttur. -->
+        <div id="radiob">
+            <label> Gerð :  </label>
+            <label>Bíómynd </label> @Html.RadioButton("sSubType", "Bíómynd")
+            <label>Þáttur </label> @Html.RadioButton("sSubType", "Þáttur")
+        </div>
+            <!-- Dropdown listi til að velja flokk skráar. -->
+            @*<div>
+                <select id="SearchMenu" name="Category">
+                    <option value="menu">--Velja flokk--</option>
+                    <option value="cartoon">Barnaefni</option>
+                    <option value="drama">Drama</option>
+                    <option value="comedy">Gaman</option>
+                    <option value="thriller">Hrollvekja</option>
+                    <option value="action">Spenna</option>
+                </select>
+            </div><br />*@
 
-                <div class="room">
-                    Gerð
-                    <input id="radioplass" type="radio" name="type" value="movie">Mynd
-                    <input id="radioplass" type="radio" name="type" value="tv-show">Þáttur
-                </div>
+            <!-- Textarea fyrir nánari lýsingu á skránni. -->
+        <label> Nánar</label> <br /> 
+                @Html.TextAreaFor(model => model.sRequestDescription, new { @id = "mytext"})
+            
+            <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
+            <div>
+                <input class="m"  type="button" name="cancel" value="Hætta við">
+                <input class="my"  type="button" name="submit" value="Submit">
+            </div>
+</fieldset>
 
-                <!-- Dropdown listi til að velja flokk skráar. -->
 
-                <div>
-                    <select id="SearchMenu" name="Category">
-                        <option value="menu">--Velja flokk--</option>
-                        <option value="cartoon">Barnaefni</option>
-                        <option value="drama">Drama</option>
-                        <option value="comedy">Gaman</option>
-                        <option value="thriller">Hrollvekja</option>
-                        <option value="action">Spenna</option>
-                    </select>
+    }
 
-                </div><br />
+</div>
+    
+    
 
-                <!-- Textarea fyrir nánari lýsingu á skránni. -->
-
-                <div>
-                    <p id="Boost">Nánar</p> <textarea id="Boost" rows="20" cols="50"></textarea><br>
-                </div>
-
-                <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
-
-                <div>
-                    <input type="button" name="submit" value="Submit">
-                    <input type="button" name="cancel" value="Hætta vid">
-                </div>
-            </fieldset>
-        </form>
-
-    </div>
+   
 
