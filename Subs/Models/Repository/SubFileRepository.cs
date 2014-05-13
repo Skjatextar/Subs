@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using Subs.App_Data.DataAccessLayer;
 using Subs.Models.Entity;
@@ -16,7 +18,10 @@ namespace Subs.Models.Repository
         {
             return _context.SubFiles;
         }
-       
-    }
 
+        public DbSet<SubFile> GetSubFilesByCategory()
+        {
+            return _context.SubFiles;
+        }
+    }
 }

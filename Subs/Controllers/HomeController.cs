@@ -14,8 +14,6 @@ using Subs.Models.ViewModel;
 using Subs.Migrations;
 using System.IO;
 
-
-
 namespace Subs.Controllers
 {
     public class HomeController : Controller
@@ -25,7 +23,6 @@ namespace Subs.Controllers
 
         // Thetta eru tengingar vid Interface klasana sem tengjast
         //   svo vid Repository sem tengjast svo vid gagnagrunn 
-        //private IClientRepository Client_m_repository = null;
         private ICommentRepository Comment_m_repository = null;
         private IRequestRepository Request_m_repository = null;
         private ISubFileRepository SubFile_m_repository = null;
@@ -46,35 +43,32 @@ namespace Subs.Controllers
         //    m_repository = rep;
         //}
         // --------------------------------------------------------------
-        SubFileRepository repo = new SubFileRepository();
+
         public ActionResult Index()
         {
-            var model = repo.GetSubFiles();
-            return View(model);
+            //SubFileRepository repo = new SubFileRepository();
+            var ListModel = SubFile_m_repository.GetSubFiles();
+            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
+
+            var result = from s in CategoryModel
+                select s.sTitle;
+
+            return View(CategoryModel);
         }
 
-        private List<SubFile> s_subs;
-        public SubFile GetSubFileId(int id)
-        {
-            SubFileRepository repo = new SubFileRepository();
 
-            var result = (from subfile in s_subs
-                          where subfile.SubFileId == id
-                          select subfile).SingleOrDefault();
-            return result;
-
-        }
+       
         [HttpGet]
         public ActionResult FileInfo(int? id)
         {  ViewBag.Message = "Skráarupplýsingar/Niðurhal";
-                  
-            int realid = id.Value;
-            var model = SubFile_m_repository.GetType();
-            if (id.HasValue)
-            {
-                return View(model);
-            }
-            return View("Notfound"); 
+            //SubFileRepository repo = new SubFileRepository();    
+            //int realid = id.Value;
+            //var model = repo.getsubfiles(realid);
+            //if (id.HasValue)
+            //{
+            //    return View(model);
+            //}
+            return View(); 
         }
 
         public ActionResult FileUpload()
