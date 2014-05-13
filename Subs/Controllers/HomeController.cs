@@ -49,22 +49,27 @@ namespace Subs.Controllers
 
         public ActionResult Index()
         {
-            SubFileRepository repo = new SubFileRepository();
-            var model = repo.GetSubFiles();
+            var model = SubFile_m_repository.GetSubFiles();
             return View(model);
-
         }
 
 
+        //public IQueryable<SubFile> GetSubFileId(int id)
+        //{
+        //    var model = SubFile_m_repository.GetSubFiles();
+        //    var result = (from subfile in model
+        //                  where subfile.SubFileId == id
+        //                  select subfile).SingleOrDefault();
+        //    return result;
+
+        //}
        
         [HttpGet]
         public ActionResult FileInfo(int? id)
         {  ViewBag.Message = "Skráarupplýsingar/Niðurhal";
 
-            SubFileRepository repo = new SubFileRepository();  
-  
             int realid = id.Value;
-            var model = repo;
+            var model = SubFile_m_repository.GetSubFiles.(realid);
             if (id.HasValue)
             {
                 return View(model);
