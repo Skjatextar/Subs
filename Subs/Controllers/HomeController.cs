@@ -53,23 +53,24 @@ namespace Subs.Controllers
             return View(model);
         }
 
+        public List<SubFile> s_subs;
+        public SubFile GetSubFileId(int id)
+        {
+  
+            
+            var result = (from subfile in s_subs
+                          where subfile.SubFileId == id
+                          select subfile).SingleOrDefault();
+            return result;
 
-        //public IQueryable<SubFile> GetSubFileId(int id)
-        //{
-        //    var model = SubFile_m_repository.GetSubFiles();
-        //    var result = (from subfile in model
-        //                  where subfile.SubFileId == id
-        //                  select subfile).SingleOrDefault();
-        //    return result;
-
-        //}
+        }
        
         [HttpGet]
         public ActionResult FileInfo(int? id)
         {  ViewBag.Message = "Skráarupplýsingar/Niðurhal";
 
             int realid = id.Value;
-            var model = SubFile_m_repository.GetSubFiles.(realid);
+            var model = SubFile_m_repository.;
             if (id.HasValue)
             {
                 return View(model);
