@@ -25,7 +25,7 @@ namespace Subs.Controllers
 
         // Thetta eru tengingar vid Interface klasana sem tengjast
         //   svo vid Repository sem tengjast svo vid gagnagrunn 
-        private IClientRepository Client_m_repository = null;
+        //private IClientRepository Client_m_repository = null;
         private ICommentRepository Comment_m_repository = null;
         private IRequestRepository Request_m_repository = null;
         private ISubFileRepository SubFile_m_repository = null;
