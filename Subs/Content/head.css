@@ -1,14 +1,16 @@
 ﻿#head {
-   /* background-image:url('Headohoto.png');*/
-    
-    background-color:#800080;
-    text-align:center;   
-    color:#ffffff;
-    padding-top:20px;
-    margin-bottom:20px;
-   
+    text-align: center;   
+    color: #ffffff;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+h1 {
+    color: #333333;
+    font-size: 60px;
+}
+/*
 #span1 {
     font-size: 25px;
     margin-right:95px;
@@ -17,63 +19,67 @@
 #span2 {
     font-size: 35px; 
     font-family:'Comic Sans MS';
-    margin-right:100px;
+    margin-right: 100px;
     text-shadow: 3px 1px 1px #4f4242;
 }
 #head-left {
     font-family: 'Comic Sans MS';
     float: left;
-    margin-left: 35px;
+    margin-left: 0px;
     font-size: 20px;
     padding-top: 20px;
     transform: rotate(-20deg);
     -webkit-transform: rotate(-20deg);
     -moz-transform: rotate(-20deg);
     text-shadow: 2px 1px 1px #4f4242;
+}*/
+
+/*#head-top {
+    min-width: 740px;
+    max-width: 740px;
+    margin-left: auto;
+    margin-right: auto;
+}*/
+
+#nav {
+    padding:0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #333333;
+    border: 2px;
+    border-color: #000000;
+    border-style: solid;
 }
 
-     
-#head-top {
+#nav li {
+    display: inline;
     min-width: 740px;
-    max-width: 940px;
+    max-width: 740px;
     margin-left: auto;
     margin-right: auto;
 }
 
-#nav {
-padding:0;
-padding-top: 20px;
-margin-top: 20px;
-min-width: 740px;
-max-width: 740px;
-margin-left: auto;
-margin-right: auto;
-margin-top: -20px;
-}
-
-#nav li {
-display:inline;
-}
-
 #nav li .tab {
-font-size:15px;
-text-decoration: none;
-float: left;
-padding-left: 15px;
-padding-right: 15px;
-padding: 10px;
-background-color: #333333;
-color:#ffffff;
-border-bottom:2px;
-border-bottom-color:#000000;
-border-bottom-style:solid;
+    font-size: 20px;
+    text-decoration: none;
+    padding-left: 5px;
+    padding: 20px;
+    color:#ffffff;
 }
 
 #nav li .tab:hover {
-background-color:#9B1C26;
-padding-bottom:12px;
-border-bottom:2px;
-border-bottom-color:#000000;
-border-bottom-style:solid;
-margin:-1px;
+    background-color:#9B1C26;
+    padding: 20px;
 }
+
+/*#login-partial li {
+    display: inline;
+}
+
+#login-partial {
+    float: right;
+    word-spacing: 10px;
+}*/

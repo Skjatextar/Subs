@@ -28,13 +28,13 @@
                 </tr>
             </thead>
             <tbody>
-                @*@foreach (var item in Model)
+                @foreach (var item in Model)
                 {
                     <tr>
-                        <td> @Html.ActionLink(item.sTitle, "info", new { id = item.sTitle }) </td>
+                        <td> @Html.ActionLink(item.sTitle, "RequestInfo", new { id = item.RequestId }) </td>
                         <td> @item.iUpVote </td>
                     </tr>
-                }*@
+                }
             </tbody>
         </table>
 
@@ -47,13 +47,13 @@
             </tr>
         </thead>
         <tbody>
-            @*@foreach (var item in Model)
+            @foreach (var item in Model)
                 {
                     <tr>
-                        <td> @Html.ActionLink(item.sTitle, "info", new { id = item.sTitle }) </td>
+                        <td> @Html.ActionLink(item.sTitle, "RequestInfo", new { id = item.RequestId }) </td>
                         <td> @item.iUpVote </td>
                     </tr>
-                }*@
+                }
         </tbody>
     </table>
     
