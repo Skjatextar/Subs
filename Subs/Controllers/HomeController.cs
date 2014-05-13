@@ -1,18 +1,18 @@
-﻿using System;
+﻿using Subs;
+using Subs.App_Data.DataAccessLayer;
+using Subs.Migrations;
+using Subs.Models.Entity;
+using Subs.Models.Interface;
+using Subs.Models.Repository;
+using Subs.Models.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
-using System.Data.Entity;
-using Subs;
-using Subs.App_Data.DataAccessLayer;
-using Subs.Models.Interface;
-using Subs.Models.Repository;
-using Subs.Models.Entity;
-using Subs.Models.ViewModel;
-using Subs.Migrations;
-using System.IO;
 
 
 
@@ -25,7 +25,7 @@ namespace Subs.Controllers
 
         // Thetta eru tengingar vid Interface klasana sem tengjast
         //   svo vid Repository sem tengjast svo vid gagnagrunn 
-        private IClientRepository Client_m_repository = null;
+        //private IClientRepository Client_m_repository = null;
         private ICommentRepository Comment_m_repository = null;
         private IRequestRepository Request_m_repository = null;
         private ISubFileRepository SubFile_m_repository = null;
@@ -54,14 +54,15 @@ namespace Subs.Controllers
             return View(model);
 
         }
-        public SubFileRepository GetSubFileById(int id)
-        {
-            var result = (from subfile in Subs
-                          where subfile.SubFileId == id
-                          select subfile).SingleOrDefault();
+        //public SubFileRepository GetSubFileById(int id)
+        //{
+        //    var result = (from subfile in Subs
+        //                  where subfile.SubFileId == id
+        //                  select subfile).SingleOrDefault();
 
-            return result;
-        }
+        //    return result;
+           
+        //}
         [HttpGet]
         public ActionResult FileInfo(int? id)
         {  ViewBag.Message = "Skráarupplýsingar/Niðurhal";
