@@ -46,31 +46,30 @@ namespace Subs.Controllers
         //    m_repository = rep;
         //}
         // --------------------------------------------------------------
-
+        SubFileRepository repo = new SubFileRepository();
         public ActionResult Index()
         {
-            var model = SubFile_m_repository.GetSubFiles();
+            var model = repo.GetSubFiles();
             return View(model);
         }
 
-        public List<SubFile> s_subs;
+        private List<SubFile> s_subs;
         public SubFile GetSubFileId(int id)
         {
-  
-            
+            SubFileRepository repo = new SubFileRepository();
+
             var result = (from subfile in s_subs
                           where subfile.SubFileId == id
                           select subfile).SingleOrDefault();
             return result;
 
         }
-       
         [HttpGet]
         public ActionResult FileInfo(int? id)
         {  ViewBag.Message = "Skráarupplýsingar/Niðurhal";
-
+                  
             int realid = id.Value;
-            var model = SubFile_m_repository.;
+            var model = SubFile_m_repository.GetType();
             if (id.HasValue)
             {
                 return View(model);

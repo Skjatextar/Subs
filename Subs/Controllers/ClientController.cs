@@ -20,10 +20,10 @@ namespace Subs.Controllers
         //private IClientRepository m_repository = null;
 
         // Smidur fyrir tengingar i Repositories
-        public ClientController()
-        {
-            //m_repository = new ClientRepository();
-        }
+        //public ClientController()
+        //{
+        //    //m_repository = new ClientRepository();
+        //}
         // --------------------------------------------------------------
 
         // Thetta er tilbuid fyrir mock-database ------------------------

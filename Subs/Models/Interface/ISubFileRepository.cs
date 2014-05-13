@@ -10,8 +10,6 @@ namespace Subs.Models.Interface
     public interface ISubFileRepository
     {
         IQueryable<SubFile> GetSubFiles();
-
-
     }
 
 }
