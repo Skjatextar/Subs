@@ -61,13 +61,18 @@ namespace Subs.Controllers
         [HttpGet]
         public ActionResult FileInfo(int? id)
         {  ViewBag.Message = "Skráarupplýsingar/Niðurhal";
-            //SubFileRepository repo = new SubFileRepository();    
-            //int realid = id.Value;
-            //var model = repo.getsubfiles(realid);
-            //if (id.HasValue)
-            //{
-            //    return View(model);
-            //}
+            int realid = id.Value;
+            var ListModel = SubFile_m_repository.GetSubFiles();
+            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
+
+            var result = (from subfile in CategoryModel
+                          where subfile.SubFileId == id
+                          select subfile).SingleOrDefault();
+
+            if (id.HasValue)
+            {
+                return View(result);
+            }
             return View(); 
         }
 
