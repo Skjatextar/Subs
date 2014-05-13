@@ -54,29 +54,20 @@ namespace Subs.Controllers
             return View(model);
 
         }
-        public SubFileRepository GetSubFileById(int id)
-        {
-            var result = (from subfile in Subs
-                          where subfile.SubFileId == id
-                          select subfile).SingleOrDefault();
 
-            return result;
-        }
+
+       
         [HttpGet]
         public ActionResult FileInfo(int? id)
         {  ViewBag.Message = "Skráarupplýsingar/Niðurhal";
-        SubFileRepository repo = new SubFileRepository();
-       
-            //int realid = id.Value;
-
-        var model = repo;
+            SubFileRepository repo = new SubFileRepository();    
+            int realid = id.Value;
+            var model = repo.getsubfiles(realid);
             if (id.HasValue)
             {
                 return View(model);
             }
-            //return View("Notfound");
-            return View(model);
-            
+            return View("Notfound"); 
         }
 
         public ActionResult FileUpload()
