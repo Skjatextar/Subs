@@ -17,7 +17,7 @@ namespace Subs.Controllers
         // Tengingar i gagnagrunn ---------------------------------------
         // Thetta er tenging vid Interface klasann sem tengist
         //   svo vid Repository sem tengist svo vid gagnagrunn 
-        private IClientRepository m_repository = null;
+        //private IClientRepository m_repository = null;
 
         // Smidur fyrir tengingar i Repositories
         public ClientController()

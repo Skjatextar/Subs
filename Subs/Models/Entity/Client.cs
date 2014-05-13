@@ -12,18 +12,18 @@ namespace Subs.Models.Entity
     {
         // Eigindi fyrir notanda ---------------------------------------------------------
         //[Key]       // Frumlykill
-        //public string   sUsername { get; set; }
+        //public string sUsername { get; set; }
         //[Required]  // Ekki nullable
-        //public string   sPass { get; set; }
+        //public string sPass { get; set; }
         //[Required]  // Ekki nullable
-        //public string   sEmail { get; set; }
+        //public string sEmail { get; set; }
         //// Notandi faer tign med ordum en her er thad taknad med tolum fra t.d. 1-5
-        //public int?      iRanking { get; set; }
+        //public int? iRanking { get; set; }
         //// Synir bara dagsetningu - tekur ut klukkuna
         //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         //public DateTime? dSignupDate { get; set; }
         //// Notandi getur valid um themu numerud fra t.d. 1-3
-        //public int?      iTheme { get; set; }
+        //public int? iTheme { get; set; }
         //// -------------------------------------------------------------------------------
 
         //// Adkomulyklar ------------------------------------------------------------------

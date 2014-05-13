@@ -7,8 +7,8 @@ using Subs.Models.Entity;
 
 namespace Subs.Models.Interface
 {
-    public interface IClientRepository
-    {
-        IQueryable<Client> GetClients();
-    }
+    //public interface IClientRepository
+    //{
+    //    IQueryable<Client> GetClients();
+    //}
 }

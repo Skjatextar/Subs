@@ -173,6 +173,7 @@
     <Compile Include="Migrations\201405120529199_Initial.Designer.cs" />
     <Compile Include="Migrations\201405121506231_In.cs" />
     <Compile Include="Migrations\201405121506231_In.Designer.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entity\Client.cs" />
     <Compile Include="Models\Entity\Comment.cs" />
