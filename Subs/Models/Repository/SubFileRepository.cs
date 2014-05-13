@@ -16,17 +16,5 @@ namespace Subs.Models.Repository
         {
             return _context.SubFiles;
         }
-        private List<SubFile> s_subs;
-        public SubFile getsubfiles(int id)
-        {
-            SubFileRepository repo = new SubFileRepository();
-
-            var result = (from subfile in s_subs
-                          where subfile.SubFileId == id
-                          select subfile).SingleOrDefault();
-            return result;
-
-        }
     }
-
 }

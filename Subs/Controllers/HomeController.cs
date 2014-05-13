@@ -49,8 +49,8 @@ namespace Subs.Controllers
 
         public ActionResult Index()
         {
-            SubFileRepository repo = new SubFileRepository();
-            var model = repo.GetSubFiles();
+            //SubFileRepository repo = new SubFileRepository();
+            var model = SubFile_m_repository.GetSubFiles();
             return View(model);
 
         }
@@ -60,14 +60,14 @@ namespace Subs.Controllers
         [HttpGet]
         public ActionResult FileInfo(int? id)
         {  ViewBag.Message = "Skráarupplýsingar/Niðurhal";
-            SubFileRepository repo = new SubFileRepository();    
-            int realid = id.Value;
-            var model = repo.getsubfiles(realid);
-            if (id.HasValue)
-            {
-                return View(model);
-            }
-            return View("Notfound"); 
+            //SubFileRepository repo = new SubFileRepository();    
+            //int realid = id.Value;
+            //var model = repo.getsubfiles(realid);
+            //if (id.HasValue)
+            //{
+            //    return View(model);
+            //}
+            return View(); 
         }
 
         public ActionResult FileUpload()
