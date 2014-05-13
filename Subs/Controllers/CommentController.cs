@@ -17,12 +17,12 @@ namespace Subs.Controllers
         // Tengingar i gagnagrunn ---------------------------------------
         // Thetta er tenging vid Interface klasann sem tengist
         //   svo vid Repository sem tengist svo vid gagnagrunn 
-        private ICommentRepository m_repository = null;
+        private ICommentRepository Comment_m_repository = null;
 
         // Smidur fyrir tengingar i Repositories
         public CommentController()
         {
-            m_repository = new CommentRepository();
+            Comment_m_repository = new CommentRepository();
         }
         // --------------------------------------------------------------
 

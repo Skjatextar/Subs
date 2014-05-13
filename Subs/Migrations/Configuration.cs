@@ -1,12 +1,3 @@
-using System;
-using System.Data.Entity;
-using System.Data.Entity.Migrations;
-using System.Linq;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Subs.App_Data.DataAccessLayer;
-using Subs.Models;
-
 namespace Subs.Migrations
 {
     using System;
@@ -14,14 +5,14 @@ namespace Subs.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Subs.App_Data.DataAccessLayer.SubDataContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Subs.Models.ApplicationDbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Subs.App_Data.DataAccessLayer.SubDataContext context)
+        protected override void Seed(Subs.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

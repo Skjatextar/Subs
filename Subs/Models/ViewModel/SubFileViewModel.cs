@@ -9,10 +9,6 @@ namespace Subs.Models.ViewModel
 {
     public class SubFileViewModel
     {
-        // Tennging i gagnagrunn - breytist thegar repos. koma inn
-        //private SubDataContext db = new SubDataContext();
-
-        public IEnumerable<Entity.Client>  ClientData { get; set; }
         public IEnumerable<Entity.Comment> CommentData { get; set; }
         public IEnumerable<Entity.Request> RequestData { get; set; }
         public IEnumerable<Entity.SubFile> SubFileData { get; set; }

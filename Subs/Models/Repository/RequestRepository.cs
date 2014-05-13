@@ -10,7 +10,7 @@ namespace Subs.Models.Repository
 {
     public class RequestRepository : IRequestRepository
     {
-        private SubDataContext _context = new SubDataContext();
+        private ApplicationDbContext _context = new ApplicationDbContext();
 
         public IQueryable<Request> GetRequests()
         {

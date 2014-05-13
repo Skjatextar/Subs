@@ -11,35 +11,40 @@ namespace Subs.Models.Entity
     {
         // Eigindi fyrir textaskrar ------------------------------------------------------
         [Key]       // Frumlykill
-        public int      iSubFileId { get; set; }
+        public int SubFileId { get; set; }
         [Required]  // Ekki nullable
-        public string   sTitle { get; set; }
+        public string sTitle { get; set; }
         // Tungumal thydingar
-        public string   sSubLanguage { get; set; }
+        public string sSubLanguage { get; set; }
         // Gerd textaskrar - kvikmynd/thattur
-        public string   sSubType { get; set; }
+        public string sSubType { get; set; }
         // Flokkur textaskrar - t.d. spennumynd/drama
-        public string   sGenre { get; set; }
+        public string sGenre { get; set; }
         // Synir bara dagsetningu - tekur ut klukkuna
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? dSubDate { get; set; }
         // Slod ad mynd fyrir skrana
-        public string   sPicture { get; set; }
+        public string sPicture { get; set; }
         // Lysing a thydingu
-        public string   sSubDescription { get; set; }
+        public string sSubDescription { get; set; }
         // Slod ad textaskra
-        public string   sFilePath { get; set; }
+        public string sFilePath { get; set; }
         // Talning a hve oft hefur verid likad vid gaedi textaskrar
-        public int?      iUpVote { get; set; }
+        public int? iUpVote { get; set; }
         // -------------------------------------------------------------------------------
 
         // Adkomylyklar ------------------------------------------------------------------
         // (one-to-one) - tenging i notanda
-        public string   sUsername { get; set; }
+        public virtual ApplicationUser UserName { get; set; }
         // (one-to-one) - tenging i notanda
-        public int      iRequestId { get; set; }
+        //[ForeignKey("RequestId")]
+        //public virtual  Request    Request { get; set; }
+        //public int RequestId { get; set; }
+        //[ForeignKey("RequestId")]
+        public virtual Request Request { get; set; }
+        //public int RequestId { get; set; }
         // (one-to-many) - listi af umsognum
-        public virtual ICollection<Comment> vComments { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
         // -------------------------------------------------------------------------------
     }
 }

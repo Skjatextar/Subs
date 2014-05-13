@@ -10,13 +10,11 @@ namespace Subs.Models.Repository
 {
     public class SubFileRepository : ISubFileRepository
     {
-        private SubDataContext _context = new SubDataContext();
+        private ApplicationDbContext _context = new ApplicationDbContext();
 
         public IQueryable<SubFile> GetSubFiles()
         {
             return _context.SubFiles;
         }
-
     }
-
 }

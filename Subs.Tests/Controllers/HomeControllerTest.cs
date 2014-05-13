@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Subs;
 using Subs.Controllers;
+using Subs.App_Data.DataAccessLayer;
 
 namespace Subs.Tests.Controllers
 {

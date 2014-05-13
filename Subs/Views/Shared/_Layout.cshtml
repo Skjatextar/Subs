@@ -10,13 +10,28 @@
 </head>
 <body>
     <div id="head">
-        <div id="head-left">Skjátextar.is</div>
-
-        <!--<span id="span1">00:43:42,586 --> <!--00:43:44,952 </span><br/>-->
+        <div id="head-top">
+        <div id="head-left">Skjátextar.is</div>>
         <span id="span2">These aren't the droids you're looking for.</span>
+        </div>
+
+            <div id="nav">
+                <ul>
+                    <li>@Html.ActionLink("Heim", "Index", "Home", new { @class = "tab" })</li>
+                    <li>@Html.ActionLink("Beiðni-leit", "RequestSearch", "Home", new { @class = "tab" })</li>
+                    <li>@Html.ActionLink("Um okkur", "About", "Home", new { @class = "tab" })</li>
+                    <li>@Html.ActionLink("Leiðbeiningar", "Instructions", "Home", new { @class = "tab" })</li>
+                    @Html.Partial("_LoginPartial") <!-- þetta er innskráning og það -->
+                </ul>
+              
+                
+            </div>
 
 
-    <div class=" navbar navbar-default">
+
+
+        </div>
+    @*<div class=" navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -24,27 +39,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                    @*@Html.ActionLink("Subs", "Index", "Home", null, new { @class = "navbar-brand" })*@
+                    //@Html.ActionLink("Subs", "Index", "Home", null, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Heim", "Index", "Home")</li>     
                     <li>@Html.ActionLink("Beiðni-leit", "RequestSearch", "Home")</li>
-                    @*<li>@Html.ActionLink("Skráarupplýsingar/Niðurhal", "FileInfo", "Home")</li> *@             
+                    //<li>@Html.ActionLink("Skráarupplýsingar/Niðurhal", "FileInfo", "Home")</li>//         
                     <li>@Html.ActionLink("Um okkur", "About", "Home")</li>
                     <li>@Html.ActionLink("Leiðbeiningar", "Instructions", "Home")</li>
-                    @*<li>@Html.ActionLink("Persónustillingar", "Profile", "Home")</li> þetta á að byrtast þegar notandi er innskráður *@ 
+                    //<li>@Html.ActionLink("Persónustillingar", "Profile", "Home")</li> þetta á að byrtast þegar notandi er innskráður//  
                       
                 </ul> 
                      @Html.Partial("_LoginPartial") 
             </div>
             </div>
         </div>
-    </div>
+    </div>*@
 
     <div id="container" class="container body-content">
         @RenderBody()
-        <hr />
         <footer>
             <div id="footer-left">
                 <p>Við mælum með <a href="http://www.videolan.org/vlc/index.html">VLC</a></p>
@@ -52,7 +66,6 @@
             <div id="footer-right">
                 <p>Með því að nota þessa síðu samþykkir þú þessa skilmála (href)</p>
             </div>
-
         </footer>
     </div>
 

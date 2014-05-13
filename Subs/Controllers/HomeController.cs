@@ -4,11 +4,15 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
+using Subs;
 using Subs.App_Data.DataAccessLayer;
 using Subs.Models.Interface;
 using Subs.Models.Repository;
 using Subs.Models.Entity;
 using Subs.Models.ViewModel;
+using Subs.Migrations;
+using System.IO;
 
 namespace Subs.Controllers
 {
@@ -19,7 +23,6 @@ namespace Subs.Controllers
 
         // Thetta eru tengingar vid Interface klasana sem tengjast
         //   svo vid Repository sem tengjast svo vid gagnagrunn 
-        private IClientRepository Client_m_repository = null;
         private ICommentRepository Comment_m_repository = null;
         private IRequestRepository Request_m_repository = null;
         private ISubFileRepository SubFile_m_repository = null;
@@ -27,7 +30,7 @@ namespace Subs.Controllers
         // Smidur fyrir tengingar i Repositories
         public HomeController()
         {
-            Client_m_repository  = new ClientRepository();
+            //Client_m_repository  = new ClientRepository();
             Comment_m_repository = new CommentRepository();
             Request_m_repository = new RequestRepository();
             SubFile_m_repository = new SubFileRepository();
@@ -43,34 +46,25 @@ namespace Subs.Controllers
 
         public ActionResult Index()
         {
-            SubFileRepository repo = new SubFileRepository();
-            var model = repo.GetSubFiles();
+            //SubFileRepository repo = new SubFileRepository();
+            var model = SubFile_m_repository.GetSubFiles();
             return View(model);
 
         }
-        //public SubFileRepository GetSubFileById(int id)
-        //{
-        //    var result = (from subfile in Subs
-        //                  where subfile.iSubFileId == id
-        //                select subfile).SingleOrDefault();
 
-        //   return result;
-        //}
+
+       
         [HttpGet]
         public ActionResult FileInfo(int? id)
-        {
-            ViewBag.Message = "Skráarupplýsingar/Niðurhal";
-
+        {  ViewBag.Message = "Skráarupplýsingar/Niðurhal";
+            //SubFileRepository repo = new SubFileRepository();    
             //int realid = id.Value;
-            SubFileRepository repo = new SubFileRepository();
-            var model = repo.GetSubFiles();
-            if (id.HasValue)
-            {
-                return View(model);
-            }
-            //return View("Notfound");
-            return View(model);
-            
+            //var model = repo.getsubfiles(realid);
+            //if (id.HasValue)
+            //{
+            //    return View(model);
+            //}
+            return View(); 
         }
 
         public ActionResult FileUpload()
