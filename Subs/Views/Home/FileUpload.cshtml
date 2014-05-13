@@ -15,9 +15,8 @@
             <label>Nafn á mynd</label>
             @Html.TextBoxFor(model => model.sTitle, new { @class = "my" })<br />
 
-            <label>Tungumál</label> <br />
-            <label>Frá</label> @Html.TextBoxFor(model => model., new { @class = "my" }) <br />
-            <label>Til</label> @Html.TextBoxFor(model => model.sLanguageTo, new { @class = "my" })  <br />
+            <label>Til</label> @Html.TextBoxFor(model => model.sSubLanguage, new { @class = "my" })  <br />
+            <label>Frá</label> @Html.TextBoxFor(model => model.sSubType, new { @class = "my" }) <br />
 
             @*<div class="room">
                     <label>Slóð á mynd</label> @Html.TextBoxFor(model => model.sPicture, new { Type = "file" })
@@ -41,7 +40,7 @@
                 </div><br />*@
             <!-- Textarea fyrir nánari lýsingu á skránni. -->
             <label> Nánar</label> <br />
-            @Html.TextAreaFor(model => model.sRequestDescription, new { @id = "mytext" })
+            @Html.TextAreaFor(model => model.sSubDescription, new { @id = "mytext" })
 
             <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
             <div>

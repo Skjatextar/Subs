@@ -75,11 +75,20 @@ h1 {
     padding: 20px;
 }
 
-/*#login-partial li {
+#login-partial li {
     display: inline;
+     margin-right:25px;
+
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: #333333;
+    border: 2px;
+    border-color: #000000;
+    border-style: solid;
 }
 
-#login-partial {
+#login-partial > a {
     float: right;
     word-spacing: 10px;
-}*/
+   
+}

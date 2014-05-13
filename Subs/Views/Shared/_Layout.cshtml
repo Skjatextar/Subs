@@ -10,19 +10,20 @@
 </head>
 <body>
     <div id="head">
-        <div id="login-partial">@Html.Partial("_LoginPartial")</div>
+        
         <h1> Subs[/////]Text</h1>
         <div id="head-top">
         </div>
-        
+        <div id="login-partial"> @Html.Partial("_LoginPartial")</div>
             <div id="nav">
                 <ul>
                     <li>@Html.ActionLink("Heim", "Index", "Home", new { @class = "tab" })</li>
                     <li>@Html.ActionLink("Beiðni-leit", "RequestSearch", "Home", new { @class = "tab" })</li>
                     <li>@Html.ActionLink("Um okkur", "About", "Home", new { @class = "tab" })</li>
                     <li>@Html.ActionLink("Leiðbeiningar", "Instructions", "Home", new { @class = "tab" })</li>
+                    
                 </ul>
-               
+                
             </div>
     
         </div>
