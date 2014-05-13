@@ -1,6 +1,12 @@
 ﻿/*#region body */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     background-color: #F5F5F5;
+    margin: 0 0 100px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -74,10 +80,13 @@ input[type="checkbox"].input-validation-error {
 /*#endregion */
 
 /*#region footer */
-footer {
-    width: 740px;
-    margin: auto;
-    color: black;
+
+footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height 100px;
+    width 100%;
 }
 
 #footer-left {
