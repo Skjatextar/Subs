@@ -25,6 +25,7 @@ namespace Subs.Controllers
 
         // Thetta eru tengingar vid Interface klasana sem tengjast
         //   svo vid Repository sem tengjast svo vid gagnagrunn 
+        private IClientRepository Client_m_repository = null;
         private ICommentRepository Comment_m_repository = null;
         private IRequestRepository Request_m_repository = null;
         private ISubFileRepository SubFile_m_repository = null;
@@ -48,34 +49,25 @@ namespace Subs.Controllers
 
         public ActionResult Index()
         {
-            SubFileRepository repo = new SubFileRepository();
-            var model = repo.GetSubFiles();
+            //SubFileRepository repo = new SubFileRepository();
+            var model = SubFile_m_repository.GetSubFiles();
             return View(model);
 
         }
-        //public SubFileRepository GetSubFileById(int id)
-        //{
-        //    var result = (from subfile in Subs
-        //                  where subfile.SubFileId == id
-        //                  select subfile).SingleOrDefault();
 
-        //    return result;
-        //}
+
+       
         [HttpGet]
         public ActionResult FileInfo(int? id)
         {  ViewBag.Message = "Skráarupplýsingar/Niðurhal";
-        SubFileRepository repo = new SubFileRepository();
-       
+            //SubFileRepository repo = new SubFileRepository();    
             //int realid = id.Value;
-
-        var model = repo;
-            if (id.HasValue)
-            {
-                return View(model);
-            }
-            //return View("Notfound");
-            return View(model);
-            
+            //var model = repo.getsubfiles(realid);
+            //if (id.HasValue)
+            //{
+            //    return View(model);
+            //}
+            return View(); 
         }
 
         public ActionResult FileUpload()
