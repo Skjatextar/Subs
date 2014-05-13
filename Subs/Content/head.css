@@ -34,12 +34,12 @@ h1 {
     text-shadow: 2px 1px 1px #4f4242;
 }*/
 
-/*#head-top {
+#head-top {
     min-width: 740px;
     max-width: 740px;
     margin-left: auto;
     margin-right: auto;
-}*/
+}
 
 #nav {
     padding:0;
@@ -77,18 +77,9 @@ h1 {
 
 #login-partial li {
     display: inline;
-     margin-right:25px;
-
-    padding-top: 1px;
-    padding-bottom: 1px;
-    background-color: #333333;
-    border: 2px;
-    border-color: #000000;
-    border-style: solid;
 }
 
-#login-partial > a {
+#login-partial {
     float: right;
     word-spacing: 10px;
-   
 }
