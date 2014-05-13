@@ -187,7 +187,6 @@
     <Compile Include="Models\Interface\ICommentRepository.cs" />
     <Compile Include="Models\Interface\IRequestRepository.cs" />
     <Compile Include="Models\Interface\ISubFileRepository.cs" />
-    <Compile Include="Models\Repository\ClientRepository.cs" />
     <Compile Include="Models\Repository\CommentRepository.cs" />
     <Compile Include="Models\Repository\RequestRepository.cs" />
     <Compile Include="Models\Repository\SubFileRepository.cs" />
