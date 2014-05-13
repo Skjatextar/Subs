@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using Subs.App_Data.DataAccessLayer;
@@ -13,6 +14,11 @@ namespace Subs.Models.Repository
         private ApplicationDbContext _context = new ApplicationDbContext();
 
         public IQueryable<Request> GetRequests()
+        {
+            return _context.Requests;
+        }
+
+        public DbSet<Request> GetRequestsByCategory()
         {
             return _context.Requests;
         }
