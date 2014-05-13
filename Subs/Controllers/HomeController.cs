@@ -47,9 +47,13 @@ namespace Subs.Controllers
         public ActionResult Index()
         {
             //SubFileRepository repo = new SubFileRepository();
-            var model = SubFile_m_repository.GetSubFiles();
-            return View(model);
+            var ListModel = SubFile_m_repository.GetSubFiles();
+            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
+            var result = from s in CategoryModel
+                select s.sTitle;
+
+            return View(CategoryModel);
         }
 
 

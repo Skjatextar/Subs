@@ -40,8 +40,7 @@
     margin-right: auto;
 }
 
-#nav
-{
+#nav {
 padding:0;
 padding-top: 20px;
 margin-top: 20px;
@@ -52,14 +51,11 @@ margin-right: auto;
 margin-top: -20px;
 }
 
-#nav li
-{
+#nav li {
 display:inline;
 }
 
-#nav li .tab
-{
-
+#nav li .tab {
 font-size:15px;
 text-decoration: none;
 float: left;
@@ -73,8 +69,7 @@ border-bottom-color:#000000;
 border-bottom-style:solid;
 }
 
-#nav li .tab:hover
-{
+#nav li .tab:hover {
 background-color:#9B1C26;
 padding-bottom:12px;
 border-bottom:2px;
