@@ -173,17 +173,19 @@
     <Compile Include="Migrations\201405120529199_Initial.Designer.cs" />
     <Compile Include="Migrations\201405121506231_In.cs" />
     <Compile Include="Migrations\201405121506231_In.Designer.cs" />
+    <Compile Include="Migrations\201405130950545_EitthvadBreyttist.cs" />
+    <Compile Include="Migrations\201405130950545_EitthvadBreyttist.Designer.cs">
+      <DependentUpon>201405130950545_EitthvadBreyttist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Entity\Client.cs" />
     <Compile Include="Models\Entity\Comment.cs" />
     <Compile Include="Models\Entity\Request.cs" />
     <Compile Include="Models\Entity\SubFile.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Interface\IClientRepository.cs" />
     <Compile Include="Models\Interface\ICommentRepository.cs" />
     <Compile Include="Models\Interface\IRequestRepository.cs" />
     <Compile Include="Models\Interface\ISubFileRepository.cs" />
-    <Compile Include="Models\Repository\ClientRepository.cs" />
     <Compile Include="Models\Repository\CommentRepository.cs" />
     <Compile Include="Models\Repository\RequestRepository.cs" />
     <Compile Include="Models\Repository\SubFileRepository.cs" />
@@ -266,6 +268,7 @@
     <Content Include="Views\Home\Profile.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\RequestInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -281,6 +284,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201405120529199_Initial.resx" />
     <EmbeddedResource Include="Migrations\201405121506231_In.resx" />
+    <EmbeddedResource Include="Migrations\201405130950545_EitthvadBreyttist.resx">
+      <DependentUpon>201405130950545_EitthvadBreyttist.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

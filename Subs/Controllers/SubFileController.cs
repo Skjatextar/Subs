@@ -17,12 +17,12 @@ namespace Subs.Controllers
 		// Tengingar i gagnagrunn ---------------------------------------
 		// Thetta er tenging vid Interface klasann sem tengist
 		//   svo vid Repository sem tengist svo vid gagnagrunn 
-		private ISubFileRepository m_repository = null;
+		private ISubFileRepository SubFile_m_repository = null;
 
 		// Smidur fyrir tengingar i Repositories
 		public SubFileController()
 		{
-			m_repository = new SubFileRepository();
+			SubFile_m_repository = new SubFileRepository();
 		}
 		// --------------------------------------------------------------
 

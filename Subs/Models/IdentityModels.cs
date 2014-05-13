@@ -31,12 +31,11 @@ namespace Subs.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection")
+            : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
         // Gagnagrunnstoflur
-        //public DbSet<Client> Clients { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<SubFile> SubFiles { get; set; }

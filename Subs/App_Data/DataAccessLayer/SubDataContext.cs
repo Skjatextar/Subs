@@ -15,7 +15,7 @@ namespace Subs.App_Data.DataAccessLayer
         }
 
         // Gagnagrunnstoflur
-        public DbSet<Client> Clients { get; set; }
+        //public DbSet<Client> Clients { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<SubFile> SubFiles { get; set; }
