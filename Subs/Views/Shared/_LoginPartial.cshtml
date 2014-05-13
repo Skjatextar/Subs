@@ -9,7 +9,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>@Html.ActionLink("Senda inn skrá", "FileUpload", "Home")</li> @* kemur þegar búið er að inn skrá sig*@
                 <li>
-                    @Html.ActionLink("Hæ" + User.Identity.GetUserName() + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+                    @Html.ActionLink("Hæ " + User.Identity.GetUserName() + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
                 </li>
                 <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
             </ul>
