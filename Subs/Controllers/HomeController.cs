@@ -14,6 +14,8 @@ using Subs.Models.ViewModel;
 using Subs.Migrations;
 using System.IO;
 
+
+
 namespace Subs.Controllers
 {
     public class HomeController : Controller
@@ -23,6 +25,7 @@ namespace Subs.Controllers
 
         // Thetta eru tengingar vid Interface klasana sem tengjast
         //   svo vid Repository sem tengjast svo vid gagnagrunn 
+        //private IClientRepository Client_m_repository = null;
         private ICommentRepository Comment_m_repository = null;
         private IRequestRepository Request_m_repository = null;
         private ISubFileRepository SubFile_m_repository = null;
@@ -51,16 +54,16 @@ namespace Subs.Controllers
             var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
             var result = from s in CategoryModel
-                select s.sTitle;
+                         select s.sTitle;
 
             return View(CategoryModel);
         }
 
 
-       
         [HttpGet]
         public ActionResult FileInfo(int? id)
-        {  ViewBag.Message = "Skráarupplýsingar/Niðurhal";
+        {
+            ViewBag.Message = "Skráarupplýsingar/Niðurhal";
             int realid = id.Value;
             var ListModel = SubFile_m_repository.GetSubFiles();
             var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
@@ -73,7 +76,7 @@ namespace Subs.Controllers
             {
                 return View(result);
             }
-            return View(); 
+            return View();
         }
 
         public ActionResult FileUpload()
@@ -93,12 +96,34 @@ namespace Subs.Controllers
         public ActionResult RequestSearch()
         {
             ViewBag.Message = "Beiðni-Leit";
+            var ListModel = Request_m_repository.GetRequests();
 
-            return View(Request_m_repository.GetRequests());
+            var CategoryModel = Request_m_repository.GetRequestsByCategory();
 
-            //return View();
+            var result = from s in CategoryModel
+                         select s.sTitle;
+
+            return View(CategoryModel);
+
         }
+        [HttpGet]
+        public ActionResult RequestInfo(int? id)   
+        {
+            ViewBag.Message = "Skráarupplýsingar/Niðurhal";
+            int realid = id.Value;
+            var ListModel = Request_m_repository.GetRequests();
+            var CategoryModel = Request_m_repository.GetRequestsByCategory();
 
+            var result = (from requ in CategoryModel
+                          where requ.RequestId == id
+                          select requ).SingleOrDefault();
+
+            if (id.HasValue)
+            {
+                return View(result);
+            }
+            return View();
+        }
         
 
         public ActionResult FileForm()
