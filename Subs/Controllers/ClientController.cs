@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-//using StudentApplication.Models;
+using Subs.App_Data.DataAccessLayer;
 using Subs.Models.Interface;
 using Subs.Models.Repository;
 
 namespace Subs.Controllers
 {
-    public class CommentController : Controller 
+    public class ClientController : Controller
     {
         // Tennging i gagnagrunn - Tekin ut thegar repos. koma inn
         //private SubDataContext db = new SubDataContext();
@@ -17,13 +17,13 @@ namespace Subs.Controllers
         // Tengingar i gagnagrunn ---------------------------------------
         // Thetta er tenging vid Interface klasann sem tengist
         //   svo vid Repository sem tengist svo vid gagnagrunn 
-        private ICommentRepository Comment_m_repository = null;
+        //private IClientRepository m_repository = null;
 
         // Smidur fyrir tengingar i Repositories
-        public CommentController()
-        {
-            Comment_m_repository = new CommentRepository();
-        }
+        //public ClientController()
+        //{
+        //    //m_repository = new ClientRepository();
+        //}
         // --------------------------------------------------------------
 
         // Thetta er tilbuid fyrir mock-database ------------------------
@@ -37,5 +37,5 @@ namespace Subs.Controllers
         // Her fyrir nedan koma Viewin ----------------------------------
 
 
-    }
+	}
 }

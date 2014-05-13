@@ -161,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RequestController.cs" />
@@ -178,12 +179,10 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Entity\Client.cs" />
     <Compile Include="Models\Entity\Comment.cs" />
     <Compile Include="Models\Entity\Request.cs" />
     <Compile Include="Models\Entity\SubFile.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Interface\IClientRepository.cs" />
     <Compile Include="Models\Interface\ICommentRepository.cs" />
     <Compile Include="Models\Interface\IRequestRepository.cs" />
     <Compile Include="Models\Interface\ISubFileRepository.cs" />
