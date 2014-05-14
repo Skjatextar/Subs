@@ -191,6 +191,7 @@
     <Compile Include="Models\Repository\SubFileRepository.cs" />
     <Compile Include="Models\ViewModel\CommentViewModel.cs" />
     <Compile Include="Models\ViewModel\RequestSearchModel.cs" />
+    <Compile Include="Models\ViewModel\RequestSubmitModel.cs" />
     <Compile Include="Models\ViewModel\RequestViewModel.cs" />
     <Compile Include="Models\ViewModel\SettingsViewModel.cs" />
     <Compile Include="Models\ViewModel\SubFileViewModel.cs" />

@@ -10,7 +10,9 @@
     {
         //Html.EditorForModel("RegistrationForm")
     <fieldset>
-
+        @using(Html.BeginForm("Search", "Events"))
+        {
+        
         <legend><span>Nýbeiðni</span></legend>
         
             <label>Nafn á mynd</label>
@@ -19,27 +21,13 @@
             <label>Tungumál: </label> <br />
             <label>Frá</label> @Html.TextBoxFor(model => model.sLanguageFrom, new { @class = "my" }) <br />
             <label>Til</label> @Html.TextBoxFor(model => model.sLanguageTo, new { @class = "my" })  <br />
-        
-                @*<div class="room">
-                <label>Slóð á mynd</label> @Html.TextBoxFor(model => model.sPicture, new { Type = "file" })
-            </div> þarf þetta ???? *@
+
                 <!-- Hér eru radiotakkar þar sem valið er annaðhvort mynd eða þáttur. -->
         <div id="radiob">
             <label> Gerð :  </label>
             <label>Bíómynd </label> @Html.RadioButton("sSubType", "Bíómynd")
             <label>Þáttur </label> @Html.RadioButton("sSubType", "Þáttur")
         </div>
-            <!-- Dropdown listi til að velja flokk skráar. -->
-            @*<div>
-                <select id="SearchMenu" name="Category">
-                    <option value="menu">--Velja flokk--</option>
-                    <option value="cartoon">Barnaefni</option>
-                    <option value="drama">Drama</option>
-                    <option value="comedy">Gaman</option>
-                    <option value="thriller">Hrollvekja</option>
-                    <option value="action">Spenna</option>
-                </select>
-            </div><br />*@
 
             <!-- Textarea fyrir nánari lýsingu á skránni. -->
         <label> Nánar</label> <br /> 
@@ -48,8 +36,10 @@
             <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
             <div>
                 <input class="m"  type="button" name="cancel" value="Hætta við">
-                <input class="my"  type="button" name="submit" value="Submit">
+                <input class="my"  type="button" name="submit" value="RequestSubmit">
             </div>
+            
+        }
 </fieldset>
 
 
