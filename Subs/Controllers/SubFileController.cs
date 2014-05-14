@@ -4,8 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Subs.Models;
+using Subs.Models.Entity;
 using Subs.Models.Interface;
 using Subs.Models.Repository;
+using Subs.Models.ViewModel;
 
 namespace Subs.Controllers
 {
@@ -42,6 +44,52 @@ namespace Subs.Controllers
 		//    return View(_uplaod);
 		//}
 
- 
+		public ActionResult Upload()
+		{
+			var model = new SubFileViewModel();
+			return View(model);
+		}
+
+		[HttpPost]
+		public ActionResult Upload(SubFileViewModel model)
+		{
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+
+			SubFile SubFile = new SubFile();
+
+			byte[] uploadFile = new byte[model.sFilePath.InputStream.Length];
+			model.sFilePath.InputStream.Read(uploadFile, 0, uploadFile.Length);
+
+			SubFile.sTitle = model.sFilePath.FileName;
+			SubFile.sFilePath = uploadFile;
+
+			SubFile_m_repository.InsertSubFile(SubFile);
+			SubFile_m_repository.SaveChanges();
+
+			return Content("File Uploaded.");
+		}
+
+		public ActionResult Info()
+		{
+		    var model = new SubFileViewModel();
+
+			return View(model);
+		}
+
+		public FileContentResult FileDownload(int? id)
+		{
+			byte[] fileData;
+			string fileName;
+
+			SubFile fileRecord = SubFile_m_repository.GetSubFilesByCategory().Find(id);
+
+			fileData = (byte[])fileRecord.sFilePath.ToArray();
+			fileName = fileRecord.sTitle;
+
+			return File(fileData, "text", fileName);
+		}
 	}
 }

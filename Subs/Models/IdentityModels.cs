@@ -41,7 +41,7 @@ namespace Subs.Models
         public DbSet<Request> Requests { get; set; }
         public DbSet<SubFile> SubFiles { get; set; }
 
-
+        //public System.Data.Entity.DbSet<Subs.Models.Entity.SubFile> SubFiles { get; set; }
 
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -14,5 +14,7 @@ namespace Subs.Models.Interface
     {
         IQueryable<SubFile> GetSubFiles();
         DbSet<SubFile> GetSubFilesByCategory();
+        void InsertSubFile(SubFile subFile);
+        void SaveChanges();
     }
 }
