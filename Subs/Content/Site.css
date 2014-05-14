@@ -79,21 +79,33 @@ input[type="checkbox"].input-validation-error {
 
 /*#region footer */
 
-footer{
+.footer-bottom {
     position: absolute;
-    left: 0;
-    bottom: 0;
-    height 100px;
-    width 100%;
+    bottom: 0px;
+    width: 100%;
+    font-size: 14px;
+    background: #333333;
+    color: #ffffff;
+    border: 2px;
+    border-color: #000000;
+    border-style: solid;
 }
 
-#footer-left {
-    float: left;
+.footer-bottom .footer-content {
+    min-width: 740px;
+    max-width: 740px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#footer-right {
-    float: right;
+.footer-bottom #footer-recomend {
+    text-align: left;
 }
+
+.footer-bottom #footer-terms {
+    text-align: right;
+}
+
 /*#endregion */
 
 .file-info {
@@ -222,14 +234,6 @@ input[type=button].m {
 #center {
 
 }
-.table-left {
-}
-/*td {
-    white-space: nowrap;
-    max-width: 200px;
-    overflow-x: hidden;
-}*/
-
 
 .table-left {
     min-width: 350px;

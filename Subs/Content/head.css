@@ -1,38 +1,16 @@
 ﻿#head {
-    text-align: center;   
+      
     color: #ffffff;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
 }
 
-h1 {
+#head-top h1 {
     color: #333333;
     font-size: 60px;
+    margin-left: 50px;
 }
-/*
-#span1 {
-    font-size: 25px;
-    margin-right:95px;
-    font-family:'Comic Sans MS';
-}
-#span2 {
-    font-size: 35px; 
-    font-family:'Comic Sans MS';
-    margin-right: 100px;
-    text-shadow: 3px 1px 1px #4f4242;
-}
-#head-left {
-    font-family: 'Comic Sans MS';
-    float: left;
-    margin-left: 0px;
-    font-size: 20px;
-    padding-top: 20px;
-    transform: rotate(-20deg);
-    -webkit-transform: rotate(-20deg);
-    -moz-transform: rotate(-20deg);
-    text-shadow: 2px 1px 1px #4f4242;
-}*/
 
 #head-top {
     min-width: 740px;
@@ -42,6 +20,7 @@ h1 {
 }
 
 #nav {
+    text-align: center;
     padding:0;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -54,32 +33,64 @@ h1 {
     border-style: solid;
 }
 
-#nav li {
-    display: inline;
+#nav ul {
     min-width: 740px;
     max-width: 740px;
     margin-left: auto;
     margin-right: auto;
 }
 
+#nav li {
+    display: inline;
+    min-width: 740px;
+    max-width: 740px;
+}
+
 #nav li .tab {
     font-size: 20px;
+    font-weight: bold;
     text-decoration: none;
     padding-left: 5px;
     padding: 20px;
-    color:#ffffff;
+    color: #ffffff;
 }
 
 #nav li .tab:hover {
-    background-color:#9B1C26;
-    padding: 20px;
+    background-color: #9B1C26;
+    padding: 18px;
+    border: 2px;
+    border-color: #333333;
+    border-style: solid;
+    -webkit-border-top-left-radius: 15px;
+    -webkit-border-top-right-radius: 15px;
+    -moz-border-radius-topleft: 15px;
+    -moz-border-radius-topright: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
-#login-partial li {
+.login-partial {
+    text-align: right;
+    min-width: 740px;
+    max-width: 740px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10px;
+}
+
+.login-partial li{
     display: inline;
-}
-
-#login-partial {
-    float: right;
-    word-spacing: 10px;
+    font-size: 13px;
+    margin-right: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #333333;
+    border: 1px;
+    border-color: #000000;
+    border-style: solid;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    font-weight: bold;
 }

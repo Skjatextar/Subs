@@ -1,0 +1,84 @@
+﻿@model Subs.Models.Entity.SubFile
+
+<div>
+    <h4>SubFile</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sSubLanguage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sSubLanguage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sSubType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sSubType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sGenre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sGenre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dSubDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dSubDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sPicture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sPicture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sSubDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sSubDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sFilePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sFilePath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iUpVote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iUpVote)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Back to List", "Index")
+</p>
