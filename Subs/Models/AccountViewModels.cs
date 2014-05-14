@@ -5,7 +5,7 @@ namespace Subs.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [Display(Name = "Notendanafn")]
+        [Display(Name = "Notandanafn")]
         public string UserName { get; set; }
     }
 
@@ -23,15 +23,15 @@ namespace Subs.Models
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Staðfesta nýja lykilorðið")]
-        [Compare("NewPassword", ErrorMessage = "Nýja lykillorðið og staðfestingin passa ekki saman.")]
+        [Display(Name = "Staðfesta nýtt lykilorð")]
+        [Compare("NewPassword", ErrorMessage = "Nýtt lykilorð og staðfesting passa ekki saman.")]
         public string ConfirmPassword { get; set; }
     }
 
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Notendanafn")]
+        [Display(Name = "Notandanafn")]
         public string UserName { get; set; }
 
         [Required]
@@ -46,18 +46,18 @@ namespace Subs.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "Notendanafn")]
+        [Display(Name = "Notandanafn")]
         public string UserName { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = " {0} þarf minnst að vera {2} stafa langt.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = " {0} þarf að vera minnst {2} stafa langt.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Lykilorð")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Staðfesta nýja lykilorðið")]
-        [Compare("Password", ErrorMessage = "Nýja lykillorðið og staðfestingin passa ekki saman.")]
+        [Display(Name = "Staðfesta nýtt lykilorð")]
+        [Compare("Password", ErrorMessage = "Nýtt lykillorð og staðfesting passa ekki saman.")]
         public string ConfirmPassword { get; set; }
     }
 }

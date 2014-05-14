@@ -268,6 +268,10 @@
     <Content Include="Views\Home\Profile.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\RequestInfo.cshtml" />
+    <Content Include="Views\Home\MostPopular.cshtml" />
+    <Content Include="Views\Home\Newest.cshtml" />
+    <Content Include="Views\Home\IndexSearch.cshtml" />
     <Content Include="Views\Home\CommentViewTest.cshtml" />
   </ItemGroup>
   <ItemGroup>

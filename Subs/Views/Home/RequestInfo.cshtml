@@ -1,0 +1,27 @@
+﻿@model  Subs.Models.Entity.Request
+@{
+    ViewBag.Title = "RequestInfo";
+}
+
+<h2>RequestInfo</h2>
+
+<div class="file-info">
+
+    <div id="Breadcrumb">
+        <a href="/Home/">Heim</a> > <a href="/Home/Search">Beiðni</a> > Senda inn skrá
+    </div>
+
+
+    <div class="box-border">
+ 
+
+                    @Html.DisplayFor(modelItem => modelItem.sTitle)
+
+                    @Html.DisplayFor(modelItem => modelItem.sSubType)
+            
+                    @Html.DisplayFor(modelItem => modelItem.sLanguageFrom)
+                
+                    @Html.DisplayFor(modelItem => modelItem.sLanguageTo)
+
+    </div>
+</div>

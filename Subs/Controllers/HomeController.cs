@@ -14,6 +14,8 @@ using Subs.Models.ViewModel;
 using Subs.Migrations;
 using System.IO;
 
+
+
 namespace Subs.Controllers
 {
     public class HomeController : Controller
@@ -23,6 +25,7 @@ namespace Subs.Controllers
 
         // Thetta eru tengingar vid Interface klasana sem tengjast
         //   svo vid Repository sem tengjast svo vid gagnagrunn 
+        //private IClientRepository Client_m_repository = null;
         private ICommentRepository Comment_m_repository = null;
         private IRequestRepository Request_m_repository = null;
         private ISubFileRepository SubFile_m_repository = null;
@@ -44,49 +47,111 @@ namespace Subs.Controllers
         //}
         // --------------------------------------------------------------
 
-        public ActionResult Index()
+        public ActionResult Index() /*Search  leitar í DB */
         {
-            //SubFileRepository repo = new SubFileRepository();
             var ListModel = SubFile_m_repository.GetSubFiles();
             var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
             var result = from s in CategoryModel
-                select s.sTitle;
+                         select s.sTitle;
 
             return View(CategoryModel);
         }
 
 
-       
         [HttpGet]
         public ActionResult FileInfo(int? id)
-        {  ViewBag.Message = "Skráarupplýsingar/Niðurhal";
-            //SubFileRepository repo = new SubFileRepository();    
-            //int realid = id.Value;
-            //var model = repo.getsubfiles(realid);
-            //if (id.HasValue)
-            //{
-            //    return View(model);
-            //}
-            return View(); 
-        }
+        {
+            ViewBag.Message = "Skráarupplýsingar/Niðurhal";
+            int realid = id.Value;
+            var ListModel = SubFile_m_repository.GetSubFiles();
+            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
+            var result = (from subfile in CategoryModel
+                          where subfile.SubFileId == id
+                          select subfile).SingleOrDefault();
+
+            if (id.HasValue)
+            {
+                return View(result);
+            }
+            return View();
+        }
+    /*-------------------------------------------------------------------*/
         public ActionResult FileUpload()
         {
             ViewBag.Message = "Senda inn skrá";
             return View();
-        }
+        }   
+        //[HttpPost]
+        //public ActionResult FileUpload(MyViewModel model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View(model);
+        //    }
 
+        //    FileUploadDBModel fileUploadModel = new FileUploadDBModel();
 
-       /* public ActionResult CommentViewTest()
+        //    byte[] uploadFile = new byte[model.File.InputStream.Length];
+        //    model.File.InputStream.Read(uploadFile, 0, uploadFile.Length);
+
+        //    fileUploadModel.FileName = model.File.FileName;
+        //    fileUploadModel.File = uploadFile;
+
+        //    db.FileUploadDBModels.Add(fileUploadModel);
+        //    db.SaveChanges();
+
+        //    return Content("File Uploaded.");   skoða þetta á morgun með gumma !!!!!!!!!!!!!!!!!!!!!!
+        //}
+
+        //public ActionResult Download()
+        //{
+        //    return View(db.FileUploadDBModels.ToList());
+        //}
+
+        //public FileContentResult FileDownload(int? id)
+        //{
+        //    byte[] fileData;
+        //    string fileName;
+
+        //    FileUploadDBModel fileRecord = db.FileUploadDBModels.Find(id);
+
+        //    fileData = (byte[])fileRecord.File.ToArray();
+        //    fileName = fileRecord.FileName;
+
+        //    return File(fileData, "text", fileName);
+        //}
+
+        [HttpPost]
+        public ActionResult Upload(HttpPostedFileBase photo)
         {
-            var model = Comment_m_repository.GetCommentsByCategory();
-            var result = from c in model
-                         select c;
-            return View(result);
-        }
-        */
+            if (photo != null)
+            {
+                string path = @"D:~\..\ProjectName\App_Data\Files";
 
+                if (photo.ContentLength > 10240)
+                {
+                    ModelState.AddModelError("photo", "The size of the file should not exceed 10 KB");
+                    return View();
+                }
+
+                var supportedTypes = new[] { "jpg", "jpeg", "png" };
+
+                var fileExt = System.IO.Path.GetExtension(photo.FileName).Substring(1);
+
+                if (!supportedTypes.Contains(fileExt))
+                {
+                    ModelState.AddModelError("photo", "Invalid type. Only the following types (jpg, jpeg, png) are supported.");
+                    return View();
+                }
+
+                photo.SaveAs(path + photo.FileName);
+            }
+
+            return RedirectToAction("Index");
+        }
+        /*------------------------------------------------------------*/
         [HttpGet]
         public ActionResult info()
         {
@@ -98,12 +163,34 @@ namespace Subs.Controllers
         public ActionResult RequestSearch()
         {
             ViewBag.Message = "Beiðni-Leit";
+            var ListModel = Request_m_repository.GetRequests();
 
-            return View(Request_m_repository.GetRequests());
+            var CategoryModel = Request_m_repository.GetRequestsByCategory();
 
-            //return View();
+            var result = from s in CategoryModel
+                         select s.sTitle;
+
+            return View(CategoryModel);
+
         }
+        [HttpGet]
+        public ActionResult RequestInfo(int? id)   
+        {
+            ViewBag.Message = "Skráarupplýsingar/Niðurhal";
+            int realid = id.Value;
+            var ListModel = Request_m_repository.GetRequests();
+            var CategoryModel = Request_m_repository.GetRequestsByCategory();
 
+            var result = (from requ in CategoryModel
+                          where requ.RequestId == id
+                          select requ).SingleOrDefault();
+
+            if (id.HasValue)
+            {
+                return View(result);
+            }
+            return View();
+        }
         
 
         public ActionResult FileForm()
@@ -152,39 +239,28 @@ namespace Subs.Controllers
             return View();
         }
 
-        public ActionResult Login()
-        {
-            ViewBag.Message = "Innskrá";
+   
 
-            return View();
+
+        public ActionResult MostPopular() /* Sýnir vinsælast á indexsíðu */
+        {
+            var ListModel = SubFile_m_repository.GetSubFiles();
+            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
+
+            var result = from s in CategoryModel
+                         select s.iUpVote;
+
+            return View(CategoryModel);
         }
+        public ActionResult Newest() /* Sýnir nýjast á indexsíðu */
+        {  
+            var ListModel = SubFile_m_repository.GetSubFiles();
+            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
+            var result = from s in CategoryModel
+                         select s.dSubDate;
 
-        public ActionResult Register()
-        {
-            ViewBag.Message = "Nýskrá";
-
-            return View();
-        }
-
-        // Ekki breyta thessu !!!!!!!!!!!!!!!!!!!!!!!!!!!! DatabasePrufa
-       /* [Authorize]
-        public ActionResult Info()
-        {
-            var model = SubFile_m_repository.GetSubFiles();
-            //return View(Client_m_repository.GetClients());
-            return View(model);
-        }
-
-        */
-
-
-
-
-        /*ekki gera neitt við þetta */
-        public ViewResult Info()
-        {
-            throw new NotImplementedException();
+            return View(CategoryModel);
         }
     }
 }

@@ -1,7 +1,12 @@
 ﻿/*#region body */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     background-color: #F5F5F5;
-    height: 100%;
+    margin: 0 0 100px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -12,15 +17,11 @@ body {
 /*#endregion */
 a ,a:link, a:visited { 
     text-decoration:none 
-
 }
 href
 {
     text-decoration:none
-
 }
-
-
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
@@ -54,8 +55,7 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 #container {
-    margin-top: 60px;
-    
+    margin-top: 20px;  
 }
 
 
@@ -78,19 +78,34 @@ input[type="checkbox"].input-validation-error {
 /*#endregion */
 
 /*#region footer */
-footer {
-    width: 940px;
-    margin: auto;
-    color: #909090;
+
+.footer-bottom {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    font-size: 14px;
+    background: #333333;
+    color: #ffffff;
+    border: 2px;
+    border-color: #000000;
+    border-style: solid;
 }
 
-#footer-left {
-    float: left;
+.footer-bottom .footer-content {
+    min-width: 740px;
+    max-width: 740px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#footer-right {
-    float: right;
+.footer-bottom #footer-recomend {
+    text-align: left;
 }
+
+.footer-bottom #footer-terms {
+    text-align: right;
+}
+
 /*#endregion */
 
 .file-info {
@@ -219,14 +234,6 @@ input[type=button].m {
 #center {
 
 }
-.table-left {
-}
-/*td {
-    white-space: nowrap;
-    max-width: 200px;
-    overflow-x: hidden;
-}*/
-
 
 .table-left {
     min-width: 350px;
@@ -302,10 +309,10 @@ caption, h3 {
 #make-srt {
      margin-top: 5px;
      overflow:hidden; 
-     margin-left:80px;
+     margin-left:10px;
 }
 
 #use-srt {
-    margin-left:80px;
+    margin-left: 10px;
     border-bottom:dotted 2px #800080;
 }
