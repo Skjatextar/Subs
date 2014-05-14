@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Subs.Models.Entity;
 
@@ -21,17 +22,17 @@ namespace Subs.Models
         //public virtual Request Request { get; set; }
         //public virtual SubFile SubFile { get; set; }
 
-        public virtual ICollection<Request> vRequests { get; set; }
+        //public virtual ICollection<Request> Request { get; set; }
         // (one-to-many) - listi af skram
-        public virtual ICollection<SubFile> vSubFiles { get; set; }
+        //public virtual ICollection<SubFile> SubFile { get; set; }
         // (one-to-many) - listi af umsognum
-        public virtual ICollection<Comment> vComments { get; set; }
+        public virtual ICollection<Comment> Comment { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection")//, throwIfV1Schema: false
         {
         }
 
@@ -39,5 +40,15 @@ namespace Subs.Models
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<SubFile> SubFiles { get; set; }
+
+
+
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    //modelBuilder.Entity<Request>()
+        //    //    .HasOptional(quote => quote.SubFile
+        //    //        .WithRequired(order => order.Request);
+        //}
     }
 }

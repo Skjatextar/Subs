@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Subs.Models.Entity.SubFile>
+﻿@*@model IEnumerable<Subs.Models.Entity.SubFile>*@
+
 @{
     ViewBag.Title = "MostPopular";
 }
@@ -16,14 +17,14 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @*@foreach (var item in Model)
                 {
                     <tr>
                         <td> @Html.ActionLink(item.sTitle, "FileInfo", new { id = item.SubFileId }) </td>
                         <td> @item.sSubType </td>
                         <td> @item.sSubLanguage </td>
                     </tr>
-                }
+                }*@
             </tbody>
         </table>
       

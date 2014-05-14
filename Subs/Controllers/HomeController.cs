@@ -11,7 +11,6 @@ using Subs.Models.Interface;
 using Subs.Models.Repository;
 using Subs.Models.Entity;
 using Subs.Models.ViewModel;
-using Subs.Migrations;
 using System.IO;
 
 
@@ -48,14 +47,21 @@ namespace Subs.Controllers
         // --------------------------------------------------------------
 
         public ActionResult Index() /*Search  leitar í DB */
-        {
-            var ListModel = SubFile_m_repository.GetSubFiles();
-            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
+        {             var ListModel = SubFile_m_repository.GetSubFiles();
 
-            var result = from s in CategoryModel
-                         select s.sTitle;
+             var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
-            return View(CategoryModel);
+ 
+
+             //var result = from s in CategoryModel
+             //             select s.sTitle;
+
+
+
+ 
+
+             return View(CategoryModel);
+
         }
 
 
@@ -67,14 +73,14 @@ namespace Subs.Controllers
             var ListModel = SubFile_m_repository.GetSubFiles();
             var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
-            var result = (from subfile in CategoryModel
-                          where subfile.SubFileId == id
-                          select subfile).SingleOrDefault();
+            //var result = (from subfile in CategoryModel
+            //              where subfile.SubFileId == id
+            //              select subfile).SingleOrDefault();
 
-            if (id.HasValue)
-            {
-                return View(result);
-            }
+            //if (id.HasValue)
+            //{
+            //    return View(result);
+            //}
             return View();
         }
     /*-------------------------------------------------------------------*/
@@ -122,6 +128,35 @@ namespace Subs.Controllers
 
         //    return File(fileData, "text", fileName);
         //}
+
+        [HttpPost]
+        public ActionResult Upload(HttpPostedFileBase photo)
+        {
+            if (photo != null)
+            {
+                string path = @"D:~\..\ProjectName\App_Data\Files";
+
+                if (photo.ContentLength > 10240)
+                {
+                    ModelState.AddModelError("photo", "The size of the file should not exceed 10 KB");
+                    return View();
+                }
+
+                var supportedTypes = new[] { "jpg", "jpeg", "png" };
+
+                var fileExt = System.IO.Path.GetExtension(photo.FileName).Substring(1);
+
+                if (!supportedTypes.Contains(fileExt))
+                {
+                    ModelState.AddModelError("photo", "Invalid type. Only the following types (jpg, jpeg, png) are supported.");
+                    return View();
+                }
+
+                photo.SaveAs(path + photo.FileName);
+            }
+
+            return RedirectToAction("Index");
+        }
         /*------------------------------------------------------------*/
         [HttpGet]
         public ActionResult info()
@@ -218,8 +253,8 @@ namespace Subs.Controllers
             var ListModel = SubFile_m_repository.GetSubFiles();
             var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
-            var result = from s in CategoryModel
-                         select s.iUpVote;
+            //var result = from s in CategoryModel
+            //             select s.iUpVote;
 
             return View(CategoryModel);
         }
@@ -228,8 +263,8 @@ namespace Subs.Controllers
             var ListModel = SubFile_m_repository.GetSubFiles();
             var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
-            var result = from s in CategoryModel
-                         select s.dSubDate;
+            //var result = from s in CategoryModel
+            //             select s.dSubDate;
 
             return View(CategoryModel);
         }
