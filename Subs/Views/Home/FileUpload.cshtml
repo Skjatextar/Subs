@@ -1,10 +1,5 @@
 ﻿@model Subs.Models.Entity.SubFile
            
-<div id="breadcrumb">
-    <p><a href="/Home/">Heim</a> > <a href="/Home/Search">Beiðni</a> > Ný beiðni</p>
-</div>
-<!-- Svæði þar sem notandi skráir inn Nafn, tungumál og slóða á mynd. -->
-<!-- Byrjum á því að gera brauðslóð (breadcrumb) til að upplýsa notandann hvar hann er staddur á síðunni. -->
 <div id="upload">
     @using (Html.BeginForm())
     {
@@ -18,10 +13,6 @@
             <label>Til</label> @Html.TextBoxFor(model => model.sSubLanguage, new { @class = "my" })  <br />
             <label>Frá</label> @Html.TextBoxFor(model => model.sSubType, new { @class = "my" }) <br />
 
-            @*<div class="room">
-                    <label>Slóð á mynd</label> @Html.TextBoxFor(model => model.sPicture, new { Type = "file" })
-                </div> þarf þetta ???? *@
-            <!-- Hér eru radiotakkar þar sem valið er annaðhvort mynd eða þáttur. -->
             <div id="radiob">
                 <label> Gerð :  </label>
                 <label>Bíómynd </label> @Html.RadioButton("sSubType", "Bíómynd")
@@ -29,7 +20,7 @@
             </div>
             <!-- Dropdown listi til að velja flokk skráar. -->
             @*@Html.DropDownList("sGenre", "Barnaefni")*@
-            @*<div>
+            <div>
                     <select id="SearchMenu" name="Category">
                         <option value="menu">--Velja flokk--</option>
                         <option value="cartoon">Barnaefni</option>
@@ -38,7 +29,7 @@
                         <option value="thriller">Hrollvekja</option>
                         <option value="action">Spenna</option>
                     </select>
-                </div><br />*@
+                </div><br />
             <!-- Textarea fyrir nánari lýsingu á skránni. -->
             <label> Nánar</label> <br />
             @Html.TextAreaFor(model => model.sSubDescription, new { @id = "mytext" })

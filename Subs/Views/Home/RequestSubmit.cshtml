@@ -2,9 +2,6 @@
 @{
     ViewBag.Title = "Request Submit";
 }
-<div id="breadcrumb">
-    <p><a href="/Home/">Heim</a> > <a href="/Home/Search">Beiðni</a> > Ný beiðni</p>
-</div>
 
 <!-- Svæði þar sem notandi skráir inn Nafn, tungumál og slóða á mynd. -->
     <!-- Byrjum á því að gera brauðslóð (breadcrumb) til að upplýsa notandann hvar hann er staddur á síðunni. -->    
@@ -19,7 +16,7 @@
             <label>Nafn á mynd</label>
             @Html.TextBoxFor(model => model.sTitle, new { @class = "my" })<br />
        
-            <label>Tungumál</label> <br />
+            <label>Tungumál: </label> <br />
             <label>Frá</label> @Html.TextBoxFor(model => model.sLanguageFrom, new { @class = "my" }) <br />
             <label>Til</label> @Html.TextBoxFor(model => model.sLanguageTo, new { @class = "my" })  <br />
         
