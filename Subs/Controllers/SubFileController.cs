@@ -26,62 +26,25 @@ namespace Subs.Controllers
 			SubFile_m_repository = new SubFileRepository();
 		}
 		// --------------------------------------------------------------
+        public ActionResult MostPopular() /* Sýnir vinsælast á indexsíðu */
+        {
+            var ListModel = SubFile_m_repository.GetSubFiles();
+            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
-		// Thetta er tilbuid fyrir mock-database ------------------------
-		// Notad vid einingaprofanir
-		//public HomeController(IClientRepository rep)
-		//{
-		//    m_repository = rep;
-		//}
-		// --------------------------------------------------------------
+            //var result = from s in CategoryModel
+            //             select s.iUpVote;
 
-		// Her fyrir nedan koma Viewin ----------------------------------
+            return View(CategoryModel);
+        }
+        public ActionResult Newest() /* Sýnir nýjast á indexsíðu */
+        {
+            var ListModel = SubFile_m_repository.GetSubFiles();
+            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
-        //public ActionResult Index()
-        //{
-        //    var model = SubFile_m_repository.GetSubFilesByCategory();
-        //    return View(model);
-        //}
+            //var result = from s in CategoryModel
+            //           select s.dSubDate;
 
-        //[HttpPost]
-        //public ActionResult Index(SubFileRepository model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(model);
-        //    }
-
-        //    SubFile subs = new SubFile();
-
-        //    byte[] uploadFile = new byte[model.File.InputStream.Length];
-        //    model.File.InputStream.Read(uploadFile, 0, uploadFile.Length);
-
-        //    subs.sTitle = model.File.FileName;
-        //    subs.sFilePath = uploadFile;
-
-        //    subs.FileUploadDBModels.Add(fileUploadModel);
-        //    subs.SaveChanges();
-
-        //    return Content("File Uploaded.");
-        //}
-
-        //public ActionResult Download()
-        //{
-        //    return View(db.FileUploadDBModels.ToList());
-        //}
-
-        //public FileContentResult FileDownload(int? id)
-        //{
-        //    byte[] fileData;
-        //    string fileName;
-
-        //    FileUploadDBModel fileRecord = db.FileUploadDBModels.Find(id);
-
-        //    fileData = (byte[])fileRecord.File.ToArray();
-        //    fileName = fileRecord.FileName;
-
-        //    return File(fileData, "text", fileName);
-        //}
-
+            return View(CategoryModel);
+        }
     }
 }

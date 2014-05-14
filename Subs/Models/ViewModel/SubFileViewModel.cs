@@ -15,9 +15,5 @@ namespace Subs.Models.ViewModel
     
 
     }
-    //public class MyViewModel
-    //{
-    //    //[DisplayName("Select File to Upload")]
-    //    public HttpPostedFileBase sFilePath { get; set; }
-    //}
+
 }

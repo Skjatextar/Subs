@@ -36,12 +36,20 @@ namespace Subs.Controllers
 
 		// Her fyrir nedan koma Viewin ----------------------------------
               
-        public ActionResult RequestSubmit(Request model)
+        public ActionResult RequestSubmit()
         {
-
-           
-            return View();
+            return View(new Request());
         }
+        public ActionResult Create(FormCollection formData)
+        {
+           var ListModel = Request_m_repository.GetRequests();
+              Request s = new Request();
+            s.RequestId = ( from Request in ListModel
+					        select Request.RequestId ).Max( ) + 1;
+            UpdateModel(s);
 
+            return RedirectToAction("Index");
+        }
+       
 	}
 }

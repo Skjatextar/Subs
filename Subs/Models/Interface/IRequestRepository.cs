@@ -12,5 +12,7 @@ namespace Subs.Models.Interface
     {
         IQueryable<Request> GetRequests();
         DbSet<Request> GetRequestsByCategory();
+
     }
+
 }

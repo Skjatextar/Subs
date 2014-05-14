@@ -266,10 +266,12 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\RequestInfo.cshtml" />
-    <Content Include="Views\Home\MostPopular.cshtml" />
-    <Content Include="Views\Home\Newest.cshtml" />
     <Content Include="Views\Home\IndexSearch.cshtml" />
     <Content Include="Views\Home\CommentViewTest.cshtml" />
+    <Content Include="Views\Request\RequestSubmit.cshtml" />
+    <Content Include="Views\SubFile\MostPopular.cshtml" />
+    <Content Include="Views\SubFile\Newest.cshtml" />
+    <Content Include="Views\Home\Newest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -278,8 +280,6 @@
   <ItemGroup>
     <Folder Include="App_Data\Files\" />
     <Folder Include="Views\Comment\" />
-    <Folder Include="Views\Request\" />
-    <Folder Include="Views\SubFile\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
