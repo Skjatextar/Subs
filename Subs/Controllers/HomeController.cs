@@ -70,14 +70,14 @@ namespace Subs.Controllers
             var ListModel = SubFile_m_repository.GetSubFiles();
             var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
-            //var result = (from subfile in CategoryModel
-            //              where subfile.SubFileId == id
-            //              select subfile).SingleOrDefault();
+            var result = (from subfile in CategoryModel
+                          where subfile.SubFileId == id
+                          select subfile).SingleOrDefault();
 
-            //if (id.HasValue)
-            //{
-            //    return View(result);
-            //}
+            if (id.HasValue)
+            {
+                return View(result);
+            }
             return View();
         }
     /*-------------------------------------------------------------------*/
