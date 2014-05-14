@@ -24,7 +24,15 @@ namespace Subs.Models.Repository
             return _context.SubFiles;
         }
 
+        public void InsertSubFile(SubFile subFile)
+        {
+            _context.SubFiles.Add(subFile);
+        }
 
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
+        }
     }
 
 }

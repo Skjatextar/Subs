@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using Subs.App_Data.DataAccessLayer;
@@ -13,7 +14,8 @@ namespace Subs.Models.ViewModel
         public IEnumerable<Entity.Request> RequestData { get; set; }
         public IEnumerable<Entity.SubFile> SubFileData { get; set; }
     
-
+        [DisplayName("Velja skrá")]
+        public HttpPostedFileBase sFilePath { get; set; }
     }
 
 }
