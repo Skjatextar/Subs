@@ -122,6 +122,35 @@ namespace Subs.Controllers
 
         //    return File(fileData, "text", fileName);
         //}
+
+        [HttpPost]
+        public ActionResult Upload(HttpPostedFileBase photo)
+        {
+            if (photo != null)
+            {
+                string path = @"D:~\..\ProjectName\App_Data\Files";
+
+                if (photo.ContentLength > 10240)
+                {
+                    ModelState.AddModelError("photo", "The size of the file should not exceed 10 KB");
+                    return View();
+                }
+
+                var supportedTypes = new[] { "jpg", "jpeg", "png" };
+
+                var fileExt = System.IO.Path.GetExtension(photo.FileName).Substring(1);
+
+                if (!supportedTypes.Contains(fileExt))
+                {
+                    ModelState.AddModelError("photo", "Invalid type. Only the following types (jpg, jpeg, png) are supported.");
+                    return View();
+                }
+
+                photo.SaveAs(path + photo.FileName);
+            }
+
+            return RedirectToAction("Index");
+        }
         /*------------------------------------------------------------*/
         [HttpGet]
         public ActionResult info()
