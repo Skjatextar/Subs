@@ -7,13 +7,14 @@
 <h2>CommentViewTest</h2>
 
 <ul class="list-group" style="max-width: 560px;">
-   
+@foreach (var item in Model)
+{
 
         <li class="list-group-item">
             <p>
                 <span class="glyphicon glyphicon-user"></span>
                 <span class="text-primary"> @Html.DisplayFor(modelItem => item.sCommenterUsername)</span>
-                <span> @Html.DisplayFor(modelItem => modelItem.sCommentText) </span>
+                <span> @Html.DisplayFor(modelItem => item.sCommentText) </span>
             </p>
             <p>
                 <span class="text-muted">@item.dCommentDate.ToString("dd. MMMM HH:mm") - </span>
@@ -24,7 +25,7 @@
                 <li>Siggi liked this</li>
             </ul>-->
         </li>
-    
+}
     <li class="list-group-item">
         @using (Html.BeginForm())
         {
