@@ -26,7 +26,7 @@
                 <label> Gerð :  </label>*@
                 @*<label>Bíómynd </label> @Html.RadioButton("sSubType", "Bíómynd")*@
                 @*<label>Þáttur </label> @Html.RadioButton("sSubType", "Þáttur")*@
-            </div>
+            @*</div>*@
             <!-- Dropdown listi til að velja flokk skráar. -->
             @*@Html.DropDownList("sGenre", "Barnaefni")*@
             @*<div>
@@ -56,28 +56,17 @@
 
 
 
-<form action="upload" method="post" enctype="multipart/form-data">
+@{
+    ViewBag.Title = "Home Page";
+}
 
-    <label for="photo">Photo:</label>
-    <input name="photo" id="photo" type="file">
-
-    <input value="Upload" type="submit">
-</form>
-
-
-
-
-
-
-
-
-@*<div class="jumbotron">
+<div class="jumbotron">
     @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <div>
-            @Html.LabelFor(x => x.File)
-            @Html.TextBoxFor(x => x.File, new { type = "file" })
-            @Html.ValidationMessageFor(x => x.File)
+            @Html.LabelFor(x => x.sFilePath)
+            @Html.TextBoxFor(x => x.sFilePath, new { type = "file" })
+            @Html.ValidationMessageFor(x => x.sFilePath)
         </div>
         <button type="submit">Upload File</button>
     }
@@ -85,4 +74,4 @@
 
 <p>
     @Html.ActionLink("Download File", "Download")
-</p>*@
+</p>

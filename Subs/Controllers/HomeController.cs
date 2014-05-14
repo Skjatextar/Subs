@@ -253,8 +253,8 @@ namespace Subs.Controllers
             var ListModel = SubFile_m_repository.GetSubFiles();
             var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
-            //var result = from s in CategoryModel
-            //             select s.iUpVote;
+            var result = from s in CategoryModel
+                         select s.iUpVote;
 
             return View(CategoryModel);
         }
@@ -263,8 +263,8 @@ namespace Subs.Controllers
             var ListModel = SubFile_m_repository.GetSubFiles();
             var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
-            //var result = from s in CategoryModel
-            //             select s.dSubDate;
+            var result = from s in CategoryModel
+                         select s.dSubDate;
 
             return View(CategoryModel);
         }

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Subs.Models;
 using Subs.Models.Interface;
 using Subs.Models.Repository;
+using Subs.Models.Entity;
 
 namespace Subs.Controllers
 {
@@ -36,12 +37,51 @@ namespace Subs.Controllers
 
 		// Her fyrir nedan koma Viewin ----------------------------------
 
-		//public Action uplaod()
-		//{
-		//    var _uplaod = new SubFileRepository();
-		//    return View(_uplaod);
-		//}
+        //public ActionResult Index()
+        //{
+        //    var model = SubFile_m_repository.GetSubFilesByCategory();
+        //    return View(model);
+        //}
 
- 
-	}
+        //[HttpPost]
+        //public ActionResult Index(SubFileRepository model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View(model);
+        //    }
+
+        //    SubFile subs = new SubFile();
+
+        //    byte[] uploadFile = new byte[model.File.InputStream.Length];
+        //    model.File.InputStream.Read(uploadFile, 0, uploadFile.Length);
+
+        //    subs.sTitle = model.File.FileName;
+        //    subs.sFilePath = uploadFile;
+
+        //    subs.FileUploadDBModels.Add(fileUploadModel);
+        //    subs.SaveChanges();
+
+        //    return Content("File Uploaded.");
+        //}
+
+        //public ActionResult Download()
+        //{
+        //    return View(db.FileUploadDBModels.ToList());
+        //}
+
+        //public FileContentResult FileDownload(int? id)
+        //{
+        //    byte[] fileData;
+        //    string fileName;
+
+        //    FileUploadDBModel fileRecord = db.FileUploadDBModels.Find(id);
+
+        //    fileData = (byte[])fileRecord.File.ToArray();
+        //    fileName = fileRecord.FileName;
+
+        //    return File(fileData, "text", fileName);
+        //}
+
+    }
 }
