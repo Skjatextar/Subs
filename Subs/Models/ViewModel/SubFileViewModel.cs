@@ -17,5 +17,9 @@ namespace Subs.Models.ViewModel
         [DisplayName("Velja skrá")]
         public HttpPostedFileBase sFilePath { get; set; }
     }
-
+    //public class MyViewModel
+    //{
+    //    //[DisplayName("Select File to Upload")]
+    //    public HttpPostedFileBase sFilePath { get; set; }
+    //}
 }
