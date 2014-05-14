@@ -37,10 +37,11 @@ namespace Subs.Controllers
 
             return View(CategoryModel);
         }
-        public ActionResult Newest() /* Sýnir nýjast á indexsíðu */
-        {
-            var ListModel = SubFile_m_repository.GetSubFiles();
-            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
+        //public ActionResult Newest() /* Sýnir nýjast á indexsíðu */
+        //{
+        //    var ListModel = SubFile_m_repository.GetSubFiles();
+        //    var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
+        //}
 
         //public ActionResult Index()
         //{
