@@ -47,9 +47,8 @@ namespace Subs.Controllers
         //}
         // --------------------------------------------------------------
 
-        public ActionResult Index()
+        public ActionResult Index() /*Search  leitar í DB */
         {
-            //SubFileRepository repo = new SubFileRepository();
             var ListModel = SubFile_m_repository.GetSubFiles();
             var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
@@ -78,13 +77,52 @@ namespace Subs.Controllers
             }
             return View();
         }
-
+    /*-------------------------------------------------------------------*/
         public ActionResult FileUpload()
         {
             ViewBag.Message = "Senda inn skrá";
             return View();
-        }
+        }   
+        //[HttpPost]
+        //public ActionResult FileUpload(MyViewModel model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View(model);
+        //    }
 
+        //    FileUploadDBModel fileUploadModel = new FileUploadDBModel();
+
+        //    byte[] uploadFile = new byte[model.File.InputStream.Length];
+        //    model.File.InputStream.Read(uploadFile, 0, uploadFile.Length);
+
+        //    fileUploadModel.FileName = model.File.FileName;
+        //    fileUploadModel.File = uploadFile;
+
+        //    db.FileUploadDBModels.Add(fileUploadModel);
+        //    db.SaveChanges();
+
+        //    return Content("File Uploaded.");   skoða þetta á morgun með gumma !!!!!!!!!!!!!!!!!!!!!!
+        //}
+
+        //public ActionResult Download()
+        //{
+        //    return View(db.FileUploadDBModels.ToList());
+        //}
+
+        //public FileContentResult FileDownload(int? id)
+        //{
+        //    byte[] fileData;
+        //    string fileName;
+
+        //    FileUploadDBModel fileRecord = db.FileUploadDBModels.Find(id);
+
+        //    fileData = (byte[])fileRecord.File.ToArray();
+        //    fileName = fileRecord.FileName;
+
+        //    return File(fileData, "text", fileName);
+        //}
+        /*------------------------------------------------------------*/
         [HttpGet]
         public ActionResult info()
         {
@@ -172,39 +210,28 @@ namespace Subs.Controllers
             return View();
         }
 
-        public ActionResult Login()
-        {
-            ViewBag.Message = "Innskrá";
+   
 
-            return View();
+
+        public ActionResult MostPopular() /* Sýnir vinsælast á indexsíðu */
+        {
+            var ListModel = SubFile_m_repository.GetSubFiles();
+            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
+
+            var result = from s in CategoryModel
+                         select s.iUpVote;
+
+            return View(CategoryModel);
         }
+        public ActionResult Newest() /* Sýnir nýjast á indexsíðu */
+        {  
+            var ListModel = SubFile_m_repository.GetSubFiles();
+            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
+            var result = from s in CategoryModel
+                         select s.dSubDate;
 
-        public ActionResult Register()
-        {
-            ViewBag.Message = "Nýskrá";
-
-            return View();
-        }
-
-        // Ekki breyta thessu !!!!!!!!!!!!!!!!!!!!!!!!!!!! DatabasePrufa
-       /* [Authorize]
-        public ActionResult Info()
-        {
-            var model = SubFile_m_repository.GetSubFiles();
-            //return View(Client_m_repository.GetClients());
-            return View(model);
-        }
-
-        */
-
-
-
-
-        /*ekki gera neitt við þetta */
-        public ViewResult Info()
-        {
-            throw new NotImplementedException();
+            return View(CategoryModel);
         }
     }
 }

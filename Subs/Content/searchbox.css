@@ -5,9 +5,9 @@
     border-width: 1px;
     border-style: solid;
     border-color: #c4d9df #a4c3ca #83afb7;            
-    width: 480px;
-    height: 45px;
-    padding: 10px;
+    width: 485px;
+    height: 55px;
+    padding: 13px;
     margin: 40px auto 50px;
     overflow: hidden; /* Clear floats */
 }
@@ -18,15 +18,15 @@
     border-width: 1px;
     border-style: solid;
     border-color: #c4d9df #a4c3ca #83afb7;            
-    width: 440px;
-    height: 45px;
-    padding: 10px;
+    width: 450px;
+    height: 55px;
+    padding: 13px;
     margin: 40px auto 50px;
     overflow: hidden; /* Clear floats */
 }
 #Categories {
     padding: 1px 1px;
-    height: 23px;
+    height: 28px;
     border: 1px solid #a4c3ca;
     font: normal 13px 'trebuchet MS', arial, helvetica;
     background: #f1f1f1;
@@ -43,7 +43,7 @@
 
 #search {
     padding: 5px 9px;
-    height: 23px;
+    height: 28px;
     width: 380px;
     border: 1px solid #a4c3ca;
     font: normal 13px 'trebuchet MS', arial, helvetica;
@@ -67,9 +67,10 @@
     font: bold 14px Arial, Helvetica;
     color: #23441e;    
     text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-    margin-left:9px;
-    padding: 1px 6px 4px 3px;
-    margin-top:-2px;
+    
+    margin-left: 9px;
+    padding: 3px 5px 8px 5px;
+   
 }
 
 #submit {       
@@ -80,11 +81,12 @@
     border-style: solid;
     border-color: #7eba7c #578e57 #447d43;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);             
-    height: 23px;
+    height: 28px;
     cursor: pointer;
     font: bold 14px Arial, Helvetica;
     color: #23441e;    
     text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    
 }
 #newrequest:hover, 
 #submit:hover {       

@@ -24,51 +24,13 @@
 </form>
 
 <!-- Tafla sem að birtir vinsælustu skrárnar. Notum Razor kóðun til að sækja þær úr gagnagrunninum. -->
-<div id="center">
-    <table class="table-responsive table table-bordered table-hover table-left">
-        <caption><h3>Vinsælast</h3></caption>
-        <thead>
-            <tr>
-                
-                <th>Titil</th>
-                <th>Gerð</th>
-                <th>Þýðing</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td> @Html.ActionLink(item.sTitle, "FileInfo", new { id = item.SubFileId}) </td>
-                    <td> @item.sSubType </td>
-                    <td> @item.sSubLanguage </td>
-                </tr>
-            } 
-        </tbody>
-    </table>
-    <!-- Tafla sem að birtir nýjustu skrárnar. Notum Razor kóðun til að ná í vinsælustu skrárnar úr gagnagrunninum. -->
+   
 
-    <table class="table-responsive table table-bordered table-hover table-right">
-        <caption><h3>Nýjast</h3></caption>
-        <thead>
-            <tr>
-                <th>Titil</th>
-                <th>Gerð</th>
-                <th>Þýðing</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td> @Html.ActionLink(item.sTitle, "FileInfo", new { id = item.SubFileId}) </td>
-                    <td> @item.sSubType </td>
-                    <td> @item.sSubLanguage </td>
-                </tr>
-            }
+        <div id="center">
 
-
-        </tbody>
-    </table>
-</div>
-</div>
+            @{ Html.RenderPartial("MostPopular");}
+            @{ Html.RenderPartial("Newest");}
+    
+        </div>
+        </div>
+        

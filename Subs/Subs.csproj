@@ -269,6 +269,9 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\RequestInfo.cshtml" />
+    <Content Include="Views\Home\MostPopular.cshtml" />
+    <Content Include="Views\Home\Newest.cshtml" />
+    <Content Include="Views\Home\IndexSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
