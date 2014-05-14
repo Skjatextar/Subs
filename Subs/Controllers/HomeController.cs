@@ -11,6 +11,7 @@ using Subs.Models.Interface;
 using Subs.Models.Repository;
 using Subs.Models.Entity;
 using Subs.Models.ViewModel;
+using Subs.Migrations;
 using System.IO;
 
 
@@ -47,18 +48,14 @@ namespace Subs.Controllers
         // --------------------------------------------------------------
 
         public ActionResult Index() /*Search  leitar í DB */
-        {             var ListModel = SubFile_m_repository.GetSubFiles();
-
+        {            
+             var ListModel = SubFile_m_repository.GetSubFiles();
              var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
- 
 
-             //var result = from s in CategoryModel
-             //             select s.sTitle;
+             var result = from s in CategoryModel
+                          select s.sTitle;
 
-
-
- 
 
              return View(CategoryModel);
 
@@ -264,9 +261,10 @@ namespace Subs.Controllers
             var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
             //var result = from s in CategoryModel
-            //             select s.dSubDate;
+              //           select s.dSubDate;
 
             return View(CategoryModel);
         }
+
     }
 }

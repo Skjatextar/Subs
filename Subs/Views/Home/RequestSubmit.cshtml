@@ -10,7 +10,7 @@
     {
         //Html.EditorForModel("RegistrationForm")
     <fieldset>
-        @using(Html.BeginForm("Search", "Events"))
+        @using(Html.BeginForm("RequestSubmit", "Events"))
         {
         
         <legend><span>Nýbeiðni</span></legend>
@@ -19,8 +19,8 @@
             @Html.TextBoxFor(model => model.sTitle, new { @class = "my" })<br />
        
             <label>Tungumál: </label> <br />
-            <label>Frá</label> @Html.TextBoxFor(model => model.sLanguageFrom, new { @class = "my" }) <br />
-            <label>Til</label> @Html.TextBoxFor(model => model.sLanguageTo, new { @class = "my" })  <br />
+            <label>Frá</label> <br />
+            <label>Til</label> <br />
 
                 <!-- Hér eru radiotakkar þar sem valið er annaðhvort mynd eða þáttur. -->
         <div id="radiob">
@@ -36,7 +36,7 @@
             <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
             <div>
                 <input class="m"  type="button" name="cancel" value="Hætta við">
-                <input class="my"  type="button" name="submit" value="RequestSubmit">
+                <input class="my" type="submit" name="RequestSubmit" value="Senda">
             </div>
             
         }
