@@ -24,7 +24,7 @@ namespace Subs.Models.Entity
         // Talning a hve oft hefur verid likad vid beidni (thrystingur a thydingu)
         public int? iUpVote { get; set; }
         // Synir bara dagsetningu - tekur ut klukkuna
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? dRequestDate { get; set; }
         // Slod ad mynd fyrir skrana
         public string sPicture { get; set; }
@@ -34,12 +34,13 @@ namespace Subs.Models.Entity
 
         // Adkomulyklar ------------------------------------------------------------------
         // (one-to-one) - tenging i textaskra
-        //public virtual  SubFile SubFile { get; set; }
-        public virtual ICollection<SubFile> SubFiles { get; set; }
-        // (one-to-many) - listi af umsognum
-        public virtual ICollection<Comment> Comments { get; set; }
+        //[Required] // Request verdur ekki til ef ekki er til SubFile
+        //public virtual SubFile SubFile { get; set; }
+        // (one-to-many) - Request a lista af Commentum
+        public virtual ICollection<Comment> Comment { get; set; }
         // (one-to-one) - tenging i notanda
-        public virtual ApplicationUser UserName { get; set; }
+        //[Required] // Request verdur ekki til ef ekki er til User
+        //public virtual ApplicationUser ApplicationUser { get; set; }
         // -------------------------------------------------------------------------------
     }
 }
