@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Subs.Models.Interface;
 using Subs.Models.Repository;
+using Subs.Models.Entity;
 
 namespace Subs.Controllers
 {
@@ -35,6 +36,15 @@ namespace Subs.Controllers
 
 		// Her fyrir nedan koma Viewin ----------------------------------
 
+
+        private Request db = new Request();
+
+        public ActionResult RequestSubmit(Request model)
+        {
+
+           
+            return View(db);
+        }
 
 	}
 }

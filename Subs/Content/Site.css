@@ -65,7 +65,7 @@ input[type="checkbox"].input-validation-error {
     padding: 50px;
     border-style: solid;
     border-width: 3px;
-    border-color: #800080;
+    border-color: #333333;
 }
 
 /*#region Breadcrumb */
@@ -232,7 +232,6 @@ input[type=button].m {
 }
 
 #center {
-
 }
 
 .table-left {
@@ -314,5 +313,5 @@ caption, h3 {
 
 #use-srt {
     margin-left: 10px;
-    border-bottom:dotted 2px #800080;
+    border-bottom:dotted 2px #333333;
 }

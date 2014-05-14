@@ -1,7 +1,7 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("Logoff", "Account", FormMethod.Post))
+    using (Html.BeginForm("Logoff", "Account", FormMethod.Post, new { id = "logoutForm" }))
     {
         @Html.AntiForgeryToken()
         <div class="login-partial">
@@ -10,7 +10,7 @@
                 <li>
                     @Html.ActionLink("Hæ " + User.Identity.GetUserName() + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
                 </li>
-                <li> <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a> </li>
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
             </ul>
         </div>
     }
@@ -25,4 +25,3 @@ else
     </div>
 
 }
-

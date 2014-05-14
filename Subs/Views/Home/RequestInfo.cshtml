@@ -1,7 +1,5 @@
 ﻿@model  Subs.Models.Entity.Request
-@{
-    ViewBag.Title = "RequestInfo";
-}
+
 
 <h2>RequestInfo</h2>
 
@@ -10,18 +8,26 @@
     <div id="Breadcrumb">
         <a href="/Home/">Heim</a> > <a href="/Home/Search">Beiðni</a> > Senda inn skrá
     </div>
+    @*@{
+        ViewBag.Title = "RequestInfo";
+    }*@
 
-
-    <div class="box-border">
+    <div class="box-border"> 
  
+         <label>Nafn sendanda : </label>  @Html.DisplayFor(modelItem => modelItem.sRequesterUsername) <br />
 
-                    @Html.DisplayFor(modelItem => modelItem.sTitle)
+         <label>Mynd/Þáttur : </label>  @Html.DisplayFor(modelItem => modelItem.sTitle) <br/>
 
-                    @Html.DisplayFor(modelItem => modelItem.sSubType)
+        <label>Tegund : </label>   @Html.DisplayFor(modelItem => modelItem.sSubType) <br />
             
-                    @Html.DisplayFor(modelItem => modelItem.sLanguageFrom)
+        <label>Tungumál frá : </label>   @Html.DisplayFor(modelItem => modelItem.sLanguageFrom) <br />
                 
-                    @Html.DisplayFor(modelItem => modelItem.sLanguageTo)
+        <label>Tungumál til : </label>    @Html.DisplayFor(modelItem => modelItem.sLanguageTo) <br />
 
+        <label>UpVote-að : </label>    @Html.DisplayFor(modelItem => modelItem.iUpVote) <br />
+
+        <label>Slóð á mynd : </label>    @Html.DisplayFor(modelItem => modelItem.sPicture) <br />
+
+        <label>Lýsing : </label>    @Html.DisplayFor(modelItem => modelItem.sRequestDescription) <br />
     </div>
 </div>
