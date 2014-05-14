@@ -17,7 +17,7 @@ namespace Subs.Models.Entity
         public string sCommentText { get; set; }
         // Synir bara dagsetningu - tekur ut klukkuna
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime? dCommentDate { get; set; }
+        public DateTime dCommentDate { get; set; }
         // -------------------------------------------------------------------------------
     }
 }

@@ -77,6 +77,16 @@ namespace Subs.Controllers
             return View();
         }
 
+
+       /* public ActionResult CommentViewTest()
+        {
+            var model = Comment_m_repository.GetCommentsByCategory();
+            var result = from c in model
+                         select c;
+            return View(result);
+        }
+        */
+
         [HttpGet]
         public ActionResult info()
         {
