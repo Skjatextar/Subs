@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<Subs.Models.Entity.SubFile>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
+
+
 <table class="table">
     <tr>
         <th>
@@ -64,15 +64,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.sSubDescription)
         </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.sFilePath)
-        </td>*@
         <td>
-            @Html.DisplayFor(modelItem => item.iUpVote)
+            @Html.DisplayFor(modelItem => item.sFilePath)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SubFileId }) |
-
+            @Html.DisplayFor(modelItem => item.iUpVote)
         </td>
     </tr>
 }
