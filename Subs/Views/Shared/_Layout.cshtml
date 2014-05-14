@@ -12,21 +12,19 @@
         <div id="head-top">
         <h1> Subs}|⁞ǁ⁞|{Text </h1>
         </div>
-        <div id="login-partial"> @Html.Partial("_LoginPartial")</div>
-            <div id="nav">
-             
-                <ul>
-                    <li>@Html.ActionLink("Heim", "Index", "Home", new { @class = "tab" })</li>
-                    <li>@Html.ActionLink("Beiðni-leit", "RequestSearch", "Home", new { @class = "tab" })</li>
-                    <li>@Html.ActionLink("Um okkur", "About", "Home", new { @class = "tab" })</li>
-                    <li>@Html.ActionLink("Leiðbeiningar", "Instructions", "Home", new { @class = "tab" })</li>
-                    
-                </ul>
-                
-            </div>
-    
+
+    <div id="head">
+        <div id="nav">
+            <ul>
+                <li>@Html.ActionLink("Heim", "Index", "Home", new { @class = "tab" })</li>
+                <li>@Html.ActionLink("Beiðni-leit", "RequestSearch", "Home", new { @class = "tab" })</li>
+                <li>@Html.ActionLink("Um okkur", "About", "Home", new { @class = "tab" })</li>
+                <li>@Html.ActionLink("Leiðbeiningar", "Instructions", "Home", new { @class = "tab" })</li>
+            </ul>
         </div>
-  
+    </div>
+        
+    @Html.Partial("_LoginPartial")
 
     <div id="container" class="container body-content">
         @RenderBody()
