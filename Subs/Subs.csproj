@@ -169,10 +169,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201405141110176_Initial.cs" />
-    <Compile Include="Migrations\201405141110176_Initial.Designer.cs">
-      <DependentUpon>201405141110176_Initial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entity\Comment.cs" />
@@ -266,10 +262,14 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\RequestInfo.cshtml" />
-    <Content Include="Views\Home\MostPopular.cshtml" />
-    <Content Include="Views\Home\Newest.cshtml" />
     <Content Include="Views\Home\IndexSearch.cshtml" />
     <Content Include="Views\Home\CommentViewTest.cshtml" />
+    <Content Include="Views\SubFile\Upload.cshtml" />
+    <Content Include="Views\SubFile\Info.cshtml" />
+    <Content Include="Views\Request\RequestSubmit.cshtml" />
+    <Content Include="Views\SubFile\MostPopular.cshtml" />
+    <Content Include="Views\SubFile\Newest.cshtml" />
+    <Content Include="Views\Home\Newest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -281,12 +281,6 @@
     <Folder Include="Views\Request\" />
     <Folder Include="Views\SubFile\" />
     <Folder Include="Views\User\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201405141110176_Initial.resx">
-      <DependentUpon>201405141110176_Initial.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Subs.Models;
+using Subs.Models.Entity;
 using Subs.Models.Interface;
 using Subs.Models.Repository;
-using Subs.Models.Entity;
+using Subs.Models.ViewModel;
 
 namespace Subs.Controllers
 {
@@ -26,16 +27,20 @@ namespace Subs.Controllers
 			SubFile_m_repository = new SubFileRepository();
 		}
 		// --------------------------------------------------------------
+        public ActionResult MostPopular() /* Sýnir vinsælast á indexsíðu */
+        {
+            var ListModel = SubFile_m_repository.GetSubFiles();
+            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
-		// Thetta er tilbuid fyrir mock-database ------------------------
-		// Notad vid einingaprofanir
-		//public HomeController(IClientRepository rep)
-		//{
-		//    m_repository = rep;
-		//}
-		// --------------------------------------------------------------
+            //var result = from s in CategoryModel
+            //             select s.iUpVote;
 
-		// Her fyrir nedan koma Viewin ----------------------------------
+            return View(CategoryModel);
+        }
+        public ActionResult Newest() /* Sýnir nýjast á indexsíðu */
+        {
+            var ListModel = SubFile_m_repository.GetSubFiles();
+            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
         //public ActionResult Index()
         //{
@@ -43,45 +48,52 @@ namespace Subs.Controllers
         //    return View(model);
         //}
 
-        //[HttpPost]
-        //public ActionResult Index(SubFileRepository model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(model);
-        //    }
+		public ActionResult Upload()
+		{
+			var model = new SubFileViewModel();
+			return View(model);
+		}
 
-        //    SubFile subs = new SubFile();
+		[HttpPost]
+		public ActionResult Upload(SubFileViewModel model)
+		{
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
 
-        //    byte[] uploadFile = new byte[model.File.InputStream.Length];
-        //    model.File.InputStream.Read(uploadFile, 0, uploadFile.Length);
+			SubFile SubFile = new SubFile();
 
-        //    subs.sTitle = model.File.FileName;
-        //    subs.sFilePath = uploadFile;
+			byte[] uploadFile = new byte[model.sFilePath.InputStream.Length];
+			model.sFilePath.InputStream.Read(uploadFile, 0, uploadFile.Length);
 
-        //    subs.FileUploadDBModels.Add(fileUploadModel);
-        //    subs.SaveChanges();
+			SubFile.sTitle = model.sFilePath.FileName;
+			SubFile.sFilePath = uploadFile;
 
-        //    return Content("File Uploaded.");
-        //}
+			SubFile_m_repository.InsertSubFile(SubFile);
+			SubFile_m_repository.SaveChanges();
 
-        //public ActionResult Download()
-        //{
-        //    return View(db.FileUploadDBModels.ToList());
-        //}
+			return Content("File Uploaded.");
+		}
 
-        //public FileContentResult FileDownload(int? id)
-        //{
-        //    byte[] fileData;
-        //    string fileName;
+		public ActionResult Info()
+		{
+		    var model = new SubFileViewModel();
 
-        //    FileUploadDBModel fileRecord = db.FileUploadDBModels.Find(id);
+			return View(model);
+		}
 
-        //    fileData = (byte[])fileRecord.File.ToArray();
-        //    fileName = fileRecord.FileName;
+		public FileContentResult FileDownload(int? id)
+		{
+			byte[] fileData;
+			string fileName;
 
-        //    return File(fileData, "text", fileName);
-        //}
+			SubFile fileRecord = SubFile_m_repository.GetSubFilesByCategory().Find(id);
 
+			fileData = (byte[])fileRecord.sFilePath.ToArray();
+			fileName = fileRecord.sTitle;
+
+			return File(fileData, "text", fileName);
+		}
     }
 }
