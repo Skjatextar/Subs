@@ -1,0 +1,20 @@
+﻿
+@model IEnumerable<Subs.Models.Entity.Comment>
+@{
+    
+    
+    
+    if(Model !=null)
+    { 
+      foreach (var comment in Model)
+            {
+                <form>
+                    <fieldset>
+                        <legend> @Html.DisplayFor(modelitem => comment.sCommenterUsername)</legend>
+                        @Html.DisplayFor(modelItem => comment.sCommentText)
+                    </fieldset>
+                </form>
+            }
+    }
+
+}

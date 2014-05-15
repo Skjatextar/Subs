@@ -100,7 +100,7 @@ input[type="checkbox"].input-validation-error {
 
 /*#endregion */
 
-.file-info {
+.file-info, .request-info {
     min-width: 540px;
     max-width: 540px;
     margin-left: auto;
@@ -293,4 +293,8 @@ caption, h3 {
 #download > a:hover{
     background-color:#F5F5F5;
     color:#333333;
+}
+
+.comment-list {
+    margin-top: 20px;
 }

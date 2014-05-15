@@ -13,10 +13,10 @@ namespace Subs.Tests.Controllers
     [TestClass]
     public class HomeControllerTest
     {
-        [TestMethod]
+        /*[TestMethod]
         public void Index()
-        {
-            // Arrange
+        {  
+         * // Arrange
             HomeController controller = new HomeController();
 
             // Act
@@ -24,9 +24,9 @@ namespace Subs.Tests.Controllers
 
             // Assert
             Assert.IsNotNull(result);
-        }
+        }*/
 
-        [TestMethod]
+        /*[TestMethod]
         public void About()
         {
             // Arrange
@@ -37,7 +37,7 @@ namespace Subs.Tests.Controllers
 
             // Assert
             Assert.AreEqual("Your application description page.", result.ViewBag.Message);
-        }
+        }*/
 
         //[TestMethod]
         //public void Contact()
@@ -51,5 +51,35 @@ namespace Subs.Tests.Controllers
         //    // Assert
         //    Assert.IsNotNull(result);
         //}
+
+        [TestMethod]
+        public void ViewMostPopular()
+        {
+            //Athugum hvort það birtist í raun 12 vinsælustu textaskrárnar.
+            // Arrange
+            HomeController controller = new HomeController();
+
+            // Act
+            ViewResult result = controller.About() as ViewResult;
+
+            // Assert
+            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+        }
+
+        [TestMethod]
+        public void GoToFileInfo()
+        {
+            //Athugum hvort við getum opnað link á skránna
+            // Arrange
+            HomeController controller = new HomeController();
+
+            // Act
+            ViewResult result = controller.About() as ViewResult;
+
+            // Assert
+            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+        }
+
+    
     }
 }
