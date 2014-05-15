@@ -32,7 +32,7 @@
                 <thead>
                     <tr>
 
-                        <th>Titil</th>
+                        <th>Titill</th>
                         <th>Gerð</th>
                         <th>Þýðing</th>
                     </tr>
@@ -41,7 +41,7 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td> @Html.ActionLink(item.sTitle, "FileInfo", "SubFile", new { id = item.SubFileId },null) </td>
+                            <td> @Html.ActionLink(item.sTitle, "FileInfo", "SubFile", new { id = item.SubFileId }, null) </td>
                             <td> @item.sSubType </td>
                             <td> @item.sSubLanguage </td>
                         </tr>
