@@ -82,16 +82,17 @@ namespace Subs.Controllers
 		[HttpPost]
 		public ActionResult RequestSubmit(RequestViewModel model, Request request)
 		{
-			//if (ModelState.IsValid)
-			//{
+			if (ModelState.IsValid)
+			{
 				if (request != null)
 				{
 					Request_m_repository.InsertRequest(request);
 					Request_m_repository.SaveChanges();
-				    return RedirectToAction("Index");
-					//return View("Index");
+				    //return RedirectToAction("Index");
+					return View("Index");
 				}
-			//}
+			}
+
 			return View();
 		}
 
