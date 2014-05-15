@@ -26,7 +26,7 @@ namespace Subs.Controllers
 		{
 			SubFile_m_repository = new SubFileRepository();
 		}
-		// --------------------------------------------------------------
+		// ----------------------------------------------------------------
         public ActionResult MostPopular() /* Sýnir vinsælast á indexsíðu */
         {
             var ListModel = SubFile_m_repository.GetSubFiles();
@@ -37,11 +37,11 @@ namespace Subs.Controllers
 
             return View(CategoryModel);
         }
-        public ActionResult Newest() /* Sýnir nýjast á indexsíðu */
-        {
-            var ListModel = SubFile_m_repository.GetSubFiles();
-            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
-
+       // public ActionResult Newest() /* Sýnir nýjast á indexsíðu */
+       // {
+       //     var ListModel = SubFile_m_repository.GetSubFiles();
+       //    var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
+       // } 
         //public ActionResult Index()
         //{
         //    var model = SubFile_m_repository.GetSubFilesByCategory();
