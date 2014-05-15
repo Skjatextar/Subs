@@ -253,9 +253,10 @@
     <Content Include="Views\Home\MostPopular.cshtml" />
     <Content Include="Views\Home\Newest.cshtml" />
     <Content Include="Views\Home\IndexSearch.cshtml" />
-    <Content Include="Views\Home\CommentViewTest.cshtml" />
     <Content Include="Views\SubFile\Upload.cshtml" />
     <Content Include="Views\SubFile\FileInfo.cshtml" />
+    <Content Include="Views\Home\FileInfo.cshtml" />
+    <Content Include="Views\Shared\_Comment.cshtml" />
     <Content Include="Views\Comment\CommentInfo.cshtml" />
     <Content Include="Views\Request\RequestSearch.cshtml" />
     <Content Include="Views\Request\RequestInfo.cshtml" />
