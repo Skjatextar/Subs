@@ -1,33 +1,32 @@
-﻿@model  Subs.Models.Entity.Request
+﻿@model Subs.Models.Entity.Request
 
+@{
+        ViewBag.Title = "Nánar";
+}
 
-<h2>RequestInfo</h2>
 
 <div class="file-info">
 
-    <div id="Breadcrumb">
-        <a href="/Home/">Heim</a> > <a href="/Home/Search">Beiðni</a> > Senda inn skrá
-    </div>
-    @*@{
-        ViewBag.Title = "RequestInfo";
-    }*@
+    <form>
+        <fieldset>
+            <legend> Nánari upplýsingar</legend>
+            <div class="file-info-text">
+                <label>Nafn sendanda : </label>  @Html.DisplayFor(modelItem => modelItem.sRequesterUsername) <br />
+                <label>Mynd/Þáttur : </label>  @Html.DisplayFor(modelItem => modelItem.sTitle) <br />
+                <label>Tegund : </label>   @Html.DisplayFor(modelItem => modelItem.sSubType) <br />
+                <label>Tungumál frá : </label>   @Html.DisplayFor(modelItem => modelItem.sLanguageFrom) <br />
+                <label>Tungumál til : </label>    @Html.DisplayFor(modelItem => modelItem.sLanguageTo) <br />
+                <label>UpVote-að : </label>    @Html.DisplayFor(modelItem => modelItem.iUpVote) <br />
+                <label>Slóð á mynd : </label>    @Html.DisplayFor(modelItem => modelItem.sPicture) <br />
+                <label>Lýsing : </label>    @Html.DisplayFor(modelItem => modelItem.sRequestDescription) <br />
+            </div>
+        </fieldset>
+    </form>
 
-    <div class="box-border"> 
- 
-         <label>Nafn sendanda : </label>  @Html.DisplayFor(modelItem => modelItem.sRequesterUsername) <br />
 
-         <label>Mynd/Þáttur : </label>  @Html.DisplayFor(modelItem => modelItem.sTitle) <br/>
+       <div>
+            @Html.Partial("_Comment", Model.Comment)
+       </div>
 
-        <label>Tegund : </label>   @Html.DisplayFor(modelItem => modelItem.sSubType) <br />
-            
-        <label>Tungumál frá : </label>   @Html.DisplayFor(modelItem => modelItem.sLanguageFrom) <br />
-                
-        <label>Tungumál til : </label>    @Html.DisplayFor(modelItem => modelItem.sLanguageTo) <br />
 
-        <label>UpVote-að : </label>    @Html.DisplayFor(modelItem => modelItem.iUpVote) <br />
-
-        <label>Slóð á mynd : </label>    @Html.DisplayFor(modelItem => modelItem.sPicture) <br />
-
-        <label>Lýsing : </label>    @Html.DisplayFor(modelItem => modelItem.sRequestDescription) <br />
-    </div>
 </div>

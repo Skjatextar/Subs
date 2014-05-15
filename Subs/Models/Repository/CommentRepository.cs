@@ -28,11 +28,11 @@ namespace Subs.Models.Repository
         {
             //check for null in id
 
-            var file = (from s in _context.Comments
+            var comment = (from s in _context.Comments
                         where s.CommentId == id
                         select s).SingleOrDefault();
 
-            return file;
+            return comment;
         }
 
         // Setja umsagnir a gagnagrunn

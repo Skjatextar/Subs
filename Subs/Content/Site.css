@@ -291,3 +291,7 @@ caption, h3 {
     background-color:#F5F5F5;
     color:#333333;
 }
+
+.comment-list {
+    margin-top: 20px;
+}
