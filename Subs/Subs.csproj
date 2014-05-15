@@ -256,13 +256,12 @@
     <Content Include="Views\Home\IndexSearch.cshtml" />
     <Content Include="Views\SubFile\Upload.cshtml" />
     <Content Include="Views\SubFile\FileInfo.cshtml" />
-    <Content Include="Views\Home\FileInfo.cshtml" />
-    <Content Include="Views\Shared\_Comment.cshtml" />
     <Content Include="Views\Comment\CommentInfo.cshtml" />
     <Content Include="Views\Request\RequestSearch.cshtml" />
     <Content Include="Views\Request\RequestInfo.cshtml" />
     <Content Include="Views\Request\RequestUpload.cshtml" />
     <Content Include="Views\Request\RequestSubmit.cshtml" />
+    <Content Include="Views\Shared\_Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

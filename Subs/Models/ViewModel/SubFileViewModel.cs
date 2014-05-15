@@ -42,5 +42,8 @@ namespace Subs.Models.ViewModel
         // Skraarnafn
         [DisplayName("Velja skrá")]
         public HttpPostedFileBase sFilePath { get; set; }
+
+
+        public virtual ICollection<Comment> Comment { get; set; }
     }
 }
