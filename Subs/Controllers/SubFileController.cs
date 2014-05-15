@@ -66,7 +66,49 @@ namespace Subs.Controllers
 
 			return Content("Skrá hefur verið hlaðið upp - Takk fyrir");
 		}
+        // Skoda upplysingar um skra - sott med ID
+        [HttpGet]
+        public ActionResult FileInfo(int? id)
+        {
+            // Saekja skra eftir ID
+            var file = SubFile_m_repository.GetSubFilesById(id);
+            // Setja umbedna skra inn i ViewModel
+            if (id.HasValue)
+            {
+                SubFileViewModel model = new SubFileViewModel
+                {
+                    SubFileId = file.SubFileId,
+                    sTitle = file.sTitle,
+                    sFileUserName = file.sFileUserName,
+                    sSubLanguage = file.sSubLanguage,
+                    sSubType = file.sSubType,
+                    sGenre = file.sGenre,
+                    //dSubDate = file.dSubDate,
+                    sPicture = file.sPicture,
+                    sSubDescription = file.sSubDescription,
+                    iUpVote = file.iUpVote
+                };
+                return View(model);
+            }
+            return View("Index"); // skoða þetta betur hvað ef 
+        }
 
-		
+        // Saekja skra
+        [HttpGet]
+        public FileContentResult FileDownload(int? id)
+        {
+            // Tekur inn byteArray
+            byte[] fileData;
+            // Skraarnafn
+            string fileName;
+
+            // Saekja skra eftir ID
+            SubFile fileRecord = SubFile_m_repository.GetSubFilesByCategory().Find(id);
+
+            fileData = (byte[])fileRecord.sFilePath.ToArray();
+            fileName = fileRecord.sTitle;
+
+            return File(fileData, "text", fileName);
+        }
 	}
 }

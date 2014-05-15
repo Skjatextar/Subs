@@ -5,7 +5,7 @@
 
 <!-- Svæði þar sem notandi skráir inn Nafn, tungumál og slóða á mynd. -->
     <!-- Byrjum á því að gera brauðslóð (breadcrumb) til að upplýsa notandann hvar hann er staddur á síðunni. -->    
-<div class="upload-request">
+@*<div class="upload-request">
     @using (Html.BeginForm())
 {
     //Html.EditorForModel("RegistrationForm")
@@ -47,9 +47,16 @@
 
 }
 
-</div>
+</div>*@
     
-    
+<fieldset>
+    <legend>Add a new student</legend>
+    <label for="sTitle">Name:</label>
+    <input type="text" id="sTitle" name="sTitle" />
+    <label for="txtAge">Age:</label>
+    <input type="text" id="sSubType" name="sSubType" />
+    <input type="button" id="btnSave" value="Save" />
+</fieldset>
 
    
 
