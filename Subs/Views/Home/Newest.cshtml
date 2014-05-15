@@ -1,29 +1,76 @@
 ﻿@model IEnumerable<Subs.Models.Entity.SubFile>
 
-@{
-    ViewBag.Title = "Newest";
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sFileUserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sSubLanguage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sSubType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sGenre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dSubDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sPicture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sSubDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sFilePath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iUpVote)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.sTitle, "FileInfo", new { id = item.SubFileId })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sFileUserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sSubLanguage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sSubType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sGenre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dSubDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sPicture)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sSubDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sFilePath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iUpVote)
+        </td>
+    </tr>
 }
 
-<!-- Tafla sem að birtir nýjustu skrárnar. Notum Razor kóðun til að ná í vinsælustu skrárnar úr gagnagrunninum. -->
-<table class="table-responsive table table-bordered table-hover table-right">
-    <caption><h3>Nýjast</h3></caption>
-    <thead>
-        <tr>
-            <th>Titil</th>
-            <th>Gerð</th>
-            <th>Þýðing</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td> @Html.ActionLink(item.sTitle, "FileInfo", new { id = item.SubFileId }) </td>
-                <td> @item.sSubType </td>
-                <td> @item.sSubLanguage </td>
-            </tr>
-        }
-
-    </tbody>
 </table>
-

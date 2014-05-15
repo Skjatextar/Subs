@@ -58,8 +58,6 @@ input[type="checkbox"].input-validation-error {
     margin-top: 20px;  
 }
 
-
-
 .box-border {
     background-color: #D3D3D3;
     padding: 50px;
@@ -67,15 +65,6 @@ input[type="checkbox"].input-validation-error {
     border-width: 3px;
     border-color: #333333;
 }
-
-/*#region Breadcrumb */
-#breadcrumb {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 500px;
-    min-width: 500px;
-}
-/*#endregion */
 
 /*#region footer */
 
@@ -116,110 +105,81 @@ input[type="checkbox"].input-validation-error {
 }
 
 /*#region FileUpload */
-#upload {
+.upload-file, .upload-request {
     width: 600px;
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto;
+    margin-top: 30px; 
 }
-#upload > form > fieldset {
-    border-radius: 10px;
-    background: #eee;
-    margin: 20px;
-    padding: 20px;
-    box-shadow: 0 0 10px #828181;
-    position: relative;
-    border: 2px groove threedface;
-}
-#upload > form > fieldset > legend {
-    position: absolute;
-    top: -2px;
-    background: #fff;
-    padding: 0px 0px;
-    border: 2px groove threedface;
-    border-top: none;
-    box-shadow: inset 0 -5px 5px #909090;
-    text-shadow: 1px 1px 2px #828181;
-     font-weight: bold;
-}
-legend > span {
-    display: block;
-    margin: -20px;
-    background: #fff;
-    padding: 5px 10px;
-    width: 120px;
-    float:right;
-}
-#upload > form > fieldset > label {
-        width: 150px;
-    text-align: right;
-    display: inline-block;
-}
-form.alt fieldset {
-    background: #eef;
-}
-form.alt legend {
-    box-shadow: inset 0 0 10px #828181;
-}
-form.alt legend span {
-    margin: -20px -15px;
-}
-#radiob {
-    margin-left:115px;
-    padding-right:15px;
 
+fieldset {
+    border-style: solid;
+    border-width: 6px;
+    border-radius: 20px;
+    border-color: #333333;
+    background-color: #efefef;
 }
+
+legend {
+    font-size: 28px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: #9B1C26;
+}
+
+#upload-fields {
+    margin-top: 20px;
+}
+
+#upload-file-name {
+    margin-left: 20px;
+    width: 200px;
+    text-align: right;
+}
+
+#radiob {
+    padding: 10px;
+    margin-left: 150px;
+}
+
+#search-menu {
+    margin-left: 30px;
+}
+
+#upload-file-text {
+    margin-left: 110px;
+}
+
+#get-file {
+    margin-left: 150px;
+    margin-bottom: 20px;
+}
+
 #mytext {
     background-color: #D3D3D3;
     border:solid 1px #BFBDBD;
     color: #1E1E1E;
     height:auto;
-    width:100%;
+    max-width: 300px;
+    min-width: 300px;
     margin-left:125px;
-    box-shadow: 2px 2px 0 #828181 inset;
-}
-input[type=text].my {
-    background-color: #D3D3D3;
-    border:solid 1px #BFBDBD;
-    color: #1E1E1E;
-    height: 28px;
-    padding-left:10px;
-    width: 250px;
+    margin-bottom: 20px;
     box-shadow: 2px 2px 0 #828181 inset;
 }
 
-input[type=submit].my
-{
-    background-color: #21b205;
-    color: #979797;
-    height: 24px;
-    width: 103px;
-    color: #bbbbbb;
-    text-transform:uppercase;
-    box-shadow:-1px 2px #6E6B6A inset;
+#upload-file-send {
+    position: absolute;
+    margin-left: 330px;
+    padding: 9px;
 }
 
-input[type=button].my, input[type=button].m {
-    float:right;
-    margin: 15px 10px 0px 15px;
-    border-radius: 3px 3px;    
-    border-width: 1px;
-    border-style: solid;
-    border-color: #7eba7c #578e57 #447d43;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);             
-    height: 23px;
-    cursor: pointer;
-    font: bold 14px Arial, Helvetica;
-    color: #23441e;    
-    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+#upload-file-quit {
+    float: right;
+    padding: 10px;
+    margin-right: 20px;  
 }
-input[type=button].my {
-    background-color: #6cbb6b;
-    background-image: linear-gradient(#95d788, #6cbb6b);
-}
-input[type=button].m {
-    background-color: #b94a48;
-    background-image: linear-gradient(#ffd800, #e9dd07);
-}
+
+
  /*#endregion */
 
 /*#region Index */

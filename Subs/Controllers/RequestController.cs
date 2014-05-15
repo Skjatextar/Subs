@@ -35,12 +35,15 @@ namespace Subs.Controllers
 		// --------------------------------------------------------------
 
 		// Her fyrir nedan koma Viewin ----------------------------------
-              
+
+
+        private Request db = new Request();
+
         public ActionResult RequestSubmit(Request model)
         {
 
            
-            return View();
+            return View(db);
         }
 
 	}

@@ -1,0 +1,51 @@
+﻿@model Subs.Models.Entity.Request
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Student</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.RequestId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sTitle, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sTitle)
+                @Html.ValidationMessageFor(model => model.sTitle)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sSubType, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sSubType)
+                @Html.ValidationMessageFor(model => model.sSubType)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.sRequesterUsername, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.sRequesterUsername)
+                @Html.ValidationMessageFor(model => model.sRequesterUsername)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
