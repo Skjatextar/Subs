@@ -19,7 +19,6 @@ namespace Subs.Models.Repository
         {
             return _context.SubFiles;
         }
-
         // Saekja bunka af stokum skram
         public DbSet<SubFile> GetSubFilesByCategory()
         {
@@ -43,6 +42,7 @@ namespace Subs.Models.Repository
         {
             _context.SubFiles.Add(subFile);
         }
+
 
         // Vista breytingar i gagnagrunn
         public void SaveChanges()

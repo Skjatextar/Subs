@@ -50,21 +50,26 @@ namespace Subs.Controllers
 			{
 				return View(model);
 			}
+            else
+            {
+                SubFile SubFile = new SubFile();
 
-			SubFile SubFile = new SubFile();
+                byte[] uploadFile = new byte[model.sFilePath.InputStream.Length];
+                model.sFilePath.InputStream.Read(uploadFile, 0, uploadFile.Length);
 
-			byte[] uploadFile = new byte[model.sFilePath.InputStream.Length];
-			model.sFilePath.InputStream.Read(uploadFile, 0, uploadFile.Length);
+                SubFile.sTitle = model.sFilePath.FileName;
+                SubFile.sFilePath = uploadFile;
 
-			SubFile.sTitle = model.sFilePath.FileName;
-			SubFile.sFilePath = uploadFile;
+                // Setja skra i gagnagrunn
+                SubFile_m_repository.InsertSubFile(SubFile);
+                // Vista breytingar i gagnagrunni
+                SubFile_m_repository.SaveChanges();
 
-			// Setja skra i gagnagrunn
-			SubFile_m_repository.InsertSubFile(SubFile);
-			// Vista breytingar i gagnagrunni
-			SubFile_m_repository.SaveChanges();
-
-			return Content("Skrá hefur verið hlaðið upp - Takk fyrir");
+                ViewBag.Message = "Skrá hefur verið hlaðið upp - Takk fyrir";
+                //return Content("Skrá hefur verið hlaðið upp - Takk fyrir");
+                return View("Upload");
+            }
+			
 		}
 		// Skoda upplysingar um skra - sott med ID
 		[HttpGet]
