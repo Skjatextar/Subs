@@ -146,7 +146,7 @@ legend > span {
     margin: -20px;
     background: #fff;
     padding: 5px 10px;
-    width: 120px;
+    width: 115px;
     float:right;
 }
 #upload > form > fieldset > label {
@@ -186,19 +186,7 @@ input[type=text].my {
     width: 250px;
     box-shadow: 2px 2px 0 #828181 inset;
 }
-
-input[type=submit].my
-{
-    background-color: #21b205;
-    color: #979797;
-    height: 24px;
-    width: 103px;
-    color: #bbbbbb;
-    text-transform:uppercase;
-    box-shadow:-1px 2px #6E6B6A inset;
-}
-
-input[type=button].my, input[type=button].m {
+input[type=submit].my, input[type=button].m {
     float:right;
     margin: 15px 10px 0px 15px;
     border-radius: 3px 3px;    
@@ -212,7 +200,7 @@ input[type=button].my, input[type=button].m {
     color: #23441e;    
     text-shadow: 0 1px 0 rgba(255,255,255,0.5);
 }
-input[type=button].my {
+input[type=submit].my {
     background-color: #6cbb6b;
     background-image: linear-gradient(#95d788, #6cbb6b);
 }

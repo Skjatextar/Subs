@@ -86,74 +86,8 @@ namespace Subs.Controllers
             ViewBag.Message = "Senda inn skrá";
             return View();
         }   
-        //[HttpPost]
-        //public ActionResult FileUpload(MyViewModel model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(model);
-        //    }
+       
 
-        //    FileUploadDBModel fileUploadModel = new FileUploadDBModel();
-
-        //    byte[] uploadFile = new byte[model.File.InputStream.Length];
-        //    model.File.InputStream.Read(uploadFile, 0, uploadFile.Length);
-
-        //    fileUploadModel.FileName = model.File.FileName;
-        //    fileUploadModel.File = uploadFile;
-
-        //    db.FileUploadDBModels.Add(fileUploadModel);
-        //    db.SaveChanges();
-
-        //    return Content("File Uploaded.");   skoða þetta á morgun með gumma !!!!!!!!!!!!!!!!!!!!!!
-        //}
-
-        //public ActionResult Download()
-        //{
-        //    return View(db.FileUploadDBModels.ToList());
-        //}
-
-        //public FileContentResult FileDownload(int? id)
-        //{
-        //    byte[] fileData;
-        //    string fileName;
-
-        //    FileUploadDBModel fileRecord = db.FileUploadDBModels.Find(id);
-
-        //    fileData = (byte[])fileRecord.File.ToArray();
-        //    fileName = fileRecord.FileName;
-
-        //    return File(fileData, "text", fileName);
-        //}
-
-        [HttpPost]
-        public ActionResult Upload(HttpPostedFileBase photo)
-        {
-            if (photo != null)
-            {
-                string path = @"D:~\..\ProjectName\App_Data\Files";
-
-                if (photo.ContentLength > 10240)
-                {
-                    ModelState.AddModelError("photo", "The size of the file should not exceed 10 KB");
-                    return View();
-                }
-
-                var supportedTypes = new[] { "jpg", "jpeg", "png" };
-
-                var fileExt = System.IO.Path.GetExtension(photo.FileName).Substring(1);
-
-                if (!supportedTypes.Contains(fileExt))
-                {
-                    ModelState.AddModelError("photo", "Invalid type. Only the following types (jpg, jpeg, png) are supported.");
-                    return View();
-                }
-
-                photo.SaveAs(path + photo.FileName);
-            }
-
-            return RedirectToAction("Index");
-        }
         /*------------------------------------------------------------*/
         [HttpGet]
         public ActionResult info()
@@ -219,14 +153,6 @@ namespace Subs.Controllers
         }
 
 
-        //public ActionResult Profile()
-        //{
-        //    ViewBag.Message = "Persónustillingar";
-
-        //    return View();
-        //}
-
-
 
         public ActionResult About()
         {
@@ -241,9 +167,6 @@ namespace Subs.Controllers
 
             return View();
         }
-
-   
-
 
         public ActionResult MostPopular() /* Sýnir vinsælast á indexsíðu */
         {

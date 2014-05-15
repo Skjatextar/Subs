@@ -5,7 +5,7 @@
     {
         //Html.EditorForModel("RegistrationForm")
         <fieldset>
-            <legend><span>Nýbeiðni</span></legend>
+            <legend><span>Ný skrá</span></legend>
 
             <label>Nafn á mynd</label>
             @Html.TextBoxFor(model => model.sTitle, new { @class = "my" })<br />
@@ -20,16 +20,16 @@
             </div>
             <!-- Dropdown listi til að velja flokk skráar. -->
             @*@Html.DropDownList("sGenre", "Barnaefni")*@
-            <div>
-                    <select id="SearchMenu" name="Category">
-                        <option value="menu">--Velja flokk--</option>
+            
+            <label></label>  <select class="my" name="Category">
+                        <option value="menu">Velja flokk</option>
                         <option value="cartoon">Barnaefni</option>
                         <option value="drama">Drama</option>
                         <option value="comedy">Gaman</option>
                         <option value="thriller">Hrollvekja</option>
                         <option value="action">Spenna</option>
                     </select>
-                </div><br />
+              <br />
             <!-- Textarea fyrir nánari lýsingu á skránni. -->
             <label> Nánar</label> <br />
             @Html.TextAreaFor(model => model.sSubDescription, new { @id = "mytext" })
