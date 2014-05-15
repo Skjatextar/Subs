@@ -14,12 +14,13 @@
         </div>
 
     <div id="head">
+       
         <div id="nav">
             <ul>
-                <li>@Html.ActionLink("Heim", "Index", "Home", new { @class = "tab", hidefocus = "hidefocus" })</li>
-                <li>@Html.ActionLink("Beiðnir", "RequestSearch", "Home", new { @class = "tab" })</li>
-                <li>@Html.ActionLink("Um okkur", "About", "Home", new { @class = "tab" })</li>
-                <li>@Html.ActionLink("Leiðbeiningar", "Instructions", "Home", new { @class = "tab" })</li>
+                <li>@Html.ActionLink("Heim", "Index", "Home",null, new { @class = "tab", hidefocus = "hidefocus" })</li>
+                <li>@Html.ActionLink("Beiðnir", "RequestSearch", "Request",null, new { @class = "tab" })</li>
+                <li>@Html.ActionLink("Um okkur", "About", "Home",null, new { @class = "tab" })</li>
+                <li>@Html.ActionLink("Leiðbeiningar", "Instructions", "Home",null, new { @class = "tab" })</li>
             </ul>
         </div>
     </div>
