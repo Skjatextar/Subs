@@ -1,5 +1,18 @@
-﻿@{
-    ViewBag.Title = "Request Upload";
+﻿@model Subs.Models.ViewModel.SubFileViewModel
+
+@{
+    ViewBag.Title = "Home Page";
 }
 
-<h2>RequestUpload</h2>
+<div class="jumbotron">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div>
+            @Html.LabelFor(x => x.sFilePath)
+            @Html.TextBoxFor(x => x.sFilePath, new { type = "file" })
+            @Html.ValidationMessageFor(x => x.sFilePath)
+        </div>
+        <button type="submit">Senda skrá</button>
+    }
+</div>
+
