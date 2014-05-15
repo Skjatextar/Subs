@@ -53,10 +53,6 @@ namespace Subs.Controllers
              var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
 
-             //var result = from s in CategoryModel
-             //             select s.sTitle;
-
-
              return View(ListModel);
         }
         public ActionResult FileForm()

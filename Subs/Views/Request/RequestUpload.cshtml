@@ -7,11 +7,13 @@
 <div class="jumbotron">
     @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
-        <div>
+        
+        
+        @*<div>
             @Html.LabelFor(x => x.sFilePath)
             @Html.TextBoxFor(x => x.sFilePath, new { type = "file" })
             @Html.ValidationMessageFor(x => x.sFilePath)
-        </div>
+        </div>*@
         <button type="submit">Senda skrá</button>
     }
 </div>

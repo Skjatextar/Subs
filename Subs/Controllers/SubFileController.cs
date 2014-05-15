@@ -70,7 +70,7 @@ namespace Subs.Controllers
                 SubFile_m_repository.SaveChanges();
 
                 ViewBag.Message = "Skrá hefur verið hlaðið upp - Takk fyrir";
-                //return Content("Skrá hefur verið hlaðið upp - Takk fyrir");
+                
                 return View("Upload");
             }
 			
