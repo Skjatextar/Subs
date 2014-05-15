@@ -19,9 +19,16 @@
             }
         });
     }
-
+    $("#btnSave").click(function () {
+        // Create a JSON object:
+        var student = {
+            "Name": $("#txtName").val(),
+            "Age": $("#txtAge").val()
+        };
+        $.post("/Home/RequestSubmit", student, function (data) {
+            // TODO: process the response, if any!
+        });
+    });
 });
 
-function redirect() {
-    window.location = "Home/RequestSubmit"
-}
+

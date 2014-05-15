@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Subs.Models.Entity.SubFile>
+
+@{
+    ViewBag.Title = "MostPopular";
+}
+
+    <!-- Tafla sem að birtir vinsælustu skrárnar. Notum Razor kóðun til að sækja þær úr gagnagrunninum. -->
+ 
+        <table class="table-responsive table table-bordered table-hover table-left">
+            <caption><h3>Vinsælast</h3></caption>
+            <thead>
+                <tr>
+
+                    <th>Titill</th>
+                    <th>Gerð</th>
+                    <th>Þýðing</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+{
+    <tr>
+        <td> @Html.ActionLink(item.sTitle, "FileInfo", "SubFile", new { id = item.SubFileId }, null) </td>
+        @*<td> @Html.ActionLink(item.sTitle, "FileInfo", new { id = item.SubFileId }) </td>*@
+        <td> @item.sSubType </td>
+        <td> @item.sSubLanguage </td>
+    </tr>
+}
+            </tbody>
+        </table>
+      
+
+

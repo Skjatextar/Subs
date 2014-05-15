@@ -245,31 +245,23 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Home\FileUpload.cshtml" />
-    <Content Include="Views\Home\Info.cshtml" />
     <Content Include="Views\Home\Instructions.cshtml" />
-    <Content Include="Views\Home\RequestSubmit.cshtml" />
-    <Content Include="Views\Home\RequestSearch.cshtml" />
-    <Content Include="Views\Home\RquestInfo.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\FileInfo.cshtml" />
-    <Content Include="Views\Home\RequestUpload.cshtml" />
-    <Content Include="Views\Home\Profile.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\Register.cshtml" />
-    <Content Include="Views\Home\RequestInfo.cshtml" />
+    <Content Include="Views\Home\MostPopular.cshtml" />
+    <Content Include="Views\Home\Newest.cshtml" />
     <Content Include="Views\Home\IndexSearch.cshtml" />
     <Content Include="Views\Home\CommentViewTest.cshtml" />
     <Content Include="Views\SubFile\Upload.cshtml" />
-    <Content Include="Views\SubFile\Info.cshtml" />
+    <Content Include="Views\SubFile\FileInfo.cshtml" />
+    <Content Include="Views\Comment\CommentInfo.cshtml" />
+    <Content Include="Views\Request\RequestSearch.cshtml" />
+    <Content Include="Views\Request\RequestInfo.cshtml" />
+    <Content Include="Views\Request\RequestUpload.cshtml" />
     <Content Include="Views\Request\RequestSubmit.cshtml" />
-    <Content Include="Views\SubFile\MostPopular.cshtml" />
-    <Content Include="Views\SubFile\Newest.cshtml" />
-    <Content Include="Views\Home\Newest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -277,9 +269,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Files\" />
-    <Folder Include="Views\Comment\" />
-    <Folder Include="Views\Request\" />
-    <Folder Include="Views\SubFile\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <PropertyGroup>

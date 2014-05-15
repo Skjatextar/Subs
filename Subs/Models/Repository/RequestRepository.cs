@@ -22,5 +22,29 @@ namespace Subs.Models.Repository
         {
             return _context.Requests;
         }
+
+        // Saekja eina beidni eftir ID
+        public Request GetRequestById(int? id)
+        {
+            //check for null in id
+
+            var file = (from s in _context.Requests
+                        where s.RequestId == id
+                        select s).SingleOrDefault();
+
+            return file;
+        }
+
+        // Setja beidnir a gagnagrunn
+        public void InsertRequest(Request request)
+        {
+            _context.Requests.Add(request);
+        }
+
+        // Vista breytingar i gagnagrunn
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
+        }
     }
 }
