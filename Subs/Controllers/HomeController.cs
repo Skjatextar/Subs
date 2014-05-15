@@ -48,55 +48,51 @@ namespace Subs.Controllers
         // --------------------------------------------------------------
 
         public ActionResult Index() /*Search  leitar í DB */
-        {
-            var ListModel = SubFile_m_repository.GetSubFiles();
-            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
+        {            
+             var ListModel = SubFile_m_repository.GetSubFiles();
+             var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
 
-            var result = from s in CategoryModel
-                         select s.sTitle;
+             var result = from s in CategoryModel
+                          select s.sTitle;
 
 
-            return View(CategoryModel);
+             return View(CategoryModel);
 
         }
 
+        /*-------------------------------------------------------------------*/
 
-        [HttpGet]
-        public ActionResult FileInfo(int? id)
+        [HttpPost]
+        public ActionResult Upload(HttpPostedFileBase photo)
         {
-            ViewBag.Message = "Skráarupplýsingar/Niðurhal";
-            int realid = id.Value;
-            var ListModel = SubFile_m_repository.GetSubFiles();
-            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
-
-            var result = (from subfile in CategoryModel
-                          where subfile.SubFileId == id
-                          select subfile).SingleOrDefault();
-
-            if (id.HasValue)
+            if (photo != null)
             {
-                return View(result);
-            }
-            return View();
-        }
-    /*-------------------------------------------------------------------*/
-        public ActionResult FileUpload()
-        {
-            ViewBag.Message = "Senda inn skrá";
-            return View();
-        }   
-       
+                string path = @"D:~\..\ProjectName\App_Data\Files";
 
-        /*------------------------------------------------------------*/
-        [HttpGet]
-        public ActionResult info()
-        {
-            var model = SubFile_m_repository.GetSubFiles();
-          
-            return View(model);
- 
+                if (photo.ContentLength > 10240)
+                {
+                    ModelState.AddModelError("photo", "The size of the file should not exceed 10 KB");
+                    return View();
+                }
+
+                var supportedTypes = new[] { "jpg", "jpeg", "png" };
+
+                var fileExt = System.IO.Path.GetExtension(photo.FileName).Substring(1);
+
+                if (!supportedTypes.Contains(fileExt))
+                {
+                    ModelState.AddModelError("photo", "Invalid type. Only the following types (jpg, jpeg, png) are supported.");
+                    return View();
+                }
+
+                photo.SaveAs(path + photo.FileName);
+            }
+
+            return RedirectToAction("Index");
         }
+        /*------------------------------------------------------------*/
+
         public ActionResult RequestSearch()
         {
             ViewBag.Message = "Beiðni-Leit";
@@ -129,14 +125,11 @@ namespace Subs.Controllers
             return View();
         }
         
-
         public ActionResult FileForm()
         {
             ViewBag.Message = "Skoða beiðni";
             return View();
         }
-
-
 
         public ActionResult RequestUpload()
         {
@@ -151,6 +144,14 @@ namespace Subs.Controllers
 
             return View();
         }
+
+
+        //public ActionResult Profile()
+        //{
+        //    ViewBag.Message = "Persónustillingar";
+
+        //    return View();
+        //}
 
 
 

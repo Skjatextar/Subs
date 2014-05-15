@@ -22,5 +22,29 @@ namespace Subs.Models.Repository
         {
             return _context.Comments;
         }
+
+        // Saekja eina umsogn eftir ID
+        public Comment GetCommentById(int? id)
+        {
+            //check for null in id
+
+            var file = (from s in _context.Comments
+                        where s.CommentId == id
+                        select s).SingleOrDefault();
+
+            return file;
+        }
+
+        // Setja umsagnir a gagnagrunn
+        public void InsertComment(Comment comment)
+        {
+            _context.Comments.Add(comment);
+        }
+
+        // Vista breytingar i gagnagrunn
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
+        }
     }
 }
