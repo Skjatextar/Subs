@@ -2,26 +2,25 @@
 
 
 <h2>RequestInfo</h2>
-
 <div class="file-info">
 
     <div id="Breadcrumb">
         <a href="/Home/">Heim</a> > <a href="/Home/Search">Beiðni</a> > Senda inn skrá
     </div>
     @*@{
-        ViewBag.Title = "RequestInfo";
-    }*@
+            ViewBag.Title = "RequestInfo";
+        }*@
 
-    <div class="box-border"> 
- 
-         <label>Nafn sendanda : </label>  @Html.DisplayFor(modelItem => modelItem.sRequesterUsername) <br />
+    <div class="box-border">
 
-         <label>Mynd/Þáttur : </label>  @Html.DisplayFor(modelItem => modelItem.sTitle) <br/>
+        <label>Nafn sendanda : </label>  @Html.DisplayFor(modelItem => modelItem.sRequesterUsername) <br />
+
+        <label>Mynd/Þáttur : </label>  @Html.DisplayFor(modelItem => modelItem.sTitle) <br />
 
         <label>Tegund : </label>   @Html.DisplayFor(modelItem => modelItem.sSubType) <br />
-            
+
         <label>Tungumál frá : </label>   @Html.DisplayFor(modelItem => modelItem.sLanguageFrom) <br />
-                
+
         <label>Tungumál til : </label>    @Html.DisplayFor(modelItem => modelItem.sLanguageTo) <br />
 
         <label>UpVote-að : </label>    @Html.DisplayFor(modelItem => modelItem.iUpVote) <br />
