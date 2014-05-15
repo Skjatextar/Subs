@@ -11,30 +11,27 @@
             {
 
                 <legend><span id="rs">Senda inn skrá</span></legend>
-                <label>Nafn á mynd</label>
-                @Html.TextBoxFor(model => model.sTitle, new { @class = "my" }) <br />
-                        <div id="radiob">
-                                <label>Tungumál: </label> 
-                                <label>Ensku :     </label> @Html.RadioButton("sSubType", "Ensku")
-                                <label>Íslensku :</label> @Html.RadioButton("sSubType", "Íslensku") <br />
-                                <!-- Hér eru radiotakkar þar sem valið er annaðhvort mynd eða þáttur. -->
-                                <label> Gerð :  </label>
-                                <label>Bíómynd </label> @Html.RadioButton("sSubType", "Bíómynd")
-                                <label>Þáttur </label> @Html.RadioButton("sSubType", "Þáttur")
-                         </div>
-                         <div>
-                                <!-- Textarea fyrir nánari lýsingu á skránni. -->
-                                <label> Nánar</label> <br />
-                                @* @Html.TextAreaFor(model => model.sRequestDescription, new { @id = "mytext" })*@
-                                <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
-                                @Html.LabelFor(x => x.sFilePath)
-                                @Html.TextBoxFor(x => x.sFilePath, new { type = "file" })
-                                @Html.ValidationMessageFor(x => x.sFilePath)
-                                @*<button type="submit">Senda skrá</button>*@
-                         </div>
-
+            
+                <label>hvort er skráinn Ensk eða Íslensk þýðing : </label> <br />
+                @Html.TextBoxFor(model => model.sSubType, new { @class = "my" }) <br />
+                
+                <div id="radiob">
+                    <label> Gerð :  </label>
+                    <label>Bíómynd </label> @Html.RadioButton("sSubType", "Bíómynd")
+                    <label>Þáttur </label> @Html.RadioButton("sSubType", "Þáttur")
+                </div>
+                <div>
+                <!-- Textarea fyrir nánari lýsingu á skránni. -->
+                <label> Nánar</label> <br />
+                 @Html.TextAreaFor(model => model.sSubDescription, new { @id = "mytext" })
+                  <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
+                   @Html.LabelFor(x => x.sFilePath)
+                  @Html.TextBoxFor(x => x.sFilePath, new { type = "file" })
+                  @Html.ValidationMessageFor(x => x.sFilePath)
+                   @*<button type="submit">Senda skrá</button>*@
+                </div>
                          <input class="m" type="button" name="cancel" value="Hætta við">
-                         <input class="my" type="submit" name="RequestSubmit" value="Senda">
+                         <input class="my" type="submit" name="submit" value="Senda">
                            @ViewBag.Message
                 }
              </fieldset>

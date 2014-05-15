@@ -49,7 +49,7 @@ namespace Subs.Controllers
 
         public ActionResult Index() /*Search  leitar í DB */
         {            
-             //var ListModel = SubFile_m_repository.GetSubFiles();
+             var ListModel = SubFile_m_repository.GetSubFiles();
              var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
 
@@ -57,7 +57,7 @@ namespace Subs.Controllers
              //             select s.sTitle;
 
 
-             return View(CategoryModel);
+             return View(ListModel);
         }
         public ActionResult FileForm()
         {

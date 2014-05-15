@@ -59,7 +59,11 @@ namespace Subs.Controllers
 
                 SubFile.sTitle = model.sFilePath.FileName;
                 SubFile.sFilePath = uploadFile;
-
+                /*prufa */
+                SubFile.sSubType = model.sSubType;
+                SubFile.sSubType = model.sSubType;
+                SubFile.sSubDescription = model.sSubDescription;
+                /*------------------------------*/
                 // Setja skra i gagnagrunn
                 SubFile_m_repository.InsertSubFile(SubFile);
                 // Vista breytingar i gagnagrunni
