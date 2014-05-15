@@ -275,3 +275,19 @@ caption, h3 {
     margin-left: 10px;
     border-bottom:dotted 2px #333333;
 }
+
+#download > a {
+    float:right;
+    padding:5px;
+    border: solid 1px #9B1C26;
+    background-color:#333333;
+    color:#efefef;
+}
+#download > a:active{
+    background-color:#ff00dc;
+    color:#4cff00;
+}
+#download > a:hover{
+    background-color:#F5F5F5;
+    color:#333333;
+}

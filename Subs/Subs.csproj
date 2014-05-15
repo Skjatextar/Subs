@@ -258,7 +258,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\RequestUpload.cshtml" />
     <Content Include="Views\Home\Profile.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\RequestInfo.cshtml" />
     <Content Include="Views\Home\MostPopular.cshtml" />
@@ -267,6 +266,7 @@
     <Content Include="Views\Home\CommentViewTest.cshtml" />
     <Content Include="Views\SubFile\Upload.cshtml" />
     <Content Include="Views\SubFile\FileInfo.cshtml" />
+    <Content Include="Views\Home\FileInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

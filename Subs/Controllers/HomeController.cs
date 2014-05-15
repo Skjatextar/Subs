@@ -63,33 +63,54 @@ namespace Subs.Controllers
 
         /*-------------------------------------------------------------------*/
 
-        [HttpPost]
-        public ActionResult Upload(HttpPostedFileBase photo)
-        {
-            if (photo != null)
+        // Skoda upplysingar um skra - sott med ID
+        [HttpGet]
+        public ActionResult FileInfo(int? id)
+        {   
+            //// Saekja skra eftir ID
+            //var file = SubFile_m_repository.GetSubFilesById(id);
+            //// Setja umbedna skra inn i ViewModel
+            //    SubFileViewModel model = new SubFileViewModel
+            //    {
+            //        SubFileId = file.SubFileId,
+            //        sTitle = file.sTitle,
+            //        sFileUserName = file.sFileUserName,
+            //        sSubLanguage = file.sSubLanguage,
+            //        sSubType = file.sSubType,
+            //        sGenre = file.sGenre,
+            //        //dSubDate = file.dSubDate,
+            //        sPicture = file.sPicture,
+            //        sSubDescription = file.sSubDescription,
+            //        iUpVote = file.iUpVote
+            //    };
+            
+            //return View(model);
+            int realid = id.Value;
+            var repo = SubFile_m_repository;
+            var model = repo.GetSubFilesById(realid);
+            if (id.HasValue)
             {
-                string path = @"D:~\..\ProjectName\App_Data\Files";
-
-                if (photo.ContentLength > 10240)
-                {
-                    ModelState.AddModelError("photo", "The size of the file should not exceed 10 KB");
-                    return View();
-                }
-
-                var supportedTypes = new[] { "jpg", "jpeg", "png" };
-
-                var fileExt = System.IO.Path.GetExtension(photo.FileName).Substring(1);
-
-                if (!supportedTypes.Contains(fileExt))
-                {
-                    ModelState.AddModelError("photo", "Invalid type. Only the following types (jpg, jpeg, png) are supported.");
-                    return View();
-                }
-
-                photo.SaveAs(path + photo.FileName);
+                return View(model);
             }
+            return View("Index");
+        }
 
-            return RedirectToAction("Index");
+        // Saekja skra
+        [HttpGet]
+        public FileContentResult FileDownload(int? id)
+        {
+            // Tekur inn byteArray
+            byte[] fileData;
+            // Skraarnafn
+            string fileName;
+
+            // Saekja skra eftir ID
+            SubFile fileRecord = SubFile_m_repository.GetSubFilesByCategory().Find(id);
+
+            fileData = (byte[])fileRecord.sFilePath.ToArray();
+            fileName = fileRecord.sTitle;
+
+            return File(fileData, "text", fileName);
         }
         /*------------------------------------------------------------*/
 
