@@ -4,8 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 //using StudentApplication.Models;
+using Subs.Models.Entity;
 using Subs.Models.Interface;
 using Subs.Models.Repository;
+using Subs.Models.ViewModel;
 
 namespace Subs.Controllers
 {
@@ -36,6 +38,23 @@ namespace Subs.Controllers
 
         // Her fyrir nedan koma Viewin ----------------------------------
 
+        // Skoda umsogn - sott med ID
+        [HttpGet]
+        public ActionResult CommentInfo(int? id)
+        {
+            // Saekja skra eftir ID
+            var comment = Comment_m_repository.GetCommentById(id);
 
+            // Setja umbedna skra inn i ViewModel
+            CommentViewModel model = new CommentViewModel
+            {
+                CommentId = comment.CommentId,
+                //sCommenterUsername = comment.ApplicationUser.UserName,
+                sCommentText = comment.sCommentText,
+                dCommentDate = comment.dCommentDate,
+            };
+
+            return View(model);
+        }
     }
 }

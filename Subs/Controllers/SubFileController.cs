@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using Subs.Models;
 using Subs.Models.Entity;
 using Subs.Models.Interface;
@@ -13,9 +14,6 @@ namespace Subs.Controllers
 {
 	public class SubFileController : Controller
 	{
-		// Tennging i gagnagrunn - Tekin ut thegar repos. koma inn
-		//private SubDataContext db = new SubDataContext();
-
 		// Tengingar i gagnagrunn ---------------------------------------
 		// Thetta er tenging vid Interface klasann sem tengist
 		//   svo vid Repository sem tengist svo vid gagnagrunn 
@@ -38,18 +36,13 @@ namespace Subs.Controllers
 
 		// Her fyrir nedan koma Viewin ----------------------------------
 
-		//public Action uplaod()
-		//{
-		//    var _uplaod = new SubFileRepository();
-		//    return View(_uplaod);
-		//}
-
 		public ActionResult Upload()
 		{
 			var model = new SubFileViewModel();
 			return View(model);
 		}
 
+		// Senda inn skra - tekur inn ViewModel
 		[HttpPost]
 		public ActionResult Upload(SubFileViewModel model)
 		{
@@ -66,24 +59,49 @@ namespace Subs.Controllers
 			SubFile.sTitle = model.sFilePath.FileName;
 			SubFile.sFilePath = uploadFile;
 
+			// Setja skra i gagnagrunn
 			SubFile_m_repository.InsertSubFile(SubFile);
+			// Vista breytingar i gagnagrunni
 			SubFile_m_repository.SaveChanges();
 
-			return Content("File Uploaded.");
+			return Content("Skrá hefur verið hlaðið upp - Takk fyrir");
 		}
 
-		public ActionResult Info()
+		// Skoda upplysingar um skra - sott med ID
+		[HttpGet]
+		public ActionResult FileInfo(int? id)
 		{
-		    var model = new SubFileViewModel();
+			// Saekja skra eftir ID
+			var file = SubFile_m_repository.GetSubFilesById(id);
+
+			// Setja umbedna skra inn i ViewModel
+			SubFileViewModel model = new SubFileViewModel
+			{
+				SubFileId = file.SubFileId,
+				sTitle = file.sTitle,
+				sFileUserName = file.sFileUserName,
+				sSubLanguage = file.sSubLanguage,
+				sSubType = file.sSubType,
+				sGenre = file.sGenre,
+				//dSubDate = file.dSubDate,
+				sPicture = file.sPicture,
+				sSubDescription = file.sSubDescription,
+				iUpVote = file.iUpVote
+			};
 
 			return View(model);
 		}
 
+		// Saekja skra
+		[HttpGet]
 		public FileContentResult FileDownload(int? id)
 		{
+			// Tekur inn byteArray
 			byte[] fileData;
+			// Skraarnafn
 			string fileName;
 
+			// Saekja skra eftir ID
 			SubFile fileRecord = SubFile_m_repository.GetSubFilesByCategory().Find(id);
 
 			fileData = (byte[])fileRecord.sFilePath.ToArray();

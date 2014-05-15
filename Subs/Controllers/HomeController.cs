@@ -61,70 +61,7 @@ namespace Subs.Controllers
 
         }
 
-
-        [HttpGet]
-        public ActionResult FileInfo(int? id)
-        {
-            ViewBag.Message = "Skráarupplýsingar/Niðurhal";
-            int realid = id.Value;
-            var ListModel = SubFile_m_repository.GetSubFiles();
-            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
-
-            //var result = (from subfile in CategoryModel
-            //              where subfile.SubFileId == id
-            //              select subfile).SingleOrDefault();
-
-            //if (id.HasValue)
-            //{
-            //    return View(result);
-            //}
-            return View();
-        }
-    /*-------------------------------------------------------------------*/
-        public ActionResult FileUpload()
-        {
-            ViewBag.Message = "Senda inn skrá";
-            return View();
-        }   
-        //[HttpPost]
-        //public ActionResult FileUpload(MyViewModel model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(model);
-        //    }
-
-        //    FileUploadDBModel fileUploadModel = new FileUploadDBModel();
-
-        //    byte[] uploadFile = new byte[model.File.InputStream.Length];
-        //    model.File.InputStream.Read(uploadFile, 0, uploadFile.Length);
-
-        //    fileUploadModel.FileName = model.File.FileName;
-        //    fileUploadModel.File = uploadFile;
-
-        //    db.FileUploadDBModels.Add(fileUploadModel);
-        //    db.SaveChanges();
-
-        //    return Content("File Uploaded.");   skoða þetta á morgun með gumma !!!!!!!!!!!!!!!!!!!!!!
-        //}
-
-        //public ActionResult Download()
-        //{
-        //    return View(db.FileUploadDBModels.ToList());
-        //}
-
-        //public FileContentResult FileDownload(int? id)
-        //{
-        //    byte[] fileData;
-        //    string fileName;
-
-        //    FileUploadDBModel fileRecord = db.FileUploadDBModels.Find(id);
-
-        //    fileData = (byte[])fileRecord.File.ToArray();
-        //    fileName = fileRecord.FileName;
-
-        //    return File(fileData, "text", fileName);
-        //}
+        /*-------------------------------------------------------------------*/
 
         [HttpPost]
         public ActionResult Upload(HttpPostedFileBase photo)
@@ -155,14 +92,7 @@ namespace Subs.Controllers
             return RedirectToAction("Index");
         }
         /*------------------------------------------------------------*/
-        [HttpGet]
-        public ActionResult info()
-        {
-            var model = SubFile_m_repository.GetSubFiles();
-          
-            return View(model);
- 
-        }
+
         public ActionResult RequestSearch()
         {
             ViewBag.Message = "Beiðni-Leit";
@@ -195,14 +125,11 @@ namespace Subs.Controllers
             return View();
         }
         
-
         public ActionResult FileForm()
         {
             ViewBag.Message = "Skoða beiðni";
             return View();
         }
-
-
 
         public ActionResult RequestUpload()
         {
@@ -241,9 +168,6 @@ namespace Subs.Controllers
 
             return View();
         }
-
-   
-
 
         public ActionResult MostPopular() /* Sýnir vinsælast á indexsíðu */
         {
