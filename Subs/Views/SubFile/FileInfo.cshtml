@@ -1,4 +1,4 @@
-﻿@using System.Net.Configuration
+﻿@*@using System.Net.Configuration*@
 @model Subs.Models.ViewModel.SubFileViewModel
 
 @*@model  Subs.Models.Entity.SubFile*@
@@ -35,7 +35,7 @@
                     <label>upvotað : </label>   @Html.DisplayFor(modelItem => modelItem.iUpVote) <br />
                     <p>
                         @*@Html.ActionLink("Sækja skrá", "Download")*@
-                        @Html.ActionLink("Sækja skrá", "Filedownload", new { id = Model.SubFileId })
+                        @Html.ActionLink(item.sTitle, "FileInfo", "SubFile", new { id = item.SubFileId }, null)
                     </p>
                     <input type="submit" name="Like" />
                 </div>
