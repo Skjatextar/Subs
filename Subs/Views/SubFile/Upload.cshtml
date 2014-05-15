@@ -3,16 +3,17 @@
 @{
     ViewBag.Title = "Home Page";
 }
+<div class="file-info">
+    <div class="jumbotron">
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div>
+                @Html.LabelFor(x => x.sFilePath)
+                @Html.TextBoxFor(x => x.sFilePath, new { type = "file" })
+                @Html.ValidationMessageFor(x => x.sFilePath)
+            </div>
+            <button type="submit">Senda skrá</button>
+        }
+    </div>
 
-<div class="jumbotron">
-    @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        <div>
-            @Html.LabelFor(x => x.sFilePath)
-            @Html.TextBoxFor(x => x.sFilePath, new { type = "file" })
-            @Html.ValidationMessageFor(x => x.sFilePath)
-        </div>
-        <button type="submit">Senda skrá</button>
-    }
 </div>
-
