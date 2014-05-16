@@ -1,11 +1,8 @@
 ﻿@model IEnumerable<Subs.Models.Entity.SubFile>
 
-
 @{
     ViewBag.Title = "Home Page";
 }
-
-
 <div class="home-page">
 <!-- Hér búum við til leitarkassa á forsíðunni með "Search" takka sem nær í gögn úr gagnagrunninum.
     Ásamt því að vera með dropdown lista til að velja flokk.   -->
@@ -19,9 +16,7 @@
         <option value="hrollvekja">Hrollvekja</option>
         <option value="spenna">Spenna</option>
     </select>
-    
-        <input id="submit" type="submit" value="Leita">  <!-- Search takki -->
-    
+    <input id="submit" type="submit" value="Leita">  <!-- Search takki -->   
 </form>
 
 <!-- Tafla sem að birtir vinsælustu skrárnar. Notum Razor kóðun til að sækja þær úr gagnagrunninum. -->
