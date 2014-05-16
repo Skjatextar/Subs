@@ -51,12 +51,13 @@ namespace Subs.Controllers
                 ViewBag.Message = "Enginn skrá var valinn";
 				return View(model); 
 			}
-                     SubFile SubFile = new SubFile();
-            if(SubFile.sFilePath == null)
+            SubFile SubFile = new SubFile();
+            if (model.sFilePath == null)
             {   /* Þetta virkjar til að passa að enginn ýti á senda nema að vekja skrá fyrst*/
                 ViewBag.Message = "Enginn skrá var valinn";
-                return View(model); 
+                return View(model);
             }
+           
              byte[] uploadFile = new byte[model.sFilePath.InputStream.Length];
              model.sFilePath.InputStream.Read(uploadFile, 0, uploadFile.Length);
 
@@ -74,9 +75,9 @@ namespace Subs.Controllers
             SubFile_m_repository.SaveChanges();
 
             ViewBag.Message = "Skrá hefur verið hlaðið upp - Takk fyrir";
-                    
-             
-			return View("Upload");
+
+            return RedirectToAction("Index", "Home");
+            //return Redirect("Upload");
 		}
 		// Skoda upplysingar um skra - sott med ID
 		[HttpGet]
