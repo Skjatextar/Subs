@@ -17,17 +17,7 @@ namespace Subs.Tests.Controllers
         {
         }
 
-
-        [TestMethod]
-        public void ChangePasswordSuccess()
-        {
-        }
-        
-        [TestMethod]
-        public void ChangePasswordFail()
-        {
-        }
-                
+             
 
     }
 }
