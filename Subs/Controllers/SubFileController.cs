@@ -38,43 +38,56 @@ namespace Subs.Controllers
 
 		public ActionResult Upload()
 		{
-			var model = new SubFileViewModel();
-			return View(model);
+			var vModel = new SubFileViewModel();
+			return View(vModel);
 		}
 
 		// Senda inn skra - tekur inn ViewModel
 		[HttpPost]
-		public ActionResult Upload(SubFileViewModel model)
+		public ActionResult Upload(SubFileViewModel vModel)
 		{
-			if (!ModelState.IsValid)
-			{
-                ViewBag.Message = "Enginn skrá var valinn";
-				return View(model); 
-			}
-                     SubFile SubFile = new SubFile();
-            if (model.sFilePath == null)
-            {   /* Þetta virkjar til að passa að enginn ýti á senda nema að vekja skrá fyrst*/
-                ViewBag.Message = "Enginn skrá var valinn";
-                return View(model); 
-            }
-           
-             byte[] uploadFile = new byte[model.sFilePath.InputStream.Length];
-             model.sFilePath.InputStream.Read(uploadFile, 0, uploadFile.Length);
-
-             SubFile.sTitle = model.sFilePath.FileName;
-             SubFile.sFilePath = uploadFile;
-             SubFile.sSubType = model.sSubType;
-             SubFile.sSubType = model.sSubType;
-             SubFile.sSubDescription = model.sSubDescription;
-             SubFile.sGenre = model.sGenre;
-          
-            // Setja skra i gagnagrunn
+            SubFile SubFile = new SubFile();
+            int iMaxContentLength = 1024 * 1024 * 1; //1 MB
+            string[] AllowedFileExtensions = new string[] { ".srt", ".SRT" };
             
+			if (!ModelState.IsValid) {
+                ViewBag.Message = "Enginn skrá var valinn";
+				return View(vModel); 
+			}
+            /* passar að skráin sé ekki tóm*/
+            if (vModel.sFilePath == null)
+            {   
+                ViewBag.Message = "Enginn skrá var valinn";
+                return View(vModel); 
+            }
+            /* passar skráar endingu sé .srt eða .SRT*/
+            else if (!AllowedFileExtensions.Contains(vModel.sFilePath.FileName.Substring(vModel.sFilePath.FileName.LastIndexOf('.'))))
+            {
+                ViewBag.Message = "Skráin þarf að vera af gerðinni: " + string.Join(", ", AllowedFileExtensions);
+                return View(vModel); ;
+            }
+            /* passar að skráin sé ekki of stór ekki viss með hversu stór hún þarf að vera setti 1mb*/
+            else if (vModel.sFilePath.ContentLength > iMaxContentLength)
+            {
+                ViewBag.Message = "Skráin má ekki vera stærri en  : " + (iMaxContentLength / 1024).ToString() + "MB";
+                return View(vModel); 
+            }
+            /* sendir gögn í grunn*/
+            byte[] bUploadFile = new byte[vModel.sFilePath.InputStream.Length];
+            vModel.sFilePath.InputStream.Read(bUploadFile, 0, bUploadFile.Length);
+
+            SubFile.sTitle = vModel.sFilePath.FileName;
+            SubFile.sFilePath = bUploadFile;
+             SubFile.sSubType = vModel.sSubType;
+             SubFile.sSubLanguage = vModel.sSubLanguage;
+             SubFile.sSubDescription = vModel.sSubDescription;
+             SubFile.sGenre = vModel.sGenre;
+             SubFile.sFileUserName = vModel.sFileUserName;
+          
+            // Setja skrár i gagnagrunn
             SubFile_m_repository.InsertSubFile(SubFile);
              // Vista breytingar i gagnagrunni
             SubFile_m_repository.SaveChanges();
-
-					//return RedirectToAction("SubFileInfo", new { id = SubFile.SubFileId });
 
             ViewBag.Message = "Skrá hefur verið hlaðið upp - Takk fyrir";
                     
@@ -83,10 +96,10 @@ namespace Subs.Controllers
 		}
 		// Skoda upplysingar um skra - sott med ID
 		[HttpGet]
-		public ActionResult FileInfo(int? id)
+		public ActionResult FileInfo(int? iId)
 		{
 			// Saekja skra eftir ID
-			var file = SubFile_m_repository.GetSubFilesById(id);
+			var file = SubFile_m_repository.GetSubFilesById(iId);
 			// Setja umbedna skra inn i ViewModel
 			//if (id.HasValue)
 			//{
@@ -103,27 +116,25 @@ namespace Subs.Controllers
 					sSubDescription = file.sSubDescription,
 					iUpVote = file.iUpVote
 				};
-				return View(model);
-			//}
-			//return View("Index"); // skoða þetta betur hvað ef 
+                return View(model);
 		}
 
 		// Saekja skra
 		[HttpGet]
-		public FileContentResult FileDownload(int? id)
+		public FileContentResult FileDownload(int? iId)
 		{
 			// Tekur inn byteArray
-			byte[] fileData;
+			byte[] bFileData;
 			// Skraarnafn
-			string fileName;
+			string sFileName;
 
 			// Saekja skra eftir ID
-			SubFile fileRecord = SubFile_m_repository.GetSubFilesByCategory().Find(id);
+			SubFile fileRecord = SubFile_m_repository.GetSubFilesByCategory().Find(iId);
 
-			fileData = (byte[])fileRecord.sFilePath.ToArray();
-			fileName = fileRecord.sTitle;
+			bFileData = (byte[])fileRecord.sFilePath.ToArray();
+			sFileName = fileRecord.sTitle;
 
-			return File(fileData, "text", fileName);
+			return File(bFileData, "text", sFileName);
 		}
 	}
 }

@@ -4,15 +4,12 @@
     ViewBag.Title = "Home Page";
 }
 
-@*@model Subs.Models.Entity.Request*@
-
 @{
         ViewBag.Title = "Request Submit";
     }
 
-    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "userForm", enctype = "multipart/form-data" }))
+    @using (Html.BeginForm(null, null, FormMethod.Post,  new { enctype = "multipart/form-data", @class = "upload" }))
     {
-        @Html.AntiForgeryToken()
 
 
         <div class="form-horizontal">
@@ -42,16 +39,16 @@
         <fieldset>
             <legend><span id="rs">Ný beiðni</span></legend>
             <label>Notandi: </label>
-            @if (User.Identity.IsAuthenticated)
+            if (User.Identity.IsAuthenticated)
             {
-                @Html.TextBoxFor(model => model.sRequesterUsername, new { @Value = @User.Identity.Name })
+                @Html.TextBoxFor(model => model.sRequesterUsername, new { @Value = @User.Identity.Name, @id = "mytext" })
             }
-            @if (!User.Identity.IsAuthenticated)
+            if (!User.Identity.IsAuthenticated)
             {
-                @Html.TextBoxFor(model => model.sRequesterUsername, new { @class = "my" })
+                @Html.TextBoxFor(model => model.sRequesterUsername, new { @id = "mytext" })
             }<br />
             <label>Nafn á mynd: </label>
-            @Html.TextBoxFor(model => model.sTitle, new { @class = "my" })<br />
+            @Html.TextBoxFor(model => model.sTitle, new { @id = "mytext" })<br />
             <label>Þýðing frá: </label>
             @Html.DropDownList("sLanguageTo", new List<SelectListItem>
                {
@@ -77,21 +74,13 @@
             <label> Nánar</label> <br />
             @Html.TextAreaFor(model => model.sRequestDescription, new { @id = "mytext" })
 
-            @*@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
-                {
-                    <div>
-                        Senda inn skrá til þýðingar
-                        @Html.TextBoxFor(x => x.sTitle, new { type = "file" })
-                        @Html.ValidationMessageFor(x => x.sTitle)
-                    </div>
-                    <button type="submit">Senda skrá</button>
-                }*@
+           
             <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
             <div>
-                <input class="m" type="button" @*name="cancel"*@ value="Hætta við">
+                @*<input class="m" type="button"  value="Hætta við">*@
                 <input class="my" type="submit" @*name="RequestSubmit"*@ value="Senda">
                 @ViewBag.Message
             </div>
-        </fieldset>
+       
     }
-</div>
+

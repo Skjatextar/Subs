@@ -49,21 +49,11 @@ namespace Subs.Controllers
 
         public ActionResult Index() /*Search  leitar í DB */
         {            
-             var ListModel = SubFile_m_repository.GetSubFiles();
-             var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
+             var vListModel = SubFile_m_repository.GetSubFiles();
+             var vCategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
-
-             return View(ListModel);
+             return View(vListModel);
         }
-        public ActionResult FileForm()
-        {
-            ViewBag.Message = "Skoða beiðni";
-            return View();
-        }
-
-
-
-
 
         public ActionResult About()
         {
@@ -78,17 +68,11 @@ namespace Subs.Controllers
 
             return View();
         }
+        public ActionResult IndexSearch()  
+        {/*Náðist ekki að útfærast*/
+            ViewBag.Message = "Leit";
 
-
-        public ActionResult Newest() /* Sýnir nýjast á indexsíðu */
-        {  
-            var ListModel = SubFile_m_repository.GetSubFiles();
-            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
-
-            //var result = from s in CategoryModel
-              //           select s.dSubDate;
-
-            return View(CategoryModel);
+            return View();
         }
 
     }
