@@ -13,10 +13,7 @@
                         <label>Tegund : </label>   @Html.DisplayFor(modelItem => modelItem.sSubLanguage) <br />
                         <label>Tungumál : </label>   @Html.DisplayFor(modelItem => modelItem.sSubType) <br />
                         <label>Flokkur : </label>   @Html.DisplayFor(modelItem => modelItem.sGenre) <br />
-                        <label>Dagsetning : </label>   @Html.DisplayFor(modelItem => modelItem.dSubDate) <br />
-                        <label>Upplýsingar : </label>   @Html.DisplayFor(modelItem => modelItem.sPicture) <br />
                         <label>Lýsing : </label>   @Html.DisplayFor(modelItem => modelItem.sSubDescription) <br />
-                        <label>upvotað : </label>   @Html.DisplayFor(modelItem => modelItem.iUpVote) <br />
                     <p id="download">
                         @Html.ActionLink("Sækja skrá", "Filedownload", new { id = Model.SubFileId })
                     </p>
