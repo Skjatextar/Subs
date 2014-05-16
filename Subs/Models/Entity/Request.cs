@@ -11,9 +11,9 @@ namespace Subs.Models.Entity
         // Eigindi fyrir beidnir ---------------------------------------------------------
         [Key]       // Frumlykill
         public int RequestId { get; set; }
-        [Required]  // Ekki nullable
+        [Required(ErrorMessage = " ÞVí miður verður að fylla út nafn")]  // Ekki nullable
         public string sRequesterUsername { get; set; }
-        [Required]  // Ekki nullable
+        [Required(ErrorMessage = "ÞVí miður verður að gefa upp nafn á mynd eða þætti sem á að þýða")]  // Ekki nullable
         public string sTitle { get; set; }
         // Tungumal sem a ad thyda i
         public string sLanguageTo { get; set; }

@@ -12,7 +12,7 @@ namespace Subs.Models.Entity
         // Eigindi fyrir textaskrar ------------------------------------------------------
         [Key]       // Frumlykill
         public int SubFileId { get; set; }
-        [Required]  // Ekki nullable
+        [Required(ErrorMessage = "Þú verður að velja skrá til að senda inn")]  // Ekki nullable
         public string sTitle { get; set; }
         // Notandi sem sendir inn skra
         public string sFileUserName { get; set; }

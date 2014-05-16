@@ -4,37 +4,9 @@
     ViewBag.Title = "Home Page";
 }
 
-@*<div class="jumbotron">
-        @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            <div>
-                @Html.LabelFor(x => x.sTitle)
-                @Html.TextBoxFor(x => x.sTitle, new { type = "file" })
-                @Html.ValidationMessageFor(x => x.sTitle)
-            </div>
-            <button type="submit">Senda skrá</button>
-        }
-    </div>*@
-
-@*<div class="jumbotron">
-        @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            <div>
-                @Html.LabelFor(x => x.sFilePath)
-                @Html.TextBoxFor(x => x.sFilePath, new { type = "file" })
-                @Html.ValidationMessageFor(x => x.sFilePath)
-            </div>
-            <button type="submit">Senda skrá</button>
-        }
-    </div>*@
-
-
-
-
-
 @*@model Subs.Models.Entity.Request*@
 
-@*@{
+@{
         ViewBag.Title = "Request Submit";
     }
 
@@ -65,7 +37,7 @@
                 <input class="" type="submit" name="RequestSubmit" value="Senda">
             </div>
         </div>
-    }*@
+    }
 
 
 
@@ -116,15 +88,6 @@
             <label> Nánar</label> <br />
             @Html.TextAreaFor(model => model.sRequestDescription, new { @id = "mytext" })
 
-            @*@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
-                {
-                    <div>
-                        Senda inn skrá til þýðingar
-                        @Html.TextBoxFor(x => x.sTitle, new { type = "file" })
-                        @Html.ValidationMessageFor(x => x.sTitle)
-                    </div>
-                    <button type="submit">Senda skrá</button>
-                }*@
             <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
             <div>
                 <input class="m" type="button" @*name="cancel"*@ value="Hætta við">
@@ -133,4 +96,4 @@
             </div>
         </fieldset>
     }
-</div>
+</div>*@
