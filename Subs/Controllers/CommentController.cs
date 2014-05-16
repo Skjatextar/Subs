@@ -39,23 +39,18 @@ namespace Subs.Controllers
 
         // Skoda umsogn - sott med ID
         [HttpGet]
-        public ActionResult CommentInfo(int? id)
+        public ActionResult CommentInfo(int? iId)
         {
             // Saekja skra eftir ID
-            var comment = Comment_m_repository.GetCommentById(id);
+            var vComment = Comment_m_repository.GetCommentById(iId);
            
             // Setja umbedna skra inn i ViewModel
             CommentViewModel model = new CommentViewModel
             {
-                CommentId = comment.CommentId,
-                //sCommenterUsername = comment.ApplicationUser.UserName,
-                sCommentText = comment.sCommentText,
-                //dCommentDate = comment.dCommentDate,
+                CommentId = vComment.CommentId,
+                sCommentText = vComment.sCommentText,
             };
-
             return View(model);
-        }
-
-        
+        } 
     }
 }
