@@ -24,3 +24,4 @@ namespace Subs.Models.Interface
         void SaveChanges();
     }
 }
+ 

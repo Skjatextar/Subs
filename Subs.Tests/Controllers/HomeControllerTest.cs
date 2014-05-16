@@ -7,6 +7,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Subs;
 using Subs.Controllers;
 using Subs.App_Data.DataAccessLayer;
+using Subs.Models.Repository;
+using Subs.Models.Interface;
+using Subs.Models.Entity;
+
 
 namespace Subs.Tests.Controllers
 {
@@ -53,12 +57,21 @@ namespace Subs.Tests.Controllers
         //}
 
         [TestMethod]
-        public void ViewMostPopular()
+        public void TestIndexWithMoreThan10Translations()
         {
-            //Athugum hvort það birtist í raun 12 vinsælustu textaskrárnar.
+            //Athugum hvort það birtist í raun 10 vinsælustu textaskrárnar.
             // Arrange
-            HomeController controller = new HomeController();
-
+            List<SubFile> subfiles = new List<SubFile>();
+            for (int i = 1; i <= 15; i++) 
+            {
+                subfiles.Add(new SubFile
+                {
+                    SubFileId = i,
+                    sTitle = "Subfile " + i.ToString(),
+                    dSubDate = DateTime.Now.AddDays(i),
+                    sFileUserName = "EinnFlottur"
+                });
+            }
             // Act
             ViewResult result = controller.About() as ViewResult;
 
