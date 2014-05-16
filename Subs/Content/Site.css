@@ -90,25 +90,23 @@ input[type="checkbox"].input-validation-error {
 /* #endregion */
 
 /*#region Info/Submit/Comment Box */
-.upload-file, .upload-request, .upload,
+.upload,.request,
 .file-info, .request-info {
     width: 600px;
     margin-top: 30px; 
 }
 
-fieldset, .upload {
+.upload, .request {
     width: 600px;
-    border-style: solid;
-    border-width: 6px;
-    border-radius: 20px;
-    border-color: #333333;
+    border: solid 6px #333333;
+    border-radius: 20px; 
     background-color: #efefef;
     margin-left: auto;
     margin-right: auto;
 }
 
 legend {
-    margin-left: 20px;
+    margin-left: 30%;
     font-size: 28px;
     font-weight: bold;
     color: #9B1C26;
@@ -128,7 +126,15 @@ legend {
     padding: 10px;
     margin-left: 140px;
 }
-
+.request > label {
+    margin-left:20%;
+}
+.request > select:first-of-type {
+    margin-left:38px;
+}
+.request > select:nth-last-of-type(2) {
+    margin-left:51px;
+}
 #search-menu {
     margin-left: 30px;
 }
@@ -139,15 +145,11 @@ legend {
 }
 
 #mytext {
-    background-color: #D3D3D3;
-    border:solid 1px #BFBDBD;
-    color: #1E1E1E;
     height:auto;
     max-width: 300px;
     min-width: 300px;
     margin-left:125px;
     margin-bottom: 20px;
-    box-shadow: 2px 2px 0 #828181 inset;
 }
 
 #download > a {
