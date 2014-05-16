@@ -50,31 +50,38 @@ namespace Subs.Controllers
 			{
 				return View(model);
 			}
-            else
-            {
-                SubFile SubFile = new SubFile();
+			else
+			{
+				if (model.sFilePath != null)
+				{
+					SubFile SubFile = new SubFile();
 
-                byte[] uploadFile = new byte[model.sFilePath.InputStream.Length];
-                model.sFilePath.InputStream.Read(uploadFile, 0, uploadFile.Length);
+					byte[] uploadFile = new byte[model.sFilePath.InputStream.Length];
+					model.sFilePath.InputStream.Read(uploadFile, 0, uploadFile.Length);
 
-                SubFile.sTitle = model.sFilePath.FileName;
-                SubFile.sFilePath = uploadFile;
-                /*prufa */
-                SubFile.sSubType = model.sSubType;
-                SubFile.sSubType = model.sSubType;
-                SubFile.sSubDescription = model.sSubDescription;
-                /*------------------------------*/
-                // Setja skra i gagnagrunn
-                SubFile_m_repository.InsertSubFile(SubFile);
-                // Vista breytingar i gagnagrunni
-                SubFile_m_repository.SaveChanges();
+					SubFile.sTitle = model.sFilePath.FileName;
+					SubFile.sFilePath = uploadFile;
+					/*prufa */
+					SubFile.sSubType = model.sSubType;
+					SubFile.sSubType = model.sSubType;
+					SubFile.sSubDescription = model.sSubDescription;
+					/*------------------------------*/
+					// Setja skra i gagnagrunn
+					SubFile_m_repository.InsertSubFile(SubFile);
+					// Vista breytingar i gagnagrunni
+					SubFile_m_repository.SaveChanges();
 
-                ViewBag.Message = "Skrá hefur verið hlaðið upp - Takk fyrir";
-                //return Content("Skrá hefur verið hlaðið upp - Takk fyrir");
-                return View("Upload");
-            }
+					//return RedirectToAction("SubFileInfo", new { id = SubFile.SubFileId });
+
+					ViewBag.Message = "Skrá hefur verið hlaðið upp - Takk fyrir";
+					//return Content("Skrá hefur verið hlaðið upp - Takk fyrir");
+					return View("Upload");
+				}
+				return View();
+			}
 			
 		}
+
 		// Skoda upplysingar um skra - sott med ID
 		[HttpGet]
 		public ActionResult FileInfo(int? id)
