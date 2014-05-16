@@ -51,11 +51,11 @@ namespace Subs.Controllers
                 ViewBag.Message = "Enginn skrá var valinn";
 				return View(model); 
 			}
-            SubFile SubFile = new SubFile();
+                     SubFile SubFile = new SubFile();
             if (model.sFilePath == null)
             {   /* Þetta virkjar til að passa að enginn ýti á senda nema að vekja skrá fyrst*/
                 ViewBag.Message = "Enginn skrá var valinn";
-                return View(model);
+                return View(model); 
             }
            
              byte[] uploadFile = new byte[model.sFilePath.InputStream.Length];
@@ -74,8 +74,10 @@ namespace Subs.Controllers
              // Vista breytingar i gagnagrunni
             SubFile_m_repository.SaveChanges();
 
-            ViewBag.Message = "Skrá hefur verið hlaðið upp - Takk fyrir";
+					//return RedirectToAction("SubFileInfo", new { id = SubFile.SubFileId });
 
+            ViewBag.Message = "Skrá hefur verið hlaðið upp - Takk fyrir";
+                    
             return RedirectToAction("Index", "Home");
             //return Redirect("Upload");
 		}

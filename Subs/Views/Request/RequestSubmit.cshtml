@@ -8,7 +8,7 @@
 
 @{
         ViewBag.Title = "Request Submit";
-}
+    }
 
     @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "userForm", enctype = "multipart/form-data" }))
     {
@@ -16,26 +16,16 @@
 
 
         <div class="form-horizontal">
-            <h4>Phone</h4>
-            <hr />
             @Html.ValidationSummary(true)
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.sTitle, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.sTitle)
-                    @Html.ValidationMessageFor(model => model.sTitle)
-                </div>
-            </div>
-
-            <div class="form-group">
+            @*<div class="form-group">
                 @Html.LabelFor(model => model.sRequestDescription, new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.sRequestDescription)
                     @Html.ValidationMessageFor(model => model.sRequestDescription)
                 </div>
                 <input class="" type="submit" name="RequestSubmit" value="Senda">
-            </div>
+            </div>*@
         </div>
     }
 
@@ -46,37 +36,62 @@
 
 <!-- Svæði þar sem notandi skráir inn Nafn, tungumál og slóða á mynd. -->
 <!-- Byrjum á því að gera brauðslóð (breadcrumb) til að upplýsa notandann hvar hann er staddur á síðunni. -->
-@*<div id="upload">
-    @using (Html.BeginForm("RequestSubmit", "Request"))
+<div id="upload">
+    @using (Html.BeginForm(@*"RequestSubmit", "Request"*@))
     {
         <fieldset>
-            <legend><span id="rs">Nýbeiðni</span></legend>
-            <label>Nafn á mynd</label>
+            <legend><span id="rs">Ný beiðni</span></legend>
+            <label>Notandi: </label>
+            @if (User.Identity.IsAuthenticated)
+            {
+                @Html.TextBoxFor(model => model.sRequesterUsername, new { @Value = @User.Identity.Name })
+            }
+            @if (!User.Identity.IsAuthenticated)
+            {
+                @Html.TextBoxFor(model => model.sRequesterUsername, new { @class = "my" })
+            }<br />
+            <label>Nafn á mynd: </label>
             @Html.TextBoxFor(model => model.sTitle, new { @class = "my" })<br />
-            <label>Notandi</label>
-            @Html.TextBoxFor(model => model.sRequesterUsername, new { @class = "my" })<br />
-            <div id="radiob">
-                <label>Tungumál: </label> <br />
-                <label>Frá :</label>
-                <label>Ensku :     </label> @Html.RadioButton("sSubType", "Ensku")
-                <label>Íslensku :</label> @Html.RadioButton("sSubType", "Íslensku")<br />
-                <label>Til :   </label>
-                <label>Ensku :     </label> @Html.RadioButton("sSubType", "Ensku")
-                <label>Íslensku :</label> @Html.RadioButton("sSubType", "Íslensku")<br />
-                <!-- Hér eru radiotakkar þar sem valið er annaðhvort mynd eða þáttur. -->
-                <label> Gerð :  </label>
-                <label>Bíómynd :</label> @Html.RadioButton("sSubType", "Bíómynd")
-                <label>Þáttur :</label> @Html.RadioButton("sSubType", "Þáttur")
-            </div>
+            <label>Þýðing frá: </label>
+            @Html.DropDownList("sLanguageTo", new List<SelectListItem>
+               {
+                    new SelectListItem{Text = "Enska",Value = "Enska"},
+                    new SelectListItem{Text = "Íslenska", Value = "Íslenska"}
+
+               }, "Þýðing frá")<br />
+            <label>Þýðing til: </label>
+            @Html.DropDownList("sLanguageFrom", new List<SelectListItem>
+               {
+                    new SelectListItem{Text = "Enska",Value = "Enska"},
+                    new SelectListItem{Text = "Íslenska", Value = "Íslenska"}
+
+               }, "Þýðing til")<br />
+            <label>Kvikmynd/þáttur: </label>
+            @Html.DropDownList("sType", new List<SelectListItem>
+               {
+                    new SelectListItem{Text = "Kvikmynd",Value = "Kvikmynd"},
+                    new SelectListItem{Text = "Þáttur", Value = "Þáttur"}
+
+               }, "Gerð")<br />
             <!-- Textarea fyrir nánari lýsingu á skránni. -->
             <label> Nánar</label> <br />
             @Html.TextAreaFor(model => model.sRequestDescription, new { @id = "mytext" })
 
+            @*@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div>
+                        Senda inn skrá til þýðingar
+                        @Html.TextBoxFor(x => x.sTitle, new { type = "file" })
+                        @Html.ValidationMessageFor(x => x.sTitle)
+                    </div>
+                    <button type="submit">Senda skrá</button>
+                }*@
             <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
             <div>
-                <input class="m" type="button" name="cancel"value="Hætta við">
-                <input class="my" type="submit" name="RequestSubmit"value="Senda">
+                <input class="m" type="button" @*name="cancel"*@ value="Hætta við">
+                <input class="my" type="submit" @*name="RequestSubmit"*@ value="Senda">
+                @ViewBag.Message
             </div>
         </fieldset>
     }
-</div>*@
+</div>
