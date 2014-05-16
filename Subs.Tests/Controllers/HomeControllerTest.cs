@@ -17,10 +17,10 @@ namespace Subs.Tests.Controllers
     [TestClass]
     public class HomeControllerTest
     {
-        /*[TestMethod]
+        [TestMethod]
         public void Index()
         {  
-         * // Arrange
+           // Arrange
             HomeController controller = new HomeController();
 
             // Act
@@ -28,9 +28,9 @@ namespace Subs.Tests.Controllers
 
             // Assert
             Assert.IsNotNull(result);
-        }*/
+        }
 
-        /*[TestMethod]
+        [TestMethod]
         public void About()
         {
             // Arrange
@@ -41,20 +41,20 @@ namespace Subs.Tests.Controllers
 
             // Assert
             Assert.AreEqual("Your application description page.", result.ViewBag.Message);
-        }*/
+        }
 
-        //[TestMethod]
-        //public void Contact()
-        //{
-        //    // Arrange
-        //    HomeController controller = new HomeController();
+        [TestMethod]
+        public void Contact()
+        {
+            // Arrange
+            HomeController controller = new HomeController();
 
-        //    // Act
-        //    ViewResult result = controller.Contact() as ViewResult;
+            // Act
+            ViewResult result = controller.Contact() as ViewResult;
 
-        //    // Assert
-        //    Assert.IsNotNull(result);
-        //}
+            // Assert
+            Assert.IsNotNull(result);
+        }
 
         [TestMethod]
         public void TestIfFilesAreInAlphabeticalOrder()
@@ -85,24 +85,25 @@ namespace Subs.Tests.Controllers
             List<SubFile> model = (viewResult.Model as IEnumerable<SubFile>).ToList();
 
             var expectedList = model.OrderBy(x => x.sTitle); 
+            
             Assert.IsTrue(expectedList.SequenceEqual(model));
             
 
         }
 
-        /*[TestMethod]
-        public void GoToFileInfo()
+        [TestMethod]
+        public void GoToIndexView()
         {
-            //Athugum hvort við getum opnað link á skránna
+            //Athugum hvort við getum opnað indexid, thad renderist.
             // Arrange
-            HomeController controller = new HomeController();
+            var controller = new HomeController(null);
 
             // Act
-            ViewResult result = controller.About() as ViewResult;
+            var result = controller.Index();
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
-        }*/
+            
+        }
 
     
     }
