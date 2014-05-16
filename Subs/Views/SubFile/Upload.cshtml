@@ -6,46 +6,50 @@
 <!-- Svæði þar sem notandi skráir inn Nafn, tungumál og slóða á mynd. -->
 @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "upload" }))
 {
-    <legend><span id="rs">Senda inn skrá</span></legend>
-    <div id="dropdown">
-        <label>þýðing :</label> <label> Gerð :</label> <label> Tungumál :</label> <br />
-        @Html.DropDownList("sSubType", new List<SelectListItem>
+    <form>
+        <fieldset>
+            <legend>Senda inn skrá</legend>
+            <div id="dropdown">
+                <label>þýðing :</label> <label> Gerð :</label> <label> Tungumál :</label> <br />
+                @Html.DropDownList("sSubType", new List<SelectListItem>
                     {
                         new SelectListItem{Text = "Enska",Value = "Enska"},
                         new SelectListItem{Text = "Íslenska", Value = "Íslenska"}
 
                     }, "Þýðing")
-        @Html.ValidationMessageFor(model => model.sSubType)
+                @Html.ValidationMessageFor(model => model.sSubType)
 
 
-        @Html.DropDownList("sGenre", new List<SelectListItem>
+                @Html.DropDownList("sGenre", new List<SelectListItem>
                     {
                         new SelectListItem{Text = "Bíómynd",Value = "Bíómynd"},
                         new SelectListItem{Text = "Þáttur", Value = "Þáttur"}
 
                     }, "Gerð")
-        @Html.ValidationMessageFor(model => model.sGenre)
-        @Html.DropDownList("sSubType", new List<SelectListItem>
+                @Html.ValidationMessageFor(model => model.sGenre)
+                @Html.DropDownList("sSubType", new List<SelectListItem>
                     {
                         new SelectListItem{Text = "Enska",Value = "Enska"},
                         new SelectListItem{Text = "Íslenska", Value = "Íslenska"}
 
                     }, "Þýðing")
-        @Html.ValidationMessageFor(model => model.sSubType)<br />
-    </div>
-    <div>
-        <!-- Textarea fyrir nánari lýsingu á skránni. -->
-        <label> Nánar </label> <br />
-        @Html.TextAreaFor(model => model.sSubDescription, new { @id = "mytext" })
-        <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
-        @Html.LabelFor(x => x.sFilePath)
-        @Html.TextBoxFor(x => x.sFilePath, new { type = "file" })
-        @Html.ValidationMessageFor(x => x.sFilePath)
-    </div>
-    <input class="m" type="button" name="cancel" value="Hætta við">
-    <input class="my" type="submit" name="submit" value="Senda">
-    //Keyrist thegar buid er ad submitta
-    @ViewBag.Message
+                @Html.ValidationMessageFor(model => model.sSubType)<br />
+            </div>
+            <div>
+                <!-- Textarea fyrir nánari lýsingu á skránni. -->
+                <label> Nánar </label> <br />
+                @Html.TextAreaFor(model => model.sSubDescription, new { @id = "mytext" })
+                <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
+                @Html.LabelFor(x => x.sFilePath)
+                @Html.TextBoxFor(x => x.sFilePath, new { type = "file" })
+                @Html.ValidationMessageFor(x => x.sFilePath)
+            </div>
+            <input class="m" type="button" name="cancel" value="Hætta við">
+            <input class="my" type="submit" name="submit" value="Senda">
+            @*Keyrist thegar buid er ad submitta*@
+            @ViewBag.Message
+        </fieldset>
+    </form>
 }
 
 
