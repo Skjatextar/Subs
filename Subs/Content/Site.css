@@ -152,6 +152,17 @@ legend {
     margin-left: 150px;
     margin-bottom: 20px;
 }
+
+.mytext {
+
+    border:solid 1px #BFBDBD;
+
+    height:auto;
+    max-width: 300px;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
  /*#endregion */
 
 /*#region Index */

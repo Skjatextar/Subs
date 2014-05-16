@@ -40,19 +40,17 @@
                     }, "Flokkur")
             @Html.ValidationMessageFor(model => model.sSubType)<br />
                 </div>
-                <div>
-                <!-- Textarea fyrir nánari lýsingu á skránni. -->
-            <label> Nánar </label> <br />
-                 @Html.TextAreaFor(model => model.sSubDescription, new { @id = "textbox" }) <br />
-
-                  <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
-                  @Html.LabelFor(x => x.sFilePath) 
-                  @Html.TextBoxFor(x => x.sFilePath, new { type = "file" })
-                  @Html.ValidationMessageFor(x => x.sFilePath)
-
-                </div>
-                         <input class="my" type="submit" name="submit" value="Senda">
-                //Keyrist thegar buid er ad submitta
+    <div id="dropdown">
+        <!-- Textarea fyrir nánari lýsingu á skránni. -->
+        <label> Nánar </label> <br />
+        @Html.TextAreaFor(model => model.sSubDescription, new { @class = "mytext" }) <br />
+        <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
+        @Html.LabelFor(x => x.sFilePath)
+        @Html.TextBoxFor(x => x.sFilePath, new { type = "file" })
+        @Html.ValidationMessageFor(x => x.sFilePath)
+    </div>
+   <input class="btn-default" type="submit" name="submit" value="Senda">
+    //Keyrist thegar buid er ad submitta
                 @ViewBag.Message
                 }
 
