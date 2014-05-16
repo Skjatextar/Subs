@@ -4,8 +4,6 @@
     ViewBag.Title = "Home Page";
 }
 
-@*@model Subs.Models.Entity.Request*@
-
 @{
         ViewBag.Title = "Request Submit";
     }
@@ -17,27 +15,13 @@
 
         <div class="form-horizontal">
             @Html.ValidationSummary(true)
-
-            @*<div class="form-group">
-                @Html.LabelFor(model => model.sRequestDescription, new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.sRequestDescription)
-                    @Html.ValidationMessageFor(model => model.sRequestDescription)
-                </div>
-                <input class="" type="submit" name="RequestSubmit" value="Senda">
-            </div>*@
         </div>
     }
-
-
-
-
-
 
 <!-- Svæði þar sem notandi skráir inn Nafn, tungumál og slóða á mynd. -->
 <!-- Byrjum á því að gera brauðslóð (breadcrumb) til að upplýsa notandann hvar hann er staddur á síðunni. -->
 <div id="upload">
-    @using (Html.BeginForm(@*"RequestSubmit", "Request"*@))
+    @using (Html.BeginForm())
     {
         <fieldset>
             <legend><span id="rs">Ný beiðni</span></legend>
