@@ -47,18 +47,19 @@ namespace Subs.Controllers
 
 			return View(vCategoryModel);
 		}
+
 		[HttpGet]
-		public ActionResult RequestInfo(int? iId)
-		{
+		public ActionResult RequestInfo(int? id)
+		{   //ekki hægt að fara eftir kóðareglum með int? id sem er strongly typed
 			ViewBag.Message = "Skráarupplýsingar/Niðurhal";
-			int iRealid = iId.Value;
-			var vListModel = Request_m_repository.GetRequests();
+
 			var vCategoryModel = Request_m_repository.GetRequestsByCategory();
 
 			var vResult = (from Request in vCategoryModel
-						  where Request.RequestId == iId
+						  where Request.RequestId == id
+						  orderby Request.sTitle ascending 
 						  select Request).SingleOrDefault();
-			if (iId.HasValue)
+			if (id.HasValue)
 			{
 				return View(vResult);
 			}
@@ -84,7 +85,7 @@ namespace Subs.Controllers
 					
 					return RedirectToAction("RequestInfo", new { id = request.RequestId });
 				}
-		    }
+			}
 
 			return View();
 		}
