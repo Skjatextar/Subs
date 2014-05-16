@@ -49,10 +49,13 @@ namespace Subs.Controllers
 
         public ActionResult Index() /*Search  leitar í DB */
         {            
-             var vListModel = SubFile_m_repository.GetSubFiles();
-             var vCategoryModel = SubFile_m_repository.GetSubFilesByCategory();
+            var vListModel = SubFile_m_repository.GetSubFiles();
 
-             return View(vListModel);
+            var result = from s in vListModel
+                orderby s.sTitle ascending
+                select s;
+
+            return View(result);
         }
 
         public ActionResult About()

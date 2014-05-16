@@ -14,11 +14,10 @@
 
     </form>
     <table class="table-responsive table table-bordered table-hover table-right">
-        <caption><h3>Nýjast</h3></caption>
-        <thead>
+  
+        @*<thead>
             <tr>
                 <th>Titill</th>
-                <th>Undirtektir</th>
             </tr>
         </thead>
         <tbody>
@@ -29,14 +28,14 @@
                     <td> @item.iUpVote </td>
                 </tr>
             }
-        </tbody>
+        </tbody>*@
     </table>
     <table class="table-responsive table table-bordered table-hover table-left">
-        <caption><h3>Vinsælast</h3></caption>
+
         <thead>
             <tr>
                 <th>Titill</th>
-                <th>Undirtektir</th>
+                <th>Tegund</th>
             </tr>
         </thead>
         <tbody>
@@ -44,7 +43,7 @@
             {
                 <tr>
                     <td> @Html.ActionLink(item.sTitle, "RequestInfo", new { id = item.RequestId }) </td>
-                    <td> @item.iUpVote </td>
+                    <td> @item.sSubType </td>
                 </tr>
             }
         </tbody>
