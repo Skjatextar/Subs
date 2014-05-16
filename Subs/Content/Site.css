@@ -90,7 +90,7 @@ input[type="checkbox"].input-validation-error {
 /* #endregion */
 
 /*#region Info/Submit/Comment Box */
-.upload,.request,
+.upload, .request,
 .file-info, .request-info {
     width: 600px;
     margin-top: 30px; 
@@ -101,8 +101,6 @@ fieldset {
     border: solid 6px #333333;
     border-radius: 20px; 
     background-color: #efefef;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 legend {
