@@ -3,12 +3,14 @@
 @{
     ViewBag.Title = "Upload";
 }
-<!-- Svæði þar sem notandi skráir inn Nafn, tungumál og slóða á mynd. -->
-@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data", @class = "upload" }))
+
+    
+        <!-- Svæði þar sem notandi skráir inn Nafn, tungumál og slóða á mynd. -->
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <form>
-        <fieldset>
-            <legend>Senda inn skrá</legend>
+    <fieldset>
+        <legend>Senda inn skrá</legend>
+        <div id="file-legend">
             <div id="dropdown">
                 <label>þýðing :</label> <label> Gerð :</label> <label> Tungumál :</label> <br />
                 @Html.DropDownList("sSubType", new List<SelectListItem>
@@ -48,8 +50,10 @@
             <input class="my" type="submit" name="submit" value="Senda">
             @*Keyrist thegar buid er ad submitta*@
             @ViewBag.Message
-        </fieldset>
-    </form>
+        </div>
+    </fieldset>
 }
+    
+
 
 
