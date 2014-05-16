@@ -7,7 +7,7 @@
 
 <!-- Svæði þar sem notandi skráir inn Nafn, tungumál og slóða á mynd. -->
 <!-- Byrjum á því að gera brauðslóð (breadcrumb) til að upplýsa notandann hvar hann er staddur á síðunni. -->
-<div id="upload">
+
  @using (Html.BeginForm(null, null, FormMethod.Post,  new { enctype = "multipart/form-data", @class = "upload" }))
 {
          <legend><span id="rs">Ný beiðni</span></legend>
@@ -52,8 +52,6 @@
             <div>
                
                 <input class="my" type="submit" value="Senda">
-                @ViewBag.Message
-            </div>
-       
+                @ViewBag.Message    
     }
 

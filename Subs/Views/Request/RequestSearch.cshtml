@@ -3,50 +3,30 @@
     ViewBag.Title = "Request Search";
 }
 <div class="request-search">
-    @*<div id="Breadcrumb">
-            <p><a href="/Home/">Heim</a> > Beiðni</p>
-        </div>*@
 
     <!-- Búum til leitarkassa þar sem notandinn getur leitað að beiðnum. Hann getur einnig gert Nýja beiðni með takkanum "Ný beiðni". -->
     <form id="searchbox-newrequest" action="">
         <input id="search" type="text" placeholder="Leita">
         <input id="submit" type="submit" value="Leita"><a href="~/Request/RequestSubmit" id="newrequest">Ný beiðni</a>
-
-    </form>
-    <table class="table-responsive table table-bordered table-hover table-right">
-  
-        @*<thead>
-            <tr>
-                <th>Titill</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+        
+</form>
+    <div id="center">
+        <table class="table-responsive table table-bordered table-hover table-right"></table>
+        <table class="table-responsive table table-bordered table-hover ">
+            <thead>
                 <tr>
-                    <td> @Html.ActionLink(item.sTitle, "RequestInfo", new { iId = item.RequestId }) </td>
-                    <td> @item.iUpVote </td>
+                    <th>Titill</th>
+                    <th>Tegund</th>
                 </tr>
-            }
-        </tbody>*@
-    </table>
-    <table class="table-responsive table table-bordered table-hover table-left">
-
-        <thead>
-            <tr>
-                <th>Titill</th>
-                <th>Tegund</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td> @Html.ActionLink(item.sTitle, "RequestInfo", new { id = item.RequestId }) </td>
-                    <td> @item.sSubType </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-
-</div>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td> @Html.ActionLink(item.sTitle, "RequestInfo", new { id = item.RequestId }) </td>
+                        <td> @item.sSubType </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
