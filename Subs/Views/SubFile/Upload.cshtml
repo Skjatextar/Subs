@@ -4,13 +4,14 @@
     ViewBag.Title = "Upload";
 }
 
-    
         <!-- Svæði þar sem notandi skráir inn Nafn, tungumál og slóða á mynd. -->
         @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <fieldset>
         <legend>Senda inn skrá</legend>
         <div id="file-legend">
+            <label>Notandanafn :</label>
+            @Html.TextBoxFor(model => model.sFileUserName, new { @Value = @User.Identity.Name })
             <div id="dropdown">
                 <label>Nafn :</label>
                 @Html.TextBoxFor(model => model.sFileUserName, new { @Value = @User.Identity.Name }) <br />
