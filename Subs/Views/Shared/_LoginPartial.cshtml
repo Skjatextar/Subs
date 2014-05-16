@@ -1,4 +1,6 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@*-------------------Innskráningar kerfið-------------------*@
+@using Microsoft.AspNet.Identity
+@*----------------------Ef þú ert skráður inn birtist 'senda inn skrár'--------------*@
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("Logoff", "Account", FormMethod.Post, new { id = "logoutForm" }))
@@ -6,7 +8,7 @@
         @Html.AntiForgeryToken()
         <div class="login-partial">
             <ul id="login-ul">
-                <li>@Html.ActionLink("Senda inn skrá", "Upload", "SubFile")</li> @* kemur þegar búið er að inn skrá sig*@
+                <li>@Html.ActionLink("Senda inn skrá", "Upload", "SubFile")</li>
                 <li>
                     @Html.ActionLink("Hæ " + User.Identity.GetUserName() + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
                 </li>
@@ -15,6 +17,8 @@
         </div>
     }
 }
+
+        @*----------------Ef þú ert ekki skráður inn er hægt að innskrá/nýskrá---------------*@
 else
 {
     <div class="login-partial">

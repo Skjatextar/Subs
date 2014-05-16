@@ -6,44 +6,38 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
-        <div id="head-top">
+    @*------------Titill á Síðuna-------------*@
+    <div id="head-top">
         <h1> Subs}|⁞ǁ⁞|{Text </h1>
-        </div>
-
+    </div>
+    @*---------------Valslá------------------*@
     <div id="head">
-       
         <div id="nav">
             <ul>
-                <li>@Html.ActionLink("Heim", "Index", "Home",null, new { @class = "tab", hidefocus = "hidefocus" })</li>
-                <li>@Html.ActionLink("Beiðnir", "RequestSearch", "Request",null, new { @class = "tab" })</li>
-                <li>@Html.ActionLink("Um okkur", "About", "Home",null, new { @class = "tab" })</li>
-                <li>@Html.ActionLink("Leiðbeiningar", "Instructions", "Home",null, new { @class = "tab" })</li>
+                <li>@Html.ActionLink("Heim", "Index", "Home", null, new { @class = "tab", hidefocus = "hidefocus" })</li>
+                <li>@Html.ActionLink("Beiðnir", "RequestSearch", "Request", null, new { @class = "tab" })</li>
+                <li>@Html.ActionLink("Um okkur", "About", "Home", null, new { @class = "tab" })</li>
+                <li>@Html.ActionLink("Leiðbeiningar", "Instructions", "Home", null, new { @class = "tab" })</li>
             </ul>
         </div>
     </div>
-        
+    @*---------------Kall í innskráningar hlutan----------*@
     @Html.Partial("_LoginPartial")
-
+    @*------------------Efnið á hverri síðu er 'Renderað' hérna----------------*@
     <div id="container" class="container body-content">
         @RenderBody()
     </div>
-
-
+    @*--------------------Fótur síðunnar-------------------*@
     <div class="footer-bottom">
         <div class="footer-content">
             <p id="footer-recomend"> Við mælum með <a href="http://www.videolan.org/vlc/index.html">VLC</a></p>
             <p> Við berum ekki ábyrgð á höfundavörðu efni né innihaldi skráa sem deilt er í gegnum síðuna </p>
         </div>
     </div>
-          
-            
-        <footer>
-     
-        </footer>
 
+    <footer></footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
