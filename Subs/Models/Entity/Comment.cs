@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity.Migrations.Model;
 using System.Linq;
 using System.Web;
 
@@ -11,7 +12,9 @@ namespace Subs.Models.Entity
         // Eigindi fyrir umsagnir --------------------------------------------------------
         [Key]       // Frumlykill
         public int CommentId { get; set; }
-        [Required]  // Ekki nullable
+
+        [Required]
+        // Ekki nullable
         public string sCommenterUsername { get; set; }
         [Required]  // Ekki nullable
         public string sCommentText { get; set; }

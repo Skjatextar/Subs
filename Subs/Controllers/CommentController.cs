@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-//using StudentApplication.Models;
 using Subs.Models.Entity;
 using Subs.Models.Interface;
 using Subs.Models.Repository;
@@ -44,17 +43,19 @@ namespace Subs.Controllers
         {
             // Saekja skra eftir ID
             var comment = Comment_m_repository.GetCommentById(id);
-
+           
             // Setja umbedna skra inn i ViewModel
             CommentViewModel model = new CommentViewModel
             {
                 CommentId = comment.CommentId,
                 //sCommenterUsername = comment.ApplicationUser.UserName,
                 sCommentText = comment.sCommentText,
-                dCommentDate = comment.dCommentDate,
+                //dCommentDate = comment.dCommentDate,
             };
 
             return View(model);
         }
+
+        
     }
 }

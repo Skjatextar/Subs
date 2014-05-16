@@ -53,12 +53,7 @@ namespace Subs.Controllers
              var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
 
-             var result = from s in CategoryModel
-                          select s.sTitle;
-
-
-             return View(CategoryModel);
-
+             return View(ListModel);
         }
         public ActionResult FileForm()
         {
@@ -84,16 +79,7 @@ namespace Subs.Controllers
             return View();
         }
 
-        public ActionResult MostPopular() /* Sýnir vinsælast á indexsíðu */
-        {
-            var ListModel = SubFile_m_repository.GetSubFiles();
-            var CategoryModel = SubFile_m_repository.GetSubFilesByCategory();
 
-            //var result = from s in CategoryModel
-            //             select s.iUpVote;
-
-            return View(CategoryModel);
-        }
         public ActionResult Newest() /* Sýnir nýjast á indexsíðu */
         {  
             var ListModel = SubFile_m_repository.GetSubFiles();

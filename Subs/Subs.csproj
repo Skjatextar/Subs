@@ -161,7 +161,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RequestController.cs" />
@@ -251,10 +250,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\MostPopular.cshtml" />
     <Content Include="Views\Home\Newest.cshtml" />
     <Content Include="Views\Home\IndexSearch.cshtml" />
-    <Content Include="Views\Home\CommentViewTest.cshtml" />
     <Content Include="Views\SubFile\Upload.cshtml" />
     <Content Include="Views\SubFile\FileInfo.cshtml" />
     <Content Include="Views\Comment\CommentInfo.cshtml" />
@@ -262,6 +259,7 @@
     <Content Include="Views\Request\RequestInfo.cshtml" />
     <Content Include="Views\Request\RequestUpload.cshtml" />
     <Content Include="Views\Request\RequestSubmit.cshtml" />
+    <Content Include="Views\Shared\_Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

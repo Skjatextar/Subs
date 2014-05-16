@@ -3,8 +3,6 @@
 @{
     ViewBag.Title = "Home Page";
 }
-
-
 <div class="home-page">
 <!-- Hér búum við til leitarkassa á forsíðunni með "Search" takka sem nær í gögn úr gagnagrunninum.
     Ásamt því að vera með dropdown lista til að velja flokk.   -->
@@ -18,23 +16,21 @@
         <option value="hrollvekja">Hrollvekja</option>
         <option value="spenna">Spenna</option>
     </select>
-    
-        <input id="submit" type="submit" value="Leita">  <!-- Search takki -->
-    
+    <input id="submit" type="submit" value="Leita">  <!-- Search takki -->   
 </form>
 
 <!-- Tafla sem að birtir vinsælustu skrárnar. Notum Razor kóðun til að sækja þær úr gagnagrunninum. -->
    
 
         <div id="center">
-            <table class="table-responsive table table-bordered table-hover table-left">
-                <caption><h3>Vinsælast</h3></caption>
+            <table class="table-responsive table table-bordered table-hover ">
+                <caption><h3>Nýjast</h3></caption>
                 <thead>
                     <tr>
-
                         <th>Titill</th>
                         <th>Gerð</th>
                         <th>Þýðing</th>
+                        
                     </tr>
                 </thead>
                 <tbody>

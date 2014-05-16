@@ -29,7 +29,7 @@ namespace Subs.Models.Entity
         public string sPicture { get; set; }
         // Lysing a thydingu
         public string sSubDescription { get; set; }
-        // Slod ad textaskra
+        // Binary fylki til ad geyma textaskra
         public byte[] sFilePath { get; set; }
         // Talning a hve oft hefur verid likad vid gaedi textaskrar
         public int? iUpVote { get; set; }

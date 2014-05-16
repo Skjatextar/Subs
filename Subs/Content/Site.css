@@ -6,7 +6,7 @@ html {
 
 body {
     background-color: #F5F5F5;
-    margin: 0 0 100px;
+    margin: 0;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -57,7 +57,10 @@ input[type="checkbox"].input-validation-error {
 #container {
     margin-top: 20px;  
 }
-
+#center {
+    margin-left:auto;
+    margin-right:auto;
+}
 .box-border {
     background-color: #D3D3D3;
     padding: 50px;
@@ -97,7 +100,7 @@ input[type="checkbox"].input-validation-error {
 
 /*#endregion */
 
-.file-info {
+.file-info, .request-info {
     min-width: 540px;
     max-width: 540px;
     margin-left: auto;
@@ -105,49 +108,36 @@ input[type="checkbox"].input-validation-error {
 }
 
 /*#region FileUpload */
-.upload-file, .upload-request {
-    width: 600px;
+.upload, .upload-request {
+    min-width: 540px;
+    max-width: 540px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px; 
-}
-
-fieldset {
-    border-style: solid;
-    border-width: 6px;
+    border: 6px solid  #333333;
     border-radius: 20px;
-    border-color: #333333;
     background-color: #efefef;
 }
-
+#dropdown > label:last-of-type {
+    margin-left: 40px;  
+}
+#dropdown > label:first-of-type {
+    padding-right: 25px;  
+}
 legend {
+    margin-left: 30%;
     font-size: 28px;
-    margin-left: 20px;
     font-weight: bold;
     color: #9B1C26;
 }
 
-#upload-fields {
-    margin-top: 20px;
-}
-
-#upload-file-name {
-    margin-left: 20px;
-    width: 200px;
-    text-align: right;
-}
-
-#radiob {
+#dropdown {
     padding: 10px;
-    margin-left: 150px;
+    margin-left: 140px;
 }
 
 #search-menu {
     margin-left: 30px;
-}
-
-#upload-file-text {
-    margin-left: 110px;
 }
 
 #get-file {
@@ -166,19 +156,6 @@ legend {
     margin-bottom: 20px;
     box-shadow: 2px 2px 0 #828181 inset;
 }
-
-#upload-file-send {
-    position: absolute;
-    margin-left: 330px;
-    padding: 9px;
-}
-
-#upload-file-quit {
-    float: right;
-    padding: 10px;
-    margin-right: 20px;  
-}
-
 
  /*#endregion */
 
@@ -292,4 +269,8 @@ caption, h3 {
 #download > a:hover{
     background-color:#F5F5F5;
     color:#333333;
+}
+
+.comment-list {
+    margin-top: 20px;
 }
