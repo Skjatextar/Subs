@@ -26,12 +26,12 @@ namespace Subs.Models.Repository
         }
 
         // Saekja eina skra eftir ID
-        public SubFile GetSubFilesById(int? id)
+        public SubFile GetSubFilesById(int? iId)
         {
             //check for null in id
 
             var file = (from s in _context.SubFiles
-                        where s.SubFileId == id
+                        where s.SubFileId == iId
                         select s).SingleOrDefault();
 
             return file;
@@ -42,7 +42,6 @@ namespace Subs.Models.Repository
         {
             _context.SubFiles.Add(subFile);
         }
-
 
         // Vista breytingar i gagnagrunn
         public void SaveChanges()
