@@ -129,7 +129,9 @@ input[type="checkbox"].input-validation-error {
 #dropdown > label:first-of-type {
     padding-right: 25px;  
 }
-
+#button {
+    margin:10px 15px;;
+}
 legend {
     margin-left: 30%;
     font-size: 28px;

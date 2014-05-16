@@ -49,9 +49,9 @@
         @Html.TextBoxFor(x => x.sFilePath, new { type = "file" })
         @Html.ValidationMessageFor(x => x.sFilePath)
     </div>
-   <input class="btn-default" type="submit" name="submit" value="Senda">
+   <input class="btn-default btn" id="button"type="submit" name="submit" value="Senda">
     //Keyrist thegar buid er ad submitta
-                @ViewBag.Message
-                }
+   @ViewBag.Message
+}
 
 
