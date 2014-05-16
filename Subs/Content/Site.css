@@ -2,7 +2,7 @@
 #center, .footer-bottom, .footer-content,
 .file-info, .request-info, .upload-file, 
 .upload-request,.home-page, .about,
- .request-search, .instructions, .upload {
+ .request-search, .instructions, #file-legend {
     margin-left:auto;
     margin-right:auto;
 }
@@ -90,7 +90,7 @@ input[type="checkbox"].input-validation-error {
 /* #endregion */
 
 /*#region Info/Submit/Comment Box */
-.upload,.request,
+#file-legend, .request,
 .file-info, .request-info {
     width: 600px;
     margin-top: 30px; 
@@ -126,13 +126,13 @@ legend {
     padding: 10px;
     margin-left: 140px;
 }
-.request > label {
+#request-fieldset > label {
     margin-left:20%;
 }
-.request > select:first-of-type {
+#request-fieldset > select:first-of-type {
     margin-left:38px;
 }
-.request > select:nth-last-of-type(2) {
+#request-fieldset > select:nth-last-of-type(2) {
     margin-left:51px;
 }
 #search-menu {
