@@ -4,39 +4,11 @@
     ViewBag.Title = "Home Page";
 }
 
-@*<div class="jumbotron">
-        @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            <div>
-                @Html.LabelFor(x => x.sTitle)
-                @Html.TextBoxFor(x => x.sTitle, new { type = "file" })
-                @Html.ValidationMessageFor(x => x.sTitle)
-            </div>
-            <button type="submit">Senda skrá</button>
-        }
-    </div>*@
-
-@*<div class="jumbotron">
-        @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            <div>
-                @Html.LabelFor(x => x.sFilePath)
-                @Html.TextBoxFor(x => x.sFilePath, new { type = "file" })
-                @Html.ValidationMessageFor(x => x.sFilePath)
-            </div>
-            <button type="submit">Senda skrá</button>
-        }
-    </div>*@
-
-
-
-
-
 @*@model Subs.Models.Entity.Request*@
 
-@*@{
+@{
         ViewBag.Title = "Request Submit";
-    }
+}
 
     @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "userForm", enctype = "multipart/form-data" }))
     {
@@ -65,7 +37,7 @@
                 <input class="" type="submit" name="RequestSubmit" value="Senda">
             </div>
         </div>
-    }*@
+    }
 
 
 
@@ -74,8 +46,8 @@
 
 <!-- Svæði þar sem notandi skráir inn Nafn, tungumál og slóða á mynd. -->
 <!-- Byrjum á því að gera brauðslóð (breadcrumb) til að upplýsa notandann hvar hann er staddur á síðunni. -->
-<div id="upload">
-    @using (Html.BeginForm(@*"RequestSubmit", "Request"*@))
+@*<div id="upload">
+    @using (Html.BeginForm("RequestSubmit", "Request"))
     {
         <fieldset>
             <legend><span id="rs">Nýbeiðni</span></legend>
@@ -100,20 +72,11 @@
             <label> Nánar</label> <br />
             @Html.TextAreaFor(model => model.sRequestDescription, new { @id = "mytext" })
 
-            @*@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
-                {
-                    <div>
-                        Senda inn skrá til þýðingar
-                        @Html.TextBoxFor(x => x.sTitle, new { type = "file" })
-                        @Html.ValidationMessageFor(x => x.sTitle)
-                    </div>
-                    <button type="submit">Senda skrá</button>
-                }*@
             <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
             <div>
-                <input class="m" type="button" @*name="cancel"*@ value="Hætta við">
-                <input class="my" type="submit" @*name="RequestSubmit"*@ value="Senda">
+                <input class="m" type="button" name="cancel"value="Hætta við">
+                <input class="my" type="submit" name="RequestSubmit"value="Senda">
             </div>
         </fieldset>
     }
-</div>
+</div>*@
