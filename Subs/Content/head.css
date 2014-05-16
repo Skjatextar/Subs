@@ -1,9 +1,20 @@
-﻿#head {
-      
-    color: #ffffff;
-    margin-bottom: 20px;
+﻿/* #region Fixed Head Size */
+#head, #head-top, #nav, #nav ul,
+.login-partial {    
     margin-left: auto;
     margin-right: auto;
+}
+
+#head-top, #nav ul, #nav li, .login-partial {
+    min-width: 740px;
+    max-width: 740px;
+}
+/* #endregion */
+
+/* #region Hedder */
+#head {    
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
 #head-top h1 {
@@ -12,38 +23,23 @@
     margin-left: 50px;
 }
 
-#head-top {
-    min-width: 740px;
-    max-width: 740px;
-    margin-left: auto;
-    margin-right: auto;
-}
+/* #endregion */
 
+/* #region Valslá */
 #nav {
     text-align: center;
     padding:0;
     padding-top: 5px;
     padding-bottom: 5px;
     margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
     background-color: #333333;
     border: 2px;
     border-color: #000000;
     border-style: solid;
 }
 
-#nav ul {
-    min-width: 740px;
-    max-width: 740px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 #nav li {
     display: inline;
-    min-width: 740px;
-    max-width: 740px;
 }
 
 #nav li .tab {
@@ -68,13 +64,11 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
+/* #endregion */
 
+/* #region Login Valslá */
 .login-partial {
     text-align: right;
-    min-width: 740px;
-    max-width: 740px;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: -10px;
 }
 
@@ -94,3 +88,4 @@
     border-radius: 20px;
     font-weight: bold;
 }
+/* #endregion */
