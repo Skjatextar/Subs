@@ -17,52 +17,66 @@ namespace Subs.Tests.Controllers
     [TestClass]
     public class HomeControllerTest
     {
-        /*[TestMethod]
+        [TestMethod]
         public void Index()
-        {  
-         * // Arrange
+        {
+            // Arrange
             HomeController controller = new HomeController();
 
-            // Act
-            ViewResult result = controller.Info() as ViewResult;
+            //  Act
+            ViewResult result = controller.Index() as ViewResult;
 
-            // Assert
+            //  Assert
             Assert.IsNotNull(result);
-        }*/
+        }
 
-        /*[TestMethod]
+        [TestMethod]
         public void About()
+        {
+            //  Arrange
+            HomeController controller = new HomeController();
+
+            //  Act
+            ViewResult result = controller.About() as ViewResult;
+
+            //  Assert
+            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+        }
+
+        [TestMethod]
+        public void Contact()
         {
             // Arrange
             HomeController controller = new HomeController();
 
             // Act
-            ViewResult result = controller.About() as ViewResult;
+            ViewResult result = controller.Contact() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
-        }*/
+            Assert.IsNotNull(result);
+        }
 
-        //[TestMethod]
-        //public void Contact()
-        //{
-        //    // Arrange
-        //    HomeController controller = new HomeController();
+        [TestMethod]
+        public void Instructions()
+        {
+            // Arrange
+            HomeController controller = new HomeController();
 
-        //    // Act
-        //    ViewResult result = controller.Contact() as ViewResult;
+            // Act
+            ViewResult result = controller.Instructions() as ViewResult;
 
-        //    // Assert
-        //    Assert.IsNotNull(result);
-        //}
+            // Assert
+            Assert.IsNotNull(result);
+        }
 
+        // Athuga hvort skrar birtast i stafrofsrod
         [TestMethod]
         public void TestIfFilesAreInAlphabeticalOrder()
         {
             //Athugum hvort skrarnar birtist i stafrofsrod a forsidu
             // Arrange
             List<SubFile> subfiles = new List<SubFile>();
-            for (int i = 1; i <= 15; i++) 
+            for (int i = 1; i <= 15; i++)
             {
                 subfiles.Add(new SubFile
                 {
@@ -73,37 +87,20 @@ namespace Subs.Tests.Controllers
             }
 
             var mockRepo = new MockSubFileRepository(subfiles);
-            var controller = new HomeController(mockRepo); 
-            
+            var controller = new HomeController(mockRepo);
+
             // Act
-            var result = controller.Index();    
+            var result = controller.Index();
 
             // Assert
             var viewResult = (ViewResult)result;
-            
+
 
             List<SubFile> model = (viewResult.Model as IEnumerable<SubFile>).ToList();
 
-            var expectedList = model.OrderBy(x => x.sTitle); 
+            var expectedList = model.OrderBy(x => x.sTitle);
             Assert.IsTrue(expectedList.SequenceEqual(model));
-            
 
-        }
-
-        /*[TestMethod]
-        public void GoToFileInfo()
-        {
-            //Athugum hvort við getum opnað link á skránna
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            ViewResult result = controller.About() as ViewResult;
-
-            // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
-        }*/
-
-    
+        } 
     }
 }
