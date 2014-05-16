@@ -25,7 +25,7 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td> @Html.ActionLink(item.sTitle, "RequestInfo", new { id = item.RequestId }) </td>
+                    <td> @Html.ActionLink(item.sTitle, "RequestInfo", new { iId = item.RequestId }) </td>
                     <td> @item.iUpVote </td>
                 </tr>
             }

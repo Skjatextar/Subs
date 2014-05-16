@@ -26,12 +26,12 @@ namespace Subs.Models.Repository
         }
 
         // Saekja eina skra eftir ID
-        public SubFile GetSubFilesById(int? iId)
-        {
+        public SubFile GetSubFilesById(int? id)
+        {   //ekki hægt að fara eftir kóðareglum með int? id sem er strongly typed
             //check for null in id
 
             var file = (from s in _context.SubFiles
-                        where s.SubFileId == iId
+                        where s.SubFileId == id
                         select s).SingleOrDefault();
 
             return file;

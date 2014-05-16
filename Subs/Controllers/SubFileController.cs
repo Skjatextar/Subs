@@ -96,10 +96,10 @@ namespace Subs.Controllers
 		}
 		// Skoda upplysingar um skra - sott med ID
 		[HttpGet]
-		public ActionResult FileInfo(int? iId)
-		{
+		public ActionResult FileInfo(int? id)
+        {   //ekki hægt að fara eftir kóðareglum með int? id sem er strongly typed
 			// Saekja skra eftir ID
-			var file = SubFile_m_repository.GetSubFilesById(iId);
+			var file = SubFile_m_repository.GetSubFilesById(id);
 			// Setja umbedna skra inn i ViewModel
 			//if (id.HasValue)
 			//{

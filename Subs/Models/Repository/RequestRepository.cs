@@ -25,7 +25,7 @@ namespace Subs.Models.Repository
 
         // Saekja eina beidni eftir ID
         public Request GetRequestById(int? id)
-        {
+        {      //ekki hægt að fara eftir kóðareglum með int? id sem er strongly typed
             //check for null in id
 
             var file = (from s in _context.Requests
