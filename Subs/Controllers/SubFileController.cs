@@ -121,7 +121,7 @@ namespace Subs.Controllers
 
 		// Saekja skra
 		[HttpGet]
-		public FileContentResult FileDownload(int? iId)
+		public FileContentResult FileDownload(int? id)
 		{
 			// Tekur inn byteArray
 			byte[] bFileData;
@@ -129,7 +129,7 @@ namespace Subs.Controllers
 			string sFileName;
 
 			// Saekja skra eftir ID
-			SubFile fileRecord = SubFile_m_repository.GetSubFilesByCategory().Find(iId);
+			SubFile fileRecord = SubFile_m_repository.GetSubFilesByCategory().Find(id);
 
 			bFileData = (byte[])fileRecord.sFilePath.ToArray();
 			sFileName = fileRecord.sTitle;
