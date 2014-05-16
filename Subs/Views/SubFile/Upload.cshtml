@@ -12,6 +12,8 @@
         <legend>Senda inn skrá</legend>
         <div id="file-legend">
             <div id="dropdown">
+                <label>Nafn :</label>
+                @Html.TextBoxFor(model => model.sFileUserName, new { @Value = @User.Identity.Name }) <br />
                 <label>þýðing :</label> <label> Gerð :</label> <label> Tungumál :</label> <br />
                 @Html.DropDownList("sSubType", new List<SelectListItem>
                     {

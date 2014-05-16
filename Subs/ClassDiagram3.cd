@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Subs.FilterConfig" Collapsed="true">
-    <Position X="7.25" Y="4.25" Width="1.5" />
+    <Position X="7.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>App_Start\FilterConfig.cs</FileName>
@@ -43,7 +43,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Subs.MvcApplication" Collapsed="true">
-    <Position X="4.25" Y="5.5" Width="1.5" />
+    <Position X="4.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Global.asax.cs</FileName>
@@ -78,7 +78,18 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Subs.Controllers.SubFileController" Collapsed="true">
-    <Position X="8.75" Y="9.25" Width="1.5" />
+    <Position X="10.25" Y="9.25" Width="1.5" />
+    <InheritanceLine Type="System.Web.Mvc.Controller" FixedToPoint="true">
+      <Path>
+        <Point X="23.75" Y="4.941" />
+        <Point X="23.75" Y="5.125" />
+        <Point X="20.583" Y="5.125" Type="JumpStart" />
+        <Point X="20.417" Y="5.125" Type="JumpEnd" />
+        <Point X="12.75" Y="5.125" />
+        <Point X="12.75" Y="9.594" />
+        <Point X="11.75" Y="9.594" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAACAAgAAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>Controllers\SubFileController.cs</FileName>
@@ -282,7 +293,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Subs.Models.Interface.ISubFileRepository" Collapsed="true">
-    <Position X="8.25" Y="10.5" Width="1.5" />
+    <Position X="7.25" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAACAAAAAAAAAAAEIAAAAAAAAAAAAACAAAAAAAA=</HashCode>
       <FileName>Models\Interface\ISubFileRepository.cs</FileName>
