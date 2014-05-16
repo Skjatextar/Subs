@@ -88,8 +88,14 @@ namespace Subs.Controllers
 				{
 					Request_m_repository.InsertRequest(request);
 					Request_m_repository.SaveChanges();
-				    //return RedirectToAction("Index");
-					return View("Index");
+					//return RedirectToAction("Index");
+					//return View("Index");
+
+					return RedirectToAction("RequestInfo", new { id = request.RequestId });
+
+					//ViewBag.Message = "Beiðni hefur verið skráð - Takk fyrir";
+
+					//return View("RequestSubmit");
 				}
 				}
 

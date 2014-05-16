@@ -48,32 +48,38 @@ namespace Subs.Controllers
 		{
 			if (!ModelState.IsValid)
 			{
-				return View(model);
+                ViewBag.Message = "Enginn skrá var valinn";
+				return View(model); 
 			}
-            else
-            {
-                SubFile SubFile = new SubFile();
-
-                byte[] uploadFile = new byte[model.sFilePath.InputStream.Length];
-                model.sFilePath.InputStream.Read(uploadFile, 0, uploadFile.Length);
-
-                SubFile.sTitle = model.sFilePath.FileName;
-                SubFile.sFilePath = uploadFile;
-                /*prufa */
-                SubFile.sSubType = model.sSubType;
-                SubFile.sSubType = model.sSubType;
-                SubFile.sSubDescription = model.sSubDescription;
-                /*------------------------------*/
-                // Setja skra i gagnagrunn
-                SubFile_m_repository.InsertSubFile(SubFile);
-                // Vista breytingar i gagnagrunni
-                SubFile_m_repository.SaveChanges();
-
-                ViewBag.Message = "Skrá hefur verið hlaðið upp - Takk fyrir";
-                
-                return View("Upload");
+                     SubFile SubFile = new SubFile();
+            if (model.sFilePath == null)
+            {   /* Þetta virkjar til að passa að enginn ýti á senda nema að vekja skrá fyrst*/
+                ViewBag.Message = "Enginn skrá var valinn";
+                return View(model); 
             }
-			
+           
+             byte[] uploadFile = new byte[model.sFilePath.InputStream.Length];
+             model.sFilePath.InputStream.Read(uploadFile, 0, uploadFile.Length);
+
+             SubFile.sTitle = model.sFilePath.FileName;
+             SubFile.sFilePath = uploadFile;
+             SubFile.sSubType = model.sSubType;
+             SubFile.sSubType = model.sSubType;
+             SubFile.sSubDescription = model.sSubDescription;
+             SubFile.sGenre = model.sGenre;
+          
+            // Setja skra i gagnagrunn
+            
+            SubFile_m_repository.InsertSubFile(SubFile);
+             // Vista breytingar i gagnagrunni
+            SubFile_m_repository.SaveChanges();
+
+					//return RedirectToAction("SubFileInfo", new { id = SubFile.SubFileId });
+
+            ViewBag.Message = "Skrá hefur verið hlaðið upp - Takk fyrir";
+                    
+            return RedirectToAction("Index", "Home");
+            //return Redirect("Upload");
 		}
 		// Skoda upplysingar um skra - sott med ID
 		[HttpGet]

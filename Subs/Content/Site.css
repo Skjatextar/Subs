@@ -12,6 +12,7 @@ body {
     margin-left:auto;
     margin-right:auto;
 }
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 10px;
@@ -60,7 +61,10 @@ input[type="checkbox"].input-validation-error {
 #container {
     margin-top: 20px;  
 }
-
+#center {
+    margin-left:auto;
+    margin-right:auto;
+}
 .box-border {
     background-color: #D3D3D3;
     padding: 50px;
@@ -123,34 +127,28 @@ fieldset {
     background-color: #efefef;
 }
 
+#dropdown > label:last-of-type {
+    margin-left: 40px;  
+}
+
+#dropdown > label:first-of-type {
+    padding-right: 25px;  
+}
+
 legend {
+    margin-left: 30%;
     font-size: 28px;
-    margin-left: 20px;
     font-weight: bold;
     color: #9B1C26;
 }
 
-#upload-fields {
-    margin-top: 20px;
-}
-
-#upload-file-name {
-    margin-left: 20px;
-    width: 200px;
-    text-align: right;
-}
-
-#radiob {
+#dropdown {
     padding: 10px;
-    margin-left: 150px;
+    margin-left: 140px;
 }
 
 #search-menu {
     margin-left: 30px;
-}
-
-#upload-file-text {
-    margin-left: 110px;
 }
 
 #get-file {
@@ -169,19 +167,6 @@ legend {
     margin-bottom: 20px;
     box-shadow: 2px 2px 0 #828181 inset;
 }
-
-#upload-file-send {
-    position: absolute;
-    margin-left: 330px;
-    padding: 9px;
-}
-
-#upload-file-quit {
-    float: right;
-    padding: 10px;
-    margin-right: 20px;  
-}
-
 
  /*#endregion */
 
@@ -225,7 +210,9 @@ caption, h3 {
     max-width: 740px;
     margin-left: auto;
     margin-right: auto;
+
 }
+
 
 .about h2 {
     margin-left: 0px;
@@ -269,7 +256,7 @@ caption, h3 {
 }
 
 #make-srt {
-     margin-top: 5px;
+     margin-top: 50px;
      overflow:hidden; 
      margin-left:10px;
 }
