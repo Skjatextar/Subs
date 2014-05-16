@@ -63,13 +63,13 @@ namespace Subs.Controllers
             /* passar skráar endingu sé .srt eða .SRT*/
             else if (!AllowedFileExtensions.Contains(vModel.sFilePath.FileName.Substring(vModel.sFilePath.FileName.LastIndexOf('.'))))
             {
-                ViewBag.Message = "Please upload Your Photo of type: " + string.Join(", ", AllowedFileExtensions);
+                ViewBag.Message = "Skráin þarf að vera af gerðinni: " + string.Join(", ", AllowedFileExtensions);
                 return View(vModel); ;
             }
             /* passar að skráin sé ekki of stór ekki viss með hversu stór hún þarf að vera setti 1mb*/
             else if (vModel.sFilePath.ContentLength > iMaxContentLength)
             {
-                ViewBag.Message = "Your Photo is too large, maximum allowed size is : " + (iMaxContentLength / 1024).ToString() + "MB";
+                ViewBag.Message = "Skráin má ekki vera stærri en  : " + (iMaxContentLength / 1024).ToString() + "MB";
                 return View(vModel); 
             }
             /* sendir gögn í grunn*/

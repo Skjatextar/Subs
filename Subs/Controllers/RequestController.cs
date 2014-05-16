@@ -44,8 +44,8 @@ namespace Subs.Controllers
 		{
 			ViewBag.Message = "Beiðni-Leit";
 			var vCategoryModel = Request_m_repository.GetRequestsByCategory();
-			return View(vCategoryModel);
 
+			return View(vCategoryModel);
 		}
 		[HttpGet]
 		public ActionResult RequestInfo(int? iId)
