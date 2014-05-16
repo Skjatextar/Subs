@@ -89,6 +89,7 @@
     <Compile Include="Controllers\CommentControllerTest.cs" />
     <Compile Include="Controllers\RequestControllerTest.cs" />
     <Compile Include="Controllers\SubFileControllerTest.cs" />
+    <Compile Include="Mocks\MockSubFileRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
