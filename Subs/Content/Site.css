@@ -115,6 +115,7 @@ legend {
 
 /*#region Choice fields */
 #dropdown > label:last-of-type {
+    
     margin-left: 40px;  
 }
 
@@ -126,6 +127,11 @@ legend {
     padding: 10px;
     margin-left: 140px;
 }
+
+#request-fieldset > input {
+    
+}
+
 #request-fieldset > label {
     margin-left:20%;
 }
