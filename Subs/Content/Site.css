@@ -6,7 +6,11 @@ html {
 
 body {
     background-color: #F5F5F5;
-    margin: 0;
+    margin: 0 0 100px;
+}
+#center {
+    margin-left:auto;
+    margin-right:auto;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -108,22 +112,29 @@ input[type="checkbox"].input-validation-error {
 }
 
 /*#region FileUpload */
-.upload, .upload-request {
-    min-width: 540px;
-    max-width: 540px;
+.upload-file, .upload-request {
+    width: 600px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px; 
-    border: 6px solid  #333333;
+}
+
+fieldset {
+    border-style: solid;
+    border-width: 6px;
     border-radius: 20px;
+    border-color: #333333;
     background-color: #efefef;
 }
+
 #dropdown > label:last-of-type {
     margin-left: 40px;  
 }
+
 #dropdown > label:first-of-type {
     padding-right: 25px;  
 }
+
 legend {
     margin-left: 30%;
     font-size: 28px;
