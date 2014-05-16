@@ -49,7 +49,6 @@
                 @Html.TextAreaFor(model => model.sRequestDescription, new { @id = "mytext" })
                 <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
                 <div>
-                    <input class="m" type="button" @*name="cancel"*@ value="Hætta við">
                     <input class="my" type="submit" @*name="RequestSubmit"*@ value="Senda">
                     @ViewBag.Message
                 </div>
