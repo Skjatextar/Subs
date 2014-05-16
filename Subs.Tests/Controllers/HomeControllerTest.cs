@@ -10,7 +10,7 @@ using Subs.App_Data.DataAccessLayer;
 using Subs.Models.Repository;
 using Subs.Models.Interface;
 using Subs.Models.Entity;
-
+using Subs.Tests.Mocks;
 
 namespace Subs.Tests.Controllers
 {
@@ -72,8 +72,12 @@ namespace Subs.Tests.Controllers
                     sFileUserName = "EinnFlottur"
                 });
             }
+
+            var mockRepo = new MockSubFileRepository(subfiles);
+            var controller = new HomeController(mockRepo); 
+
             // Act
-            ViewResult result = controller.About() as ViewResult;
+            var result = controller.Index();    
 
             // Assert
             Assert.AreEqual("Your application description page.", result.ViewBag.Message);
