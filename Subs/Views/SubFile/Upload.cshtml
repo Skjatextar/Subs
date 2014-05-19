@@ -10,13 +10,11 @@
     <fieldset>
         <legend>Senda inn skrá</legend>
         <div id="file-legend">
-            <label>Notandanafn :</label>
-            @Html.TextBoxFor(model => model.sFileUserName, new { @Value = @User.Identity.Name })
+            <label>Notandanafn :</label><br />
+            @Html.TextBoxFor(model => model.sFileUserName, new { @Value = @User.Identity.Name, @readonly = "readonly", @id = "mytext" })
             <div id="dropdown">
-                <label>Nafn :</label>
-                @Html.TextBoxFor(model => model.sFileUserName, new { @Value = @User.Identity.Name }) <br />
-                <label>þýðing :</label> <label> Gerð :</label> <label> Tungumál :</label> <br />
-                @Html.DropDownList("sSubType", new List<SelectListItem>
+                <label>þýðing :</label> <label> Gerð :</label> <label> Flokkur :</label> <br />
+                @Html.DropDownList("SubLanguage", new List<SelectListItem>
                     {
                         new SelectListItem{Text = "Enska",Value = "Enska"},
                         new SelectListItem{Text = "Íslenska", Value = "Íslenska"}
@@ -24,35 +22,39 @@
                     }, "Þýðing")
                 @Html.ValidationMessageFor(model => model.sSubType)
 
-
-                @Html.DropDownList("sGenre", new List<SelectListItem>
+                
+                @Html.DropDownList("sSubTypes", new List<SelectListItem>
                     {
                         new SelectListItem{Text = "Bíómynd",Value = "Bíómynd"},
                         new SelectListItem{Text = "Þáttur", Value = "Þáttur"}
 
-                    }, "Gerð")
+                    }, "Tungumál")
                 @Html.ValidationMessageFor(model => model.sGenre)
-                @Html.DropDownList("sSubType", new List<SelectListItem>
+                @Html.DropDownList("sGenre", new List<SelectListItem>
                     {
-                        new SelectListItem{Text = "Enska",Value = "Enska"},
-                        new SelectListItem{Text = "Íslenska", Value = "Íslenska"}
-
-                    }, "Þýðing")
+                        new SelectListItem{Text = "Drama<",Value = "Drama<"},
+                        new SelectListItem{Text = "Barnaefni", Value = "Barnaefni"},
+                        new SelectListItem{Text = "Gaman", Value = "Gaman"},
+                        new SelectListItem{Text = "Hrollvekja", Value = "Hrollvekja"},
+                        new SelectListItem{Text = "Spenna", Value = "Spenna"}
+                    }, "Gerð")
                 @Html.ValidationMessageFor(model => model.sSubType)<br />
             </div>
             <div>
+                <label>Url á IMDB.com upplýsingar um myndina :</label> <br />
+                @Html.TextBoxFor(model => model.sPicture, new { @id = "mytext" }) <br />
                 <!-- Textarea fyrir nánari lýsingu á skránni. -->
                 <label> Nánar </label> <br />
-                @Html.TextAreaFor(model => model.sSubDescription, new { @id = "mytext" })
+                @Html.TextAreaFor(model => model.sSubDescription, new { @id = "mytext" }) <br />
                 <!-- Takkar þar sem notandi getur sent inn skrá (submit) eða hætta við þar sem hann er redirectaður inná forsíðuna. -->
                 @Html.LabelFor(x => x.sFilePath)
                 @Html.TextBoxFor(x => x.sFilePath, new { type = "file" })
                 @Html.ValidationMessageFor(x => x.sFilePath)
             </div>
-            <input class="m" type="button" name="cancel" value="Hætta við">
+            
             <input class="my" type="submit" name="submit" value="Senda">
             @*Keyrist thegar buid er ad submitta*@
-            @ViewBag.Message
+            <b>@ViewBag.Message</b>
         </div>
     </fieldset>
 }

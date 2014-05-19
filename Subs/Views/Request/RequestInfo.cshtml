@@ -9,13 +9,14 @@
     <form>
         <fieldset>
             <legend>Nánari upplýsingar</legend>
-            <label>Sendandi : </label>  @Html.DisplayFor(modelItem => modelItem.sRequesterUsername) <br />
-            <label>Titill : </label>  @Html.DisplayFor(modelItem => modelItem.sTitle) <br />
-            <label>Tegund : </label>   @Html.DisplayFor(modelItem => modelItem.sSubType) <br />
-            <label>Tungumál frá : </label>   @Html.DisplayFor(modelItem => modelItem.sLanguageFrom) <br />
-            <label>Tungumál til : </label>    @Html.DisplayFor(modelItem => modelItem.sLanguageTo) <br />
-            <label>Undirtektir : </label>    @Html.DisplayFor(modelItem => modelItem.iUpVote) <br />
-            <label>Lýsing : </label>    @Html.DisplayFor(modelItem => modelItem.sRequestDescription) <br />
+            <label>    Sendandi : </label>       @Html.DisplayFor(modelItem => modelItem.sRequesterUsername)  <br />
+            <label>      Titill : </label>       @Html.DisplayFor(modelItem => modelItem.sTitle)              <br />
+            <label>      Tegund : </label>       @Html.DisplayFor(modelItem => modelItem.sSubType)            <br />
+            <label>Tungumál frá : </label>       @Html.DisplayFor(modelItem => modelItem.sLanguageFrom)       <br />
+            <label>Tungumál til : </label>       @Html.DisplayFor(modelItem => modelItem.sLanguageTo)         <br />
+            <label>  Url á mynd : </label>       @Html.DisplayFor(modelItem => modelItem.sPicture)            <br />
+            <label> Undirtektir : </label>       @Html.DisplayFor(modelItem => modelItem.iUpVote)             <br />
+            <label>      Lýsing : </label>       @Html.DisplayFor(modelItem => modelItem.sRequestDescription) <br />
         </fieldset>
     </form>
     @*---------------------'Comments' á beiðni---------------------*@
